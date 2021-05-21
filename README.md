@@ -14,3 +14,42 @@ Este sitio fue seleccionado por el tipo de producto que ofrece, siendo semejante
 
 ### https://www.playstation.com/es-mx/
 Al igual que el anterior, este sitio es una buena referencia por el tipo de producto que ofrece.
+
+
+## Hola mi nombre es: Eduardo Izquierdo Rojas.
+
+![alt yo](https://github.com/Eduardishion/Eduardishion/blob/main/avatar.png)
+
+Soy estudiante de la  licenciatura en ingenieria de software de la Universidad 
+Autonoma de Estado de Mexico UAEM, Unidad Academica Profesional Tianguistenco UAPT.
+
+Algunas areas de mi interes son: RPA - Automat of Robotic Processes, web development, web scraping, natural language processing (PLN), chat bots, and artificial intelligence. Actualmente estudiante del curso Programación Full stack Node en Digital House Coding  School (DH). Reconosco que me encanta el desarrollo de software y siempre me a gustado indagar sobre las nuevas tecnologias y por lo general me gusta ser autodidacta y aprender de los demas,y tener encuenta que para mejorar siempre hay que practicar, practicar y practicar... 
+
+Enlaces de contacto:
+
+Mi linkedin
+https://www.linkedin.com/in/eduardo-izquierdo-rojas-b75887121/
+
+Mi github:
+https://github.com/Eduardishion
+
+## Páginas de referencia
+
+Banggood
+https://www.banggood.com/
+
+De esta pagina e-commerce hemos abstraido, especificamente lo que se refiere al componente de detalle de producto por su manera tan ordenada al presentar sus productos asi como sus detalles y caracteristicas del mismo.
+
+Focalprice
+https://www.focalprice.com/
+
+De esta pagina e-commerce analiamos, el componente de carrito de compra, en el cual hemos elegido igualar su estructura en su orden y simplecidad.
+
+
+
+
+
+
+
+
+
