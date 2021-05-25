@@ -21,34 +21,35 @@ Este sitio fue seleccionado por el tipo de producto que ofrece, siendo semejante
 
 Al igual que el anterior, este sitio es una buena referencia por el tipo de producto que ofrece.
 
-## Hola mi nombre es: Eduardo Izquierdo Rojas.
+## Eduardo Izquierdo Rojas.
 
 ![alt yo](https://github.com/Eduardishion/Eduardishion/blob/main/avatar.png)
 
-Soy estudiante de la licenciatura en ingenieria de software de la Universidad
-Autonoma de Estado de Mexico UAEM, Unidad Academica Profesional Tianguistenco UAPT.
+Eduardo Izquierdo Rojas es estudiante de la licenciatura en ingeniería de software de la Universidad Autónoma de Estado de México UAEM, Unidad Académica Profesional Tianguistenco UAPT.
 
-Algunas areas de mi interes son: RPA - Automat of Robotic Processes, web development, web scraping, natural language processing (PLN), chat bots, and artificial intelligence. Actualmente estudiante del curso Programación Full stack Node en Digital House Coding School (DH). Reconosco que me encanta el desarrollo de software y siempre me a gustado indagar sobre las nuevas tecnologias y por lo general me gusta ser autodidacta y aprender de los demas,y tener encuenta que para mejorar siempre hay que practicar, practicar y practicar...
+Tiene como areas de interés, RPA - Automat of Robotic Processes, web development, web scraping, natural language processing (PLN), chat bots, and artificial intelligence Actualmente es estudiante del curso Programación Full stack Node en Digital House Coding School (DH). 
 
-Enlaces de contacto:
+Por lo general le gusta el desarrollo de software e indagar sobre las nuevas tecnologías   así como ser autodidacta y aprender de los demás, y tener en cuenta que para mejorar siempre hay que practicar, practicar y practicar...
 
-Mi linkedin
+Enlaces de contacto:
+
+Mi linkedin
 https://www.linkedin.com/in/eduardo-izquierdo-rojas-b75887121/
 
-Mi github:
+Mi github:
 https://github.com/Eduardishion
 
-## Páginas de referencia
+## Páginas de referencia
 
 Banggood
 https://www.banggood.com/
 
-De esta pagina e-commerce hemos abstraido, especificamente lo que se refiere al componente de detalle de producto por su manera tan ordenada al presentar sus productos asi como sus detalles y caracteristicas del mismo.
+De esta página e-commerce hemos abstraído, específicamente lo que se refiere al componente de detalle de producto por su manera tan ordenada al presentar sus productos así como sus detalles y características del mismo.
 
 Focalprice
 https://www.focalprice.com/
 
-De esta pagina e-commerce analiamos, el componente de carrito de compra, en el cual hemos elegido igualar su estructura en su orden y simplecidad.
+De esta página e-commerce analizamos, el componente de carrito de compra, en el cual hemos elegido igualar su estructura en su orden y simplicidad.
 
 ## Hola que tal mi nombre es: Kevin Hintze Maldonado
 
