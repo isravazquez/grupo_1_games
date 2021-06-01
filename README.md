@@ -68,3 +68,6 @@ Mercado Libre
 https://www.mercadolibre.com.mx
 
 De este sitio se tomarían los carruceles y probablemente la barra del navegador por su simplicidad.
+
+## TRELLO
+https://trello.com/b/WzMUODyV/web-site 
