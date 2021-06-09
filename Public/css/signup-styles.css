@@ -61,6 +61,9 @@ body {
 .cerrar-formulario:hover {
   background-color: #ff453a;
 }
+.cerrar-formulario:active + .contenedor {
+  display: none;
+}
 .maximizar-formulario {
   background-color: #ffcc00;
   width: 20px;

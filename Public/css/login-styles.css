@@ -11,6 +11,9 @@ body {
   background: linear-gradient(to right top, blue, lightblue);
 }
 
+#logo-principal {
+  width: 30px;
+}
 .cabecera {
   position: relative;
   display: flex;

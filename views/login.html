@@ -12,7 +12,7 @@
             <div class="formulario">
                 <div class="cabecera">
                     <div class="logo-cabecera-formulario">
-                        <img src="#" alt="Logo">
+                        <img src="/img/logo_160_x_160.svg" alt="logo" id="logo-principal">
                     </div>
                     <h3 id="NombrePagina">Tableros Games</h3>
                     <div class="botones-cabecera-formulario">
@@ -26,7 +26,8 @@
                     <input type="text" placeholder="Email or mobile number" class="user-profile-input" name="user-profile" required>
                     <input type="password" placeholder=" Password" class="password-input" name="password" required>
                     <button class="login-submit">Log in</button>
-                    <button class="signup-redirection">Sign Up</button>
+                    <input type=button class="signup-redirection" onClick="location.href='/signup'"value='Sign Up'>
+                    <!-- <button class="signup-redirection">Sign Up</button> -->
                 </form>
                 <div class="remember-form">
                     <input type="checkbox" checked="checked" name="remember">
