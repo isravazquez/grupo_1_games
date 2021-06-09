@@ -7,6 +7,19 @@ body {
     margin: 0;
 }
 
+A:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+A:hover {
+    color: #ffffff;
+    text-decoration: none
+}
+A:visited {
+    color: #ffffff;
+    text-decoration: none
+}
+
 /* Comienza Header */
 
 header {
@@ -32,6 +45,19 @@ header {
 
 .fa-bars, .fa-search, .fa-shopping-cart, .fa-user{
     margin: 24px;
+}
+
+.nav-bar {
+    display: none;
+}
+
+
+.nav-bar a {
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    padding: 5px ;
+    font-size: 17px;
 }
 
 /* Termina Header */
@@ -90,4 +116,25 @@ footer {
 .legal {
     text-decoration: none;
     color: #ffffff;
+}
+
+@media (min-width: 756px){
+    header {
+        justify-content: space-between;
+    }
+
+    .fa-bars{
+        display: none;
+    }
+
+    #logo-principal{
+        order: -2;
+    }
+
+    .nav-bar{
+        display: flex;
+        justify-content: space-between;
+        order: -1;
+    }
+
 }

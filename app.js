@@ -3,12 +3,6 @@ const path = require("path");
 
 const app = express();
 
-<<<<<<< HEAD
-app.use( express.static(path.resolve(__dirname, './Public')) )
-
-app.get('/', (req,res) => {
-    res.sendFile(path.resolve(__dirname, './views/home.html'));
-=======
 app.use(express.static(path.resolve(__dirname, "./public")));
 console.log(path.resolve(__dirname, "./public"));
 app.get("/", (req, res) => {
@@ -19,7 +13,6 @@ app.get("/login", (req, res) => {
 });
 app.get("/signup", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/signup.html"));
->>>>>>> 6af2a2411ab207c2709efaedd1056fcf75168403
 });
 
 app.listen(3000, () => {
