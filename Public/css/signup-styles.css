@@ -9,11 +9,10 @@ body {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(to right top, blue, lightblue);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1em;
 }
 
-#logo-principal {
-  width: 30px;
-}
 .cabecera {
   position: relative;
   display: flex;
@@ -33,7 +32,8 @@ body {
 }
 #NombrePagina {
   position: absolute;
-  right: 40%;
+  right: 35%;
+  font-size: 0.8em;
 }
 .logo-cabecera-formulario {
   position: absolute;
@@ -42,7 +42,7 @@ body {
 .formulario {
   display: flex;
   flex-direction: column;
-  width: 45vw;
+  width: 35vw;
   height: 73vh;
   background-color: white;
   border-radius: 30px;
@@ -50,17 +50,6 @@ body {
   overflow: hidden;
   box-shadow: 0 5px 15px #888;
 }
-.remember-form {
-  display: none;
-}
-
-/* input[type="checkbox"]:checked + .formulario {
-  opacity: 0;
-}
-
-input[type="checkbox"]:checked {
-  box-shadow: 0 0 0 3px hotpink;
-} */
 
 .cerrar-formulario {
   background-color: #ff3b30;
@@ -71,6 +60,9 @@ input[type="checkbox"]:checked {
 }
 .cerrar-formulario:hover {
   background-color: #ff453a;
+}
+.cerrar-formulario:active + .contenedor {
+  display: none;
 }
 .maximizar-formulario {
   background-color: #ffcc00;
@@ -93,6 +85,14 @@ input[type="checkbox"]:checked {
   background-color: #32d74b;
 }
 
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .cuerpo-formulario {
   width: 100%;
   height: 100%;
@@ -105,31 +105,33 @@ input[type="checkbox"]:checked {
 }
 .user-profile-input,
 .password-input,
-.login-submit,
+.login-submit-form,
 .signup-redirection {
   border-radius: 25px;
   width: 80%;
   margin: 10px;
-  display: flex;
-  justify-content: center;
   border: 1px solid rgb(210, 210, 215);
   box-sizing: border-box;
+  text-align: center;
 }
 
-.login-submit {
+.login-submit-form {
   background-color: #0071e3;
   color: whitesmoke;
   margin-bottom: 10px;
   border: none;
+  position: absolute;
+  top: 90%;
 }
-.login-submit:hover {
+.login-submit-footer {
+  display: none;
+}
+.login-submit-form:hover {
   background-color: #0d77e0;
 }
 .signup-redirection {
   background-color: #0071e3;
   color: whitesmoke;
-  position: relative;
-  transform: translateY(80px);
   border: none;
 }
 .signup-redirection:hover {
@@ -169,34 +171,46 @@ input[type="checkbox"]:checked {
 
 @media only screen and (max-width: 600px) {
   .logo-cabecera-formulario,
-  #NombrePagina,
-  .remember-footer {
+  .login-submit-form {
     display: none;
   }
-  .remember-form {
+  .login-submit-footer {
     display: flex;
-    position: absolute;
-    top: 95%;
+    background-color: transparent;
+    color: whitesmoke;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .pie-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .user-profile-input,
-  .password-input,
   .login-submit,
   .signup-redirection {
     border-radius: 25px;
-    width: 50%;
-    margin: 40px;
+    width: 80%;
+    margin: 10px;
     display: flex;
     justify-content: center;
     border: 1px solid rgb(210, 210, 215);
     box-sizing: border-box;
-    font-size: 1.1em;
+    font-size: 0.8em;
   }
   .login-submit {
+    display: flex;
+    box-sizing: border-box;
     background-color: #0071e3;
     color: whitesmoke;
     margin-bottom: 10px;
     border: none;
-    width: 50%;
+    width: auto;
+    padding: 0 10%;
   }
   .cabecera {
     position: relative;
@@ -213,8 +227,11 @@ input[type="checkbox"]:checked {
     justify-content: space-evenly;
   }
   .botones-cabecera-formulario {
+    position: absolute;
+    right: 2.5%;
     display: flex;
-    justify-content: left;
+    width: 30%;
+    justify-content: space-around;
   }
   .formulario {
     display: flex;

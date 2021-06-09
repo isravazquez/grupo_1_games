@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/signup-styles.css" rel="stylesheet">
+    <title>Games-Tableros</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="formulario">
+            <div class="cabecera">
+                <div class="logo-cabecera-formulario">
+                    <img src="#" alt="Logo">
+                </div>
+                <h3 id="NombrePagina">Tableros Games</h3>
+                <div class="botones-cabecera-formulario">
+                    <button class="random-formulario"></button>
+                    <button class="maximizar-formulario"></button>
+                    <button class="cerrar-formulario"></button>
+                </div>
+            </div>
+            <div class="cuerpo-formulario">
+                <form action="" method="POST" classs="cuerpo-formulario">
+                    <input type="text" placeholder="Nombre Completo" class="user-profile-input" name="nombreCompleto"required>
+                    <input type="text" placeholder="Email" class="user-profile-input" name="user-email" required>
+                    <input type="text" placeholder="Phone Number" class="user-profile-input" name="user-number" required>
+                    <input type="password" placeholder=" Password" class="user-profile-input" name="password" required>
+                    <input type="password" placeholder="Confirm Password" name="password-confirmation" class="user-profile-input">
+                    <button class="signup-redirection">Sign Up</button>
+                    <input type=button class="login-submit-form" onClick="location.href='/login'"value='Log In'>
+                    <!-- <button class="login-submit-form">Log In</button> -->
+                </form>
+            </div>
+            <div class="pie-formulario">
+                <button class="login-submit-footer">Log In</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
