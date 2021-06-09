@@ -14,6 +14,12 @@ app.get("/login", (req, res) => {
 app.get("/signup", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/signup.html"));
 });
+app.get("/productDetail", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/productDetail.html"));
+});
+app.get("/shoppingCart", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/shoppingCart.html"));
+});
 
 app.listen(3000, () => {
   console.log("Servidor en marcha en el puerto 3000");
