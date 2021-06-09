@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
+    <!-- fuentes externas -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/css/home-styles.css">
+    <link rel="stylesheet" href="/css/shoppingCart-styles.css">
+    <title>Games Home</title>
+</head>
+<body>
+    <header>
+        <div class="opciones-izquierda-header">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-search"></i>
+        </div>
+        <nav class="nav-bar">
+                <a href="#">Tableros</a>
+                <a href="#">Futbolitos</a>
+                <a href="#">Maquinitas</a>
+                <a href="#">Accesorios</a>
+                <a href="#">Contacto</a>
+        </nav>
+        <img src="/img/logo_160_x_160.svg" alt="logo" id="logo-principal">
+        <div class="opciones-derecha-header">
+                <i class="fas fa-shopping-cart"></i>
+                <a href="/login"><i class="fas fa-user"></i></a>
+        </div>
+
+    </header>
+    <main id="areaPrincipal">
+        <section id="vistaCestadeProductos">
+            <div>
+                <div id="tablaProductos">
+                <!-- encabezados -->
+                    <div id="encabeados">
+                        <div id="imagen" class="centrado">
+                            <strong>
+                                <p>Producto</p>
+                            </strong> 
+                        </div>
+                        <div id="precio" class="centrado">
+                            <strong>
+                                <p>Precio</p>
+                            </strong>
+                        </div>
+                        <div id="canti" class="centrado">
+                            <strong>
+                                <p>Cantidad</p>
+                            </strong>
+                        </div>
+                        <div id="total" class="centrado">
+                            <strong>
+                                <p>Total</p>
+                            </strong>
+                        </div>
+                        <div id="Icono" class="centrado">
+                            <strong>
+                                <p>Operacion</p>
+                            </strong>
+                        </div>
+                    </div>
+                <!-- encabezados -->
+                <!-- producto -->
+                    <div id="productos" class="centrado">
+                        <div id="imagen">
+                            <img src="img/1.webp" alt="miniatura" class="miniatura">
+                            <p>Producto</p>
+                            <!-- <strong><p>ID: 235566</p></strong>  -->
+                        </div> 
+                        <div id="precio" class="centrado">
+                            <p> $ 32.99</p>
+                        </div>
+                        <div id="cantidad" class="centrado">
+                            <div class="textoTabla">-</div>
+                            <div class="textoTabla">10</div>
+                            <div class="textoTabla">+</div>
+                        </div>
+                        <div id="imagen">
+                            <p>$ 65.98</p>
+                        </div>
+                        <div id="Icono" class="centrado">
+                            <img src="img/cancel_black_24dp.svg" alt="">
+                        </div>
+                    </div>
+                <!-- producto -->
+                <!-- producto -->
+                    <div id="productos" class="centrado">
+                        <div id="imagen">
+                            <img src="img/1.webp" alt="miniatura" class="miniatura">
+                            <p>Producto</p>
+                            <!-- <strong><p>ID: 235566</p></strong>  -->
+                        </div> 
+                        <div id="precio" class="centrado">
+                            <p> $ 32.99</p>
+                        </div>
+                        <div id="cantidad" class="centrado">
+                            <div class="textoTabla">-</div>
+                            <div class="textoTabla">10</div>
+                            <div class="textoTabla">+</div>
+                        </div>
+                        <div id="imagen">
+                            <p>$ 65.98</p>
+                        </div>
+                        <div id="Icono" class="centrado">
+                            <img src="img/cancel_black_24dp.svg" alt="">
+                        </div>
+                    </div>
+                <!-- producto -->
+                <!-- producto -->
+                    <div id="productos" class="centrado">
+                        <div id="imagen">
+                            <img src="img/1.webp" alt="miniatura" class="miniatura">
+                            <p>Producto</p>
+                            <!-- <strong><p>ID: 235566</p></strong>  -->
+                        </div> 
+                        <div id="precio" class="centrado">
+                            <p> $ 32.99</p>
+                        </div>
+                        <div id="cantidad" class="centrado">
+                            <div class="textoTabla">-</div>
+                            <div class="textoTabla">10</div>
+                            <div class="textoTabla">+</div>
+                        </div>
+                        <div id="imagen">
+                            <p>$ 65.98</p>
+                        </div>
+                        <div id="Icono" class="centrado">
+                            <img src="img/cancel_black_24dp.svg" alt="">
+                        </div>
+                    </div>
+                <!-- producto -->
+                </div>
+            </div>
+        </section>
+        <section id="vistaPago">
+            <form action="#" method="post" id="botonesPago">
+                <h2> Subtotal: $ 65.98</h2>
+                <div>
+                    <input type="button" value="Hacer pago" class="botonPrimario">
+                </div>
+                <strong><p>-- o --</p></strong>
+                <div>
+                    <input type="button" value="Shop Pay" class="botonPrimario">
+                </div>
+                <div>
+                    <input type="button" value="Google Pay" class="botonPrimario">
+                </div>
+                <div>
+                    <input type="button" value="Paypal" class="botonPrimario">
+                </div>
+                <div>
+                    <input type="button" value="Amaon Pay" class="botonPrimario">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="info-footer">
+            <img src="/img/logo_160_x_160.svg" alt="logo" id="logo-footer">
+            <div class="lista-footer">
+                <a href="#AvisoPrivacidad"></a>Aviso de Privacidad</a>
+                <a href="#TerminosCondiciones"></a>Terminos y Condiciones</a>
+                <a href="#Politicas"></a> Póliticas de devolución</a>
+            </div>
+            <div class="redes-sociales">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-whatsapp"></i>
+            </div>
+        </div>
+        <div>
+            <a href="#Legal" class="legal">2021 GAMES</a>
+        </div>
+    </footer>
+</body>
+</html>
