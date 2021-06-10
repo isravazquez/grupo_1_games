@@ -43,6 +43,10 @@ header {
     color: #ffffff;
 }
 
+#search-der {
+    display: none;
+}
+
 .fa-bars, .fa-search, .fa-shopping-cart, .fa-user{
     margin: 24px;
 }
@@ -118,9 +122,13 @@ footer {
     color: #ffffff;
 }
 
-@media (min-width: 756px){
+@media (min-width: 790px){
+    body {
+        width: 100vw;
+    }
+
     header {
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .fa-bars{
@@ -128,13 +136,49 @@ footer {
     }
 
     #logo-principal{
-        order: -2;
+        order: -1;
+        margin-left: 48px;
+    }
+
+    #search-der {
+        display: block;
+    }
+
+    #search-izq {
+        display: none;
     }
 
     .nav-bar{
-        display: flex;
+        display: block;
         justify-content: space-between;
-        order: -1;
     }
 
+    .nav-bar a{
+        margin: 0 10px;
+    }
+
+    .lista-footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .lista-footer a {
+        margin: 0 16px;
+    }
+
+    .redes-sociales {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .redes-sociales i {
+        margin: 0 16px;
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1200px){
+    header {
+        padding: 0 10%; 
+    }
 }
