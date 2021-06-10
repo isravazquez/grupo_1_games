@@ -43,9 +43,6 @@ header {
     color: #ffffff;
 }
 
-#search-der {
-    display: none;
-}
 
 .fa-bars, .fa-search, .fa-shopping-cart, .fa-user{
     margin: 24px;
@@ -164,6 +161,7 @@ footer {
 
     header {
         justify-content: space-around;
+        position: relative;
     }
 
     .fa-bars{
@@ -175,12 +173,10 @@ footer {
         margin-left: 48px;
     }
 
-    #search-der {
-        display: block;
-    }
 
-    #search-izq {
-        display: none;
+    .fa-search {
+        position: absolute;
+        right: 15%;
     }
 
     .nav-bar{
@@ -215,5 +211,11 @@ footer {
 @media (min-width: 1200px){
     header {
         padding: 0 10%; 
+        position: relative;
+    }
+
+    .fa-search {
+        position: absolute;
+        right: 22%;
     }
 }
