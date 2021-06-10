@@ -66,14 +66,49 @@ header {
 
 /* Termina Header */
 
+.seccion-banner {
+    border: red solid 2px;
+    height: 550px;
+    margin: 10px 0;
+}
+
+.seccion-maquinita {
+    margin: 10px 0;
+    border: solid red 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-maquinita {
+    height: 540px;
+    border: solid green 2px;
+}
+
+.descripcion-y-juegos {
+    display: flex;
+    flex-direction: column;
+}
+
+.descripcion-maquinita{
+    height: 128px;
+}
+
+.catalogo-juegos-maq {
+    height: 120px;
+    border: solid red 2px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.catalogo-juegos-maq img{
+    border: red solid 2px;
+    height: 80px;
+    width: 80px;
+}
+
 
 /* Comienza Footer */
-
-#sectionBanner {
-    background-color: red;
-    height: 550px;
-    margin: 0px;
-}
 
 footer {
     background-color: #333333;
