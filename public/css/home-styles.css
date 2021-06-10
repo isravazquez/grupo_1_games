@@ -100,10 +100,79 @@ header {
 
 .catalogo-juegos-maq img{
     border: red solid 2px;
-    height: 80px;
-    width: 80px;
+    height: 72px;
+    width: 72px;
 }
 
+.seccion-tablero {
+    margin: 10px 0;
+    border: solid red 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-tablero {
+    height: 120px;
+    border: solid green 2px;
+    display: block;
+}
+
+.catalogo-juegos-tab {
+    height: 160px;
+    border: solid red 2px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.catalogo-juegos-tab img{
+    display: flex;
+    border: red solid 2px;
+    height: 62px;
+    width: 62px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.seccion-futbolito {
+    margin: 10px 0;
+    border: solid red 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-futbolito {
+    height: 360px;
+    border: solid green 2px;
+    display: block;
+}
+
+.equipos {
+    height: 360px;
+    border: solid red 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-equipo {
+    display: flex;
+    border: red solid 2px;
+    height: 64px;
+    width: 64px;
+}
+
+.vs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.vs img, .vs h3 {
+    margin: 0 25px;
+}
 
 /* Comienza Footer */
 
