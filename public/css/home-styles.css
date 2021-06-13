@@ -88,6 +88,7 @@ header {
 
 .descripcion-maquinita{
     height: 128px;
+    border: red 2px solid;
 }
 
 .catalogo-juegos-maq {
@@ -256,6 +257,49 @@ footer {
     .nav-bar a{
         margin: 0 10px;
     }
+
+/* Termina Header */
+
+    .seccion-maquinita {
+        flex-direction: row; 
+    }
+    
+    .img-maquinita {
+        width: 60%;
+    }
+
+    .descripcion-y-juegos {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
+
+    .descripcion-maquinita {
+        height: 75%;
+    }
+
+    .catalogo-juegos-maq {
+        height: 25%;
+    }
+
+
+
+    .seccion-futbolito {
+        flex-direction: row;
+    }
+
+    .equipos {
+        order: -1;
+        width: 35%;
+    }
+
+    .img-futbolito {
+        width: 65%;
+    }
+
+
+
+/* Comienza Footer */
 
     .lista-footer {
         flex-direction: row;
