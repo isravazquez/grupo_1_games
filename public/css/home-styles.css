@@ -64,9 +64,15 @@ header {
 /* Termina Header */
 
 .seccion-banner {
-    border: red solid 2px;
-    height: 550px;
+    height: 280px;
     margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#banner-img {
+    width: 100vw;
+    object-fit: cover;
 }
 
 .seccion-maquinita {
@@ -77,8 +83,8 @@ header {
 }
 
 .img-maquinita {
-    height: 540px;
     border: solid green 2px;
+    object-fit: contain;
 }
 
 .descripcion-y-juegos {
@@ -100,9 +106,9 @@ header {
 }
 
 .catalogo-juegos-maq img{
-    border: red solid 2px;
     height: 72px;
     width: 72px;
+    object-fit: cover;
 }
 
 .seccion-tablero {
@@ -116,6 +122,7 @@ header {
     height: 120px;
     border: solid green 2px;
     display: block;
+    object-fit: contain;
 }
 
 .catalogo-juegos-tab {
@@ -147,6 +154,7 @@ header {
     height: 360px;
     border: solid green 2px;
     display: block;
+    object-fit: contain;
 }
 
 .equipos {
@@ -232,13 +240,15 @@ footer {
     header {
         justify-content: space-around;
         position: relative;
+        height: 32px;
     }
 
     .fa-bars{
         display: none;
     }
 
-    #logo-principal{
+    
+    header a{
         order: -1;
         margin-left: 48px;
     }
@@ -251,7 +261,7 @@ footer {
 
     .nav-bar{
         display: block;
-        justify-content: space-between;
+        justify-content: space-between;S
     }
 
     .nav-bar a{
@@ -260,6 +270,10 @@ footer {
 
 /* Termina Header */
 
+    .seccion-banner {
+        height: 480px;
+
+    }
     .seccion-maquinita {
         flex-direction: row; 
     }
