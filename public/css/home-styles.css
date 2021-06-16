@@ -78,14 +78,14 @@ header {
 
 .seccion-maquinita {
     margin: 10px 0;
-    border: solid red 2px;
     display: flex;
     flex-direction: column;
 }
 
 .img-maquinita {
-    border: solid green 2px;
     object-fit: contain;
+    background: linear-gradient(70deg, rgb(241, 241, 241), rgba(41, 41, 41, 0.795));
+
 }
 
 .descripcion-y-juegos {
@@ -94,33 +94,39 @@ header {
 }
 
 .descripcion-maquinita{
-    height: 128px;
-    border: red 2px solid;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    align-content: space-around;
+    color: #f2f2f2;
+    margin: 0;
 }
 
 #descripcion-maq-1 {
-    align-items: left;
+    text-align: left;
+    padding: 8px;
+    background: linear-gradient(to right, rgb(12, 12, 12), rgb(65, 65, 65));
+    margin: 0;
 }
 
 #descripcion-maq-2 {
     text-align: center;
+    padding: 8px;
+    background: linear-gradient(30deg, rgb(63, 63, 63), rgb(107, 107, 107));
+    margin: 0;
 }
 
 #descripcion-maq-3 {
     text-align: right;
+    padding: 8px;
+    background: linear-gradient(to right,  rgb(65, 65, 65),rgb(12, 12, 12));
+    margin: 0;
 }
 
 .catalogo-juegos-maq {
-    height: 120px;
-    border: solid red 2px;
+    padding: 16px;
+    background: linear-gradient(70deg, rgb(65, 65, 65), rgba(93, 93, 93, 0.5));
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 0;
 }
 
 .catalogo-juegos-maq img{
@@ -131,25 +137,26 @@ header {
 
 .seccion-tablero {
     margin: 10px 0;
-    border: solid red 2px;
     display: flex;
     flex-direction: column;
 }
 
 .img-tablero {
     height: 120px;
-    border: solid green 2px;
+    background: linear-gradient(to bottom, rgb(241, 241, 241), rgba(156, 156, 156, 0.5));
     display: block;
     object-fit: contain;
+    margin: 0;
 }
 
 .catalogo-juegos-tab {
     height: 160px;
-    border: solid red 2px;
+    background: linear-gradient(to bottom, rgba(156, 156, 156, 0.5), rgba(41, 41, 41, 0.795));
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 .catalogo-juegos-tab img{
@@ -161,21 +168,20 @@ header {
 
 .seccion-futbolito {
     margin: 10px 0;
-    border: solid red 2px;
     display: flex;
     flex-direction: column;
 }
 
 .img-futbolito {
     height: 360px;
-    border: solid green 2px;
+    background: linear-gradient(to bottom, rgb(241, 241, 241), rgba(156, 156, 156, 0.5));
     display: block;
     object-fit: contain;
 }
 
 .equipos {
     height: 360px;
-    border: solid red 2px;
+    background: linear-gradient(to bottom, rgba(156, 156, 156, 0.5), rgba(41, 41, 41, 0.795));
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -184,7 +190,6 @@ header {
 
 .img-equipo {
     display: flex;
-    border: red solid 2px;
     height: 64px;
     width: 64px;
     object-fit: cover;
@@ -307,6 +312,21 @@ footer {
 
     .descripcion-maquinita {
         height: 75%;
+        font-size: 10;
+    }
+
+    #descripcion-maq-1 {
+        height: 25%;
+        padding: auto;
+    }
+
+    #descripcion-maq-2 {
+        height: 35%;
+        padding: auto;
+    }
+
+    #descripcion-maq-3 {
+        height: 40%;
     }
 
     .catalogo-juegos-maq {
@@ -322,10 +342,12 @@ footer {
     .equipos {
         order: -1;
         width: 35%;
+        background: linear-gradient(to left, rgba(156, 156, 156, 0.5), rgba(41, 41, 41, 0.795));
     }
 
     .img-futbolito {
         width: 65%;
+        background: linear-gradient(to left, rgb(241, 241, 241), rgba(156, 156, 156, 0.5));
     }
 
 
