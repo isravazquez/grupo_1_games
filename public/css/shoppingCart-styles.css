@@ -134,7 +134,7 @@ img{
 
 
 /* medida escritorio */
-@media (min-width: 768px){
+@media (min-width: 790px){
    /*-------area principal -------*/
    #areaPrincipal{
        display: flex;
