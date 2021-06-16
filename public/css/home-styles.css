@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: "Montserrat";
 }
 
 body {
@@ -95,6 +96,23 @@ header {
 .descripcion-maquinita{
     height: 128px;
     border: red 2px solid;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#descripcion-maq-1 {
+    align-items: left;
+}
+
+#descripcion-maq-2 {
+    text-align: center;
+}
+
+#descripcion-maq-3 {
+    text-align: right;
 }
 
 .catalogo-juegos-maq {
@@ -136,11 +154,9 @@ header {
 
 .catalogo-juegos-tab img{
     display: flex;
-    border: red solid 2px;
     height: 62px;
     width: 62px;
-    justify-content: space-around;
-    align-items: center;
+    object-fit: cover;
 }
 
 .seccion-futbolito {
@@ -171,6 +187,7 @@ header {
     border: red solid 2px;
     height: 64px;
     width: 64px;
+    object-fit: cover;
 }
 
 .vs {
@@ -248,7 +265,7 @@ footer {
     }
 
     
-    header a{
+    header .contenedor-logo {
         order: -1;
         margin-left: 48px;
     }
