@@ -24,7 +24,7 @@ A:visited {
 /* Comienza Header */
 
 header {
-    width: 100%;
+    width: 100vw;
     background-color: #333333;
     height: 48px;
     margin: 0;
@@ -216,7 +216,7 @@ footer {
 }
 
 .info-footer {
-    width: 100%;
+    width: 100vw%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -308,31 +308,36 @@ footer {
         display: flex;
         flex-direction: column;
         width: 40%;
-        margin-left: 2px;
     }
 
     .descripcion-maquinita {
         height: 75%;
-        font-size: 24px;
         margin-bottom: 2px;
+        margin-left: 2px;
     }
 
     #descripcion-maq-1 {
         height: 25%;
-        padding: auto;
+        padding-top: 16px;
+        font-size: 16px;
     }
 
     #descripcion-maq-2 {
         height: 35%;
         padding: auto;
+        font-size: 24px;
     }
 
     #descripcion-maq-3 {
         height: 40%;
+        font-size: 32px;
+        padding-top: 24px;
+
     }
 
     .catalogo-juegos-maq {
         height: 25%;
+        margin-left: 2px;
     }
 
 
