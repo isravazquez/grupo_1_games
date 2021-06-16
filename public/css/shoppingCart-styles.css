@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-p{
-    font-size: 1vw;
-    
-}
 
 body{
     /* fondo de toda la pagina  */
@@ -96,6 +92,10 @@ img{
 
 /* medida movil pequeño*/
 @media (min-width:200px){
+    p{
+        font-size: 3vw;   
+    }
+
     /*-----vistaCestadeProductos -----*/
     #encabeados,#productos{
         display: flex;
@@ -135,6 +135,10 @@ img{
 
 /* medida escritorio */
 @media (min-width: 790px){
+    p{
+        font-size: 2vw;   
+    }
+
    /*-------area principal -------*/
    #areaPrincipal{
        display: flex;
