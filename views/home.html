@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 rel="stylesheet" />
     <link rel="stylesheet" href="/css/home-styles.css">
+    <link rel="stylesheet" href="/css/modal-styles.css">
     <title>Games Home</title>
 </head>
 <body>
@@ -27,11 +28,71 @@ rel="stylesheet" />
             <a href="/"><img src="/img/logo_160_x_160_blanco.svg" alt="logo" id="logo-principal"></a>
         </div>
         <div class="opciones-derecha-header">
-                <i class="fas fa-shopping-cart"></i>
+                <label for="desplegar">
+                    <i class="fas fa-shopping-cart btn_despiega"></i>
+                </label>
                 <a href="/login"><i class="fas fa-user"></i></a>
         </div>
 
     </header>
+    <input type="checkbox" name="desplegar" id="desplegar" hidden>
+    <div class="model-overlay active" ><!--caja transparente-->
+        <div class="modal"><!--caja blanca-->
+            <div id="form">
+                <h2>Lista de productos</h2>
+                <form action="/shoppingCart" method="get" id="formulario">
+                    <a href="/productDetail">
+                        <div class="productoLista">
+                            <div class="eliminar">
+                                <img src="/img/cancel_black_24dp.svg" alt="">
+                            </div>
+                            <div>
+                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
+                            </div>
+                            <div>
+                                <p class="nombreLista">
+                                    Pro System Audiotek Tablero Arcade Videojuegos
+                                </p>
+                            </div>   
+                        </div>
+                    </a>
+                    <a href="/productDetail">
+                        <div class="productoLista">
+                            <div class="eliminar">
+                                <img src="/img/cancel_black_24dp.svg" alt="">
+                            </div>
+                            <div>
+                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
+                            </div>
+                            <div>
+                                <p class="nombreLista">
+                                    Pro System Audiotek Tablero Arcade Videojuegos
+                                </p>
+                            </div>   
+                        </div>
+                    </a>
+                    <a href="/productDetail">
+                        <div class="productoLista">
+                            <div class="eliminar">
+                                <img src="/img/cancel_black_24dp.svg" alt="">
+                            </div>
+                            <div>
+                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
+                            </div>
+                            <div>
+                                <p class="nombreLista">
+                                    Pro System Audiotek Tablero Arcade Videojuegos
+                                </p>
+                            </div>   
+                        </div>
+                    </a>
+                    <div class="input-group actions">
+                        <a href="/shoppingCart" type="submit" class="botonPrimario">Ver carrito</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <main>
         <section class="seccion-banner">
             <img src="/img/banner.png" alt="banner" id="banner-img">
