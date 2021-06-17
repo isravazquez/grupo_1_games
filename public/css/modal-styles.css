@@ -63,3 +63,17 @@ input[type="checkbox"]:checked + .model-overlay{
 }
 
 /* ---------vista del modal-------- */
+
+@media (min-width:200px){
+    .modal{
+        width: 100%;
+    }
+    
+}
+
+@media (min-width:790px){
+    .modal{
+        width: 60%;
+    }
+    
+}
