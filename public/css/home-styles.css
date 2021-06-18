@@ -28,10 +28,10 @@ A:visited {
 header {
   width: 100%;
   background-color: #333333;
-  height: 25px;
+  height: 30px;
   margin: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
@@ -46,20 +46,25 @@ main {
   /* width: 32px; */
   height: 25px;
 }
-
-.opciones-derecha-header,
 .opciones-izquierda-header {
+  display: none;
+}
+.opciones-derecha-header {
   display: flex;
+  width: auto;
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
+  position: relative;
+  top: 0;
+  right: 10px;
 }
 
 .fa-bars,
 .fa-search,
 .fa-shopping-cart,
 .fa-user {
-  margin: 24px;
+  margin: 10px;
 }
 
 .nav-bar {
@@ -83,9 +88,11 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: static;
+  top: 20px;
 }
 
-banner-img {
+.banner-img {
   height: 100%;
   width: auto;
   object-fit: contain;
@@ -299,9 +306,10 @@ footer {
     overflow-y: hidden;
   }
   header {
-    justify-content: space-around;
-    /* position: relative; */
-    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
     position: fixed;
     top: 0;
     left: 0;
@@ -313,13 +321,16 @@ footer {
 
   header .contenedor-logo {
     order: -1;
+    position: relative;
+    top: 0;
+    left: 10px;
     /* margin-left: 48px; */
   }
 
-  .fa-search {
+  /* .fa-search {
     position: absolute;
     right: 15%;
-  }
+  } */
 
   .nav-bar {
     display: block;
@@ -335,6 +346,8 @@ footer {
   .seccion-banner {
     max-height: 480px;
     object-fit: contain;
+    position: static;
+    top: 20px;
   }
   .seccion-maquinita {
     flex-direction: row;
@@ -445,18 +458,21 @@ footer {
     /* position: absolute; */
     overflow-y: overlay;
     overflow-x: hidden;
+    /* position: relative; */
   }
   header {
-    padding: 0 10%;
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .fa-search {
+  /* .fa-search {
     position: absolute;
     right: 22%;
-  }
+  } */
   #banner-img {
     height: auto;
     width: 100%;
@@ -464,5 +480,8 @@ footer {
   }
   main {
     width: calc(100vw);
+    /* position: absolute;
+    top: 40px;
+    left: 0; */
   }
 }
