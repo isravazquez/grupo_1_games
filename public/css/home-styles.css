@@ -28,7 +28,7 @@ A:visited {
 header {
   width: 100%;
   background-color: #333333;
-  height: 48px;
+  height: 25px;
   margin: 0;
   display: flex;
   justify-content: space-around;
@@ -38,11 +38,13 @@ header {
   left: 0;
 }
 main {
-  width: 100vw;
+  width: calc(100vw);
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 #logo-principal {
-  width: 32px;
+  /* width: 32px; */
+  height: 25px;
 }
 
 .opciones-derecha-header,
@@ -291,11 +293,15 @@ footer {
   body {
     width: 100vw;
   }
-
+  main {
+    width: calc(100vw);
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
   header {
     justify-content: space-around;
     /* position: relative; */
-    height: 32px;
+    height: 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -307,7 +313,7 @@ footer {
 
   header .contenedor-logo {
     order: -1;
-    margin-left: 48px;
+    /* margin-left: 48px; */
   }
 
   .fa-search {
@@ -419,6 +425,27 @@ footer {
 }
 
 @media (min-width: 1200px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background: transparent;
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 20px;
+    height: 50px;
+  }
+  body {
+    /* position: absolute; */
+    overflow-y: overlay;
+    overflow-x: hidden;
+  }
   header {
     padding: 0 10%;
     position: fixed;
@@ -434,5 +461,8 @@ footer {
     height: auto;
     width: 100%;
     object-fit: contain;
+  }
+  main {
+    width: calc(100vw);
   }
 }
