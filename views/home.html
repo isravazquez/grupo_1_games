@@ -6,23 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet" />
+    rel="stylesheet" />
     <link rel="stylesheet" href="/css/home-styles.css">
     <link rel="stylesheet" href="/css/modal-styles.css">
-    <title>Games Home</title>
+    <title>Games</title>
 </head>
 <body>
-    <header>
-        <div class="opciones-izquierda-header">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-search"></i>
-        </div>
+    <header class="header">
+        <a href="#" id="boton-hamburguesa">
+            <i class="fas fa-bars icono-header"></i>
+        </a>
         <nav class="nav-bar">
-                <a href="#">Tableros</a>
-                <a href="#">Futbolitos</a>
-                <a href="#">Maquinitas</a>
-                <a href="#">Accesorios</a>
-                <a href="#">Contacto</a>
+            <a href="#">Tableros</a>
+            <a href="#">Futbolitos</a>
+            <a href="#">Maquinitas</a>
+            <a href="#">Accesorios</a>
+            <a href="#">Contacto</a>
         </nav>
         <div class="contenedor-logo">
             <a href="/"><img src="/img/logo_160_x_160_blanco.svg" alt="logo" id="logo-principal"></a>
@@ -35,75 +34,42 @@ rel="stylesheet" />
             <a href="/login"><i class="fas fa-user"></i></a>
         </div>
     </header>
-    <input type="checkbox" name="desplegar" id="desplegar" hidden>
-    <div class="model-overlay active" ><!--caja transparente-->
-        <div class="modal"><!--caja blanca-->
-            <div id="form">
-                <h2>Lista de productos</h2>
-                <form action="/shoppingCart" method="get" id="formulario">
-                    <a href="/productDetail">
-                        <div class="productoLista">
-                            <div class="eliminar">
-                                <img src="/img/cancel_black_24dp.svg" alt="">
-                            </div>
-                            <div>
-                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
-                            </div>
-                            <div>
-                                <p class="nombreLista">
-                                    Pro System Audiotek Tablero Arcade Videojuegos
-                                </p>
-                            </div>   
-                        </div>
-                    </a>
-                    <a href="/productDetail">
-                        <div class="productoLista">
-                            <div class="eliminar">
-                                <img src="/img/cancel_black_24dp.svg" alt="">
-                            </div>
-                            <div>
-                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
-                            </div>
-                            <div>
-                                <p class="nombreLista">
-                                    Pro System Audiotek Tablero Arcade Videojuegos
-                                </p>
-                            </div>   
-                        </div>
-                    </a>
-                    <a href="/productDetail">
-                        <div class="productoLista">
-                            <div class="eliminar">
-                                <img src="/img/cancel_black_24dp.svg" alt="">
-                            </div>
-                            <div>
-                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
-                            </div>
-                            <div>
-                                <p class="nombreLista">
-                                    Pro System Audiotek Tablero Arcade Videojuegos
-                                </p>
-                            </div>   
-                        </div>
-                    </a>
-                    <div class="input-group actions">
-                        <a href="/shoppingCart" type="submit" class="botonPrimario">Ver carrito</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <main>
+    <main class="main">
         <section class="seccion-banner">
-            <img src="/img/banner.png" alt="banner" class="banner-img">
+            <ul class="slider">
+                <li id="slide-1">
+                    <h2 id="letrero-banner-1">Desde $3,490.00 MXN</h2>
+                    <img src="/img/banner.png" alt="banner" id="img-banner-1">
+                </li>
+                <li id="slide-2">
+                    <img src="/img/banner.png" alt="banner" id="img-banner-1">
+                </li>
+                <li id="slide-3">
+                    <img src="/img/banner.png" alt="banner" id="img-banner-1">
+                </li>
+            </ul>
+            <ul class="menu-slider">
+                <li>
+                    <a href="#slide-1"></a>
+                </li>
+                <li>
+                    <a href="#slide-2"></a>
+                </li>
+                <li>
+                    <a href="#slide-3"></a>
+                </li>
+            </ul>
         </section>
         <section class="seccion-maquinita">
-            <img src="/img/maquinita-derecha.png" alt="img-maquinita" class="img-maquinita">
-            <div class="descripcion-y-juegos">
-                <div class="descripcion-maquinita">
-                    <p id="descripcion-maq-1">Maquinita de videojuegos profesional</p>
-                    <p id="descripcion-maq-2">Incluye más de 6000 juegos de multiples sistemas</p>
-                    <p id="descripcion-maq-3">Y 60 titulos de XB360</p>
+            <div class="contenedor-img-maquinita">
+                <img src="/img/maquinita-derecha.png" alt="img-maquinita" class="img-maquinita">
+                <a href="#agregar-maquinita" class="boton-agregar"><i class="fas fa-cart-plus"></i></a>
+            </div>
+            <div class="descripcion-y-juegos-maq">
+                <div class="descripcion">
+                    <h3 id="descripcion-maq-1">Maquinita de Mario Bros</h3>
+                    <h3 id="descripcion-maq-2">Incluye más de 6000 juegos de múltiples sistemas</h3>
+                    <h3 id="descripcion-maq-3">Y 60 titulos de XB360</h3>
                 </div>
                 <div class="catalogo-juegos-maq">
                     <img src="/img/gtav.jpg" alt="gtav">
@@ -113,36 +79,52 @@ rel="stylesheet" />
                 </div>
         </section>
         <section class="seccion-tablero">
-            <img src="/img/tablero.png" alt="img-tablero" class="img-tablero">
-            <div class="catalogo-juegos-tab">
-                <img src="/img/kof.png" alt="kof">
-                <img src="/img/street-fighter.png" alt="street-fighter">
-                <img src="/img/metal-slug.jpg" alt="metal-slug">
-                <img src="/img/mario-bros.jpg" alt="mario-bros">
-                <img src="/img/donkey-kong.png" alt="donkey-kong">
-                <img src="/img/pac-man.jpg" alt="pac-man">
-                <img src="/img/bomberman.png" alt="bomberman">
-                <img src="/img/cadillacs.jpg" alt="cadillacs">
-                <img src="/img/bubble.jpg" alt="bubble">
+            <div class="contenedor-img-tablero">
+                <img src="/img/tablero.png" alt="img-tablero" class="img-tablero">
+                <a href="#agregar-tablero" class="boton-agregar"><i class="fas fa-cart-plus"></i></a>
+            </div>
+            <div class="descripcion-y-juegos-tab">
+                <div class="descripcion">
+                    <h3 id="descripcion-tab-1">Tablero Marvel vs Capcom</h3>
+                    <h3 id="descripcion-tab-2">Incluye más de 5000 juegos de múltiples sistemas</h3>
+                </div>
+                <div class="catalogo-juegos-tab">
+                    <img src="/img/kof.png" alt="kof">
+                    <img src="/img/street-fighter.png" alt="street-fighter">
+                    <img src="/img/metal-slug.jpg" alt="metal-slug">
+                    <img src="/img/mario-bros.jpg" alt="mario-bros">
+                    <img src="/img/donkey-kong.png" alt="donkey-kong">
+                    <img src="/img/pac-man.jpg" alt="pac-man">
+                    <img src="/img/bomberman.png" alt="bomberman">
+                    <img src="/img/cadillacs.jpg" alt="cadillacs">
+                </div>
             </div>
         </section>
         <section class="seccion-futbolito">
-            <img src="/img/futbolito.png" alt="img-futbolito" class="img-futbolito">
+            <div class="contenedor-img-futbolito">
+                <img src="/img/futbolito.png" alt="img-futbolito" class="img-futbolito">
+            </div>
+            <div class="descripcion">
+                <h3 id="descripcion-futbolito-1">Futbolito</h3>
+            </div>
             <div class="equipos">
                 <div class="vs">
                     <img src="/img/chivas.png" alt="chivas" class="img-equipo">
                     <h3>VS</h3>
                     <img src="/img/america.png" alt="america" class="img-equipo">
+                    <a href="#agregar-futbolito-chivas-america" class="boton-agregar-futbolito"><i class="fas fa-cart-plus"></i></a>
                 </div>
                 <div class="vs">
                     <img src="/img/barcelona.png" alt="barcelona" class="img-equipo">
                     <h3>VS</h3>
                     <img src="/img/real-madrid.png" alt="real-madrid" class="img-equipo">
+                    <a href="#agregar-futbolito-barca-madrid" class="boton-agregar-futbolito"><i class="fas fa-cart-plus"></i></a>
                 </div>
                 <div class="vs">
                     <img src="/img/mexico.png" alt="mexico" class="img-equipo">
                     <h3>VS</h3>
                     <img src="/img/brasil.png" alt="brasil" class="img-equipo">
+                    <a href="#agregar-futbolito-mexico-brasil" class="boton-agregar-futbolito"><i class="fas fa-cart-plus"></i></a>
                 </div>
             </div>
         </section>
@@ -162,7 +144,7 @@ rel="stylesheet" />
             </div>
         </div>
         <div>
-            <a href="#Legal" class="legal">2021 GAMES</a>
+            <a href="#Legal" class="legal">© 2021 GAMES</a>
         </div>
     </footer>
 </body>
