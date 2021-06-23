@@ -96,10 +96,6 @@ img{
         font-size: 3vw;   
     }
 
-    #areaPrincipal{
-        position:relative;
-        top: 30px;
-    }   
     /*-----vistaCestadeProductos -----*/
     #encabeados,#productos{
         display: flex;
@@ -133,11 +129,7 @@ img{
         margin: auto;
     }
     /*-----vistaPago -----*/
-    
-    footer{
-        position:relative;
-        top: 30px;
-    }
+   
 }
 
 
@@ -149,8 +141,6 @@ img{
 
    /*-------area principal -------*/
    #areaPrincipal{
-       position:relative;
-       top: 30px;
        display: flex;
    }
    /*-------area principal -------*/
