@@ -162,6 +162,12 @@ img{
         justify-content: space-around;
     }
     /* ----costo a pagar--- */
+
+    /* correccion de para barra fija  */
+    #areaPrincipal{
+        margin-top: 48px;
+    }
+    /* correccion de para barra fija  */
 }
 
 /* medida escritorio */

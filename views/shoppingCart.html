@@ -15,28 +15,29 @@ rel="stylesheet" />
     <title>Games Home</title>
 </head>
 <body>
-    <header>
-        <div class="opciones-izquierda-header">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-search"></i>
-        </div>
+    <header class="header">
+        <a href="#" id="boton-hamburguesa">
+            <i class="fas fa-bars icono-header"></i>
+        </a>
         <nav class="nav-bar">
-                <a href="#">Tableros</a>
-                <a href="#">Futbolitos</a>
-                <a href="#">Maquinitas</a>
-                <a href="#">Accesorios</a>
-                <a href="#">Contacto</a>
+            <a href="#">Tableros</a>
+            <a href="#">Futbolitos</a>
+            <a href="#">Maquinitas</a>
+            <a href="#">Accesorios</a>
+            <a href="#">Contacto</a>
         </nav>
-        <div class="contenedor-logo">
-            <a href="/"><img src="/img/logo_160_x_160_blanco.svg" alt="logo" id="logo-principal"></a>
-        </div>
-        <div class="opciones-derecha-header">
-                <label for="desplegar">
-                    <i class="fas fa-shopping-cart btn_despiega"></i>
-                </label>
-                <a href="/login"><i class="fas fa-user"></i></a>
-        </div>
-
+        <a href="#" id="boton-buscador">
+            <i class="fas fa-search icono-header"></i>
+        </a>
+        <a href="/" class="logo" id="logo-principal">
+            <img src="/img/logo_160_x_160_blanco.svg" alt="logo" class="logo">
+        </a>
+        <label for="desplegar" id="boton-carrito">
+            <i class="fas fa-shopping-cart btn_despiega icono-header"></i>
+        </label>
+        <a href="/login" id="boton-login">
+            <i class="fas fa-user icono-header"></i>
+        </a>
     </header>
     <input type="checkbox" name="desplegar" id="desplegar" hidden>
     <div class="model-overlay active" ><!--caja transparente-->

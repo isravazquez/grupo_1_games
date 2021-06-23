@@ -130,6 +130,11 @@ img{
     }
     /*-----vistaPago -----*/
    
+    /* correccion de para barra fija  */
+    #areaPrincipal{
+        margin-top: 48px;
+    }
+    /* correccion de para barra fija  */
 }
 
 

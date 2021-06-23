@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     /* para un color transparente */
-     /*background-color: rgba(0, 0, 0, 0.7); */
+     background-color: rgba(0, 0, 0, 0.7);
     /* para la posicion fija */
     position: fixed;
     /* para  psicionarlo desde la vertical y horizontal 0*/
@@ -29,7 +29,7 @@
 }
 
 input[type="checkbox"]:checked + .model-overlay{
-
+    z-index: 2;
     visibility: visible;
 }
 
