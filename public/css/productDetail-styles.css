@@ -128,6 +128,10 @@ img{
         font-size: 3vw;   
     }
 
+    #areaPrincipal{
+        position:relative;
+        top: 30px;
+    }    
     /* ----vistaProducto---- */
     #imagenProducto{
         display: flex;
@@ -161,6 +165,11 @@ img{
         display: flex;
         justify-content: space-around;
     }
+
+    footer{
+        position:relative;
+        top: 30px;
+    }
     /* ----costo a pagar--- */
 }
 
@@ -171,6 +180,8 @@ img{
     }
     /*-------area principal -------*/
     #areaPrincipal{
+        position:relative;
+        top: 30px;
         display: flex;
     }
     /*-------area principal -------*/
@@ -186,6 +197,8 @@ img{
         align-items: center;
         justify-content: center;
     }
+
+   
 
 }
 
