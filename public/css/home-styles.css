@@ -1,13 +1,12 @@
 * {
   box-sizing: border-box;
   font-family: "Montserrat";
-}
-
+  }
+  
 body {
   background-color: #f2f2f2;
   margin: 0;
-  width: 100vw;
-  overflow-x: hidden;
+  padding: 0;
 }
 
 A:link {
@@ -23,50 +22,23 @@ A:visited {
   text-decoration: none;
 }
 
-/* Comienza Header */
+  /* Comienza Header */
 
-header {
-  width: 100%;
+.header {
+  width: 100vw;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   height: 48px;
   margin: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-}
-main {
-  width: calc(100vw);
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-#logo-principal {
-  /* width: 32px; */
-  height: 25px;
-}
-.opciones-izquierda-header {
-  display: none;
-}
-.opciones-derecha-header {
   display: flex;
-  width: auto;
   justify-content: space-between;
   align-items: center;
-  color: #ffffff;
-  position: relative;
-  top: 0;
-  right: 10px;
-}
-
-.fa-bars,
-.fa-search,
-.fa-shopping-cart,
-.fa-user {
-  margin: 10px;
-}
+  padding: 0 16px;
+  z-index: 100;
+  }
 
 .nav-bar {
   display: none;
@@ -77,55 +49,151 @@ main {
   color: #ffffff;
   display: inline-block;
   padding: 5px;
-  font-size: 0.9em;
+  font-size: 17px;
+}
+
+.icono-header {
+  color: #f2f2f2;
+}
+
+#logo-principal {
+  margin: 0 16px;
+}
+
+.logo {
+  width: 32px;
 }
 
 /* Termina Header */
-.blank {
-  position: relative;
-  top: 40px;
-  left: 0;
-  height: 38px;
-  width: auto;
-}
-.seccion-banner {
+
+.main{
   width: 100%;
-  max-height: 280px;
-  margin: 10px 0;
+  position: relative;
+  top: 56px;
+  padding: 0;
+  margin: 0;
+}
+
+.seccion-banner {
+  background-color: #f2f2f2;
+  width: 100%;
+}
+
+.seccion-banner ul, .seccion-banner ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+ul.slider li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  background-color: white;
+  transition: opacity 250ms;
+  margin: 0;
+}
+
+#img-banner-1{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+#letrero-banner-1 {
+  position: absolute;
+  bottom: 4px;
+  left: 8px;
+  font-size: 1rem;
+  color: #f2f2f2d5;
+}
+
+ul.slider li:first-child{
+  opacity: 1;
+}
+
+ul.slider li:target {
+  opacity: 1
+}
+
+.menu-slider {
+  text-align: center;
+  margin: 20px;
+  position: absolute;
+  top: 265px;
+  right: 8px;
+}
+
+.menu-slider li {
+  display: inline-block;
+  text-align: center;
+}
+
+.menu-slider li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-decoration: none;
+  background-color: rgba(190, 190, 190, 0.5);
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  border-radius: 100%;
+  margin: 0 8px;
+}
+
+.seccion-maquinita{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  position: static;
-  top: 20px;
-}
-
-.banner-img {
-  height: 100%;
-  width: auto;
-  object-fit: contain;
-}
-
-.seccion-maquinita {
   margin: 10px 0;
-  display: flex;
-  flex-direction: column;
 }
 
-.img-maquinita {
+.contenedor-img-maquinita {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.img-maquinita{
   object-fit: contain;
+  width: 100%;
   background: linear-gradient(
     70deg,
     rgb(241, 241, 241),
-    rgba(41, 41, 41, 0.795)
+    rgba(190, 190, 190, 0.795)
   );
+  margin: 0;
 }
 
-.descripcion-y-juegos {
+.boton-agregar {
+  background-color: #0071E3;
+  color: #f3f3f3;
+  display: block;
+  max-width: 50px;
+  padding: 8px 8px 8px 4px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.descripcion-y-juegos-maq {
   display: flex;
   flex-direction: column;
 }
 
-.descripcion-maquinita {
+.descripcion {
   align-content: space-around;
   color: #f2f2f2;
   margin: 0;
@@ -154,17 +222,19 @@ main {
 
 .catalogo-juegos-maq {
   padding: 16px;
-  background: linear-gradient(70deg, rgb(65, 65, 65), rgba(93, 93, 93, 0.5));
+  background: linear-gradient(70deg, #107c10, #54b354);
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .catalogo-juegos-maq img {
-  height: 72px;
-  width: 72px;
-  object-fit: cover;
+  height: 96px;
+  width: 96px;
+  object-fit: cover; 
+  margin: 8px;
 }
 
 .seccion-tablero {
@@ -173,73 +243,119 @@ main {
   flex-direction: column;
 }
 
+.contenedor-img-tablero {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
 .img-tablero {
-  height: 120px;
+  width: 100%;
   background: linear-gradient(
-    to bottom,
+    70deg,
     rgb(241, 241, 241),
-    rgba(156, 156, 156, 0.5)
-  );
+    rgba(190, 190, 190, 0.795));
   display: block;
   object-fit: contain;
+  margin: 0;
+  padding: 24px;
+}
+
+.descripcion-y-juegos-maq-tab {
+  display: flex;
+  flex-direction: column;
+}
+
+#descripcion-tab-1 {
+  text-align: left;
+  padding: 8px;
+  background: linear-gradient(to right, rgb(12, 12, 12), rgb(65, 65, 65));
+  margin: 0;
+}
+
+#descripcion-tab-2 {
+  text-align: right;
+  padding: 8px;
+  background: linear-gradient(to right,
+  rgb(65, 65, 65),
+  rgb(12, 12, 12));
   margin: 0;
 }
 
 .catalogo-juegos-tab {
-  height: 160px;
   background: linear-gradient(
     to bottom,
-    rgba(156, 156, 156, 0.5),
-    rgba(41, 41, 41, 0.795)
+    #3e7cce,
+    #00439c
   );
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   margin: 0;
+  padding: 16px 0;
 }
 
 .catalogo-juegos-tab img {
   display: flex;
-  height: 62px;
-  width: 62px;
+  height: 64px;
+  width: 64px;
   object-fit: cover;
+  margin: 8px;
 }
 
 .seccion-futbolito {
-  /* margin: 10px 0; */
+  margin: 10px 0;
   display: flex;
   flex-direction: column;
 }
 
+.contenedor-img-futbolito {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
 .img-futbolito {
-  height: 360px;
+  width: 100%;
   background: linear-gradient(
-    to bottom,
+    70deg,
     rgb(241, 241, 241),
-    rgba(156, 156, 156, 0.5)
-  );
+    rgba(190, 190, 190, 0.795));
   display: block;
   object-fit: contain;
+  padding: 24px;
+}
+
+#descripcion-futbolito-1 {
+  text-align: center;
+  padding: 8px;
+  background: linear-gradient(to right,
+   rgb(12, 12, 12),
+    rgb(65, 65, 65));
+  margin: 0;
 }
 
 .equipos {
-  height: 360px;
+  width: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(156, 156, 156, 0.5),
-    rgba(41, 41, 41, 0.795)
+    rgb(46, 46, 46),
+    rgb(14, 13, 13)
   );
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding: 24px 0;
 }
 
 .img-equipo {
   display: flex;
-  height: 64px;
-  width: 64px;
+  height: 48px;
+  width: 48px;
   object-fit: cover;
 }
 
@@ -247,12 +363,28 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  color: #f3f3f3;
+  position: relative;
+  flex-wrap: wrap;
 }
 
 .vs img,
-.vs h3 {
-  margin: 0 25px;
+.vs h3,
+.vs .boton-agregar {
+  margin: 16px;
 }
+
+.vs .boton-agregar-futbolito {
+  background-color: #0071E3;
+  color: #f3f3f3;
+  display: block;
+  max-width: 50px;
+  padding: 8px 8px 8px 4px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+}
+
 
 /* Comienza Footer */
 
@@ -261,9 +393,12 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 8px;
   width: 100%;
-  overflow-x: hidden;
-  height: 64px;
+  position: relative;
+  top: 56px;
+  padding: 0;
+  margin: 0;
 }
 
 .info-footer {
@@ -290,7 +425,7 @@ footer {
 .redes-sociales {
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
@@ -305,100 +440,85 @@ footer {
   color: #ffffff;
 }
 
-@media (min-width: 790px) {
-  body {
-    width: 100vw;
-  }
-  main {
-    width: calc(100vw);
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 48px;
-    position: fixed;
-    top: 0;
-    left: 0;
+
+@media (min-width: 481px){
+  .catalogo-juegos-maq img{
+    width: 112px;
+    height: 112px;
   }
 
-  .fa-bars {
+  .catalogo-juegos-tab img{
+    width: 104px;
+    height: 104px;
+  }
+
+  .img-equipo{
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (min-width: 720px){
+
+  #boton-hamburguesa {
     display: none;
   }
 
-  header .contenedor-logo {
+  #logo-principal {
     order: -1;
-    position: relative;
-    top: 0;
-    left: 10px;
-    /* margin-left: 48px; */
   }
 
-  /* .fa-search {
-    position: absolute;
-    right: 15%;
-  } */
-
-  .nav-bar {
-    display: block;
-    justify-content: space-between;
+  .nav-bar{
+    display: flex;
+    margin: 24px;
   }
 
-  /* .nav-bar a{
-        margin: 0 10px;
-    } */
+  .nav-bar a{
+    margin: 0 4px;
+  }
+
+  #boton-buscador,
+  #boton-carrito,
+  #boton-login {
+    margin: 0 4px;
+  }
+
+  #boton-login{
+    margin-right: 16px;
+  }
 
   /* Termina Header */
 
-  .seccion-banner {
-    max-height: 480px;
-    object-fit: contain;
-    position: static;
-    top: 20px;
-  }
   .seccion-maquinita {
     flex-direction: row;
   }
 
-  .img-maquinita {
+  .contenedor-img-maquinita {
     width: 60%;
   }
 
-  .descripcion-y-juegos {
+  .img-maquinita {
+    height: 100%;
+  }
+
+  .descripcion-y-juegos-maq {
     display: flex;
     flex-direction: column;
     width: 40%;
   }
 
-  .descripcion-maquinita {
-    height: 75%;
-    margin-bottom: 2px;
-    margin-left: 2px;
+  .boton-agregar{
+    bottom: 32px;
+    right: 32px;
+    transform: scale(1.5);
   }
 
-  #descripcion-maq-1 {
-    height: 25%;
-    padding-top: 16px;
-    font-size: 16px;
+  #descripcion-tab-1{
+    padding-left: 10%;
   }
 
-  #descripcion-maq-2 {
-    height: 35%;
-    padding: auto;
-    font-size: 24px;
-  }
-
-  #descripcion-maq-3 {
-    height: 40%;
-    font-size: 32px;
-    padding-top: 24px;
-  }
-
-  .catalogo-juegos-maq {
-    height: 25%;
-    margin-left: 2px;
+  #descripcion-tab-2{
+    padding-right: 10%;
   }
 
   .seccion-futbolito {
@@ -408,102 +528,40 @@ footer {
   .equipos {
     order: -1;
     width: 35%;
-    background: linear-gradient(
-      to left,
-      rgba(156, 156, 156, 0.5),
-      rgba(41, 41, 41, 0.795)
-    );
+
   }
 
-  .img-futbolito {
+  .contenedor-img-futbolito {
     width: 65%;
-    background: linear-gradient(
-      to left,
-      rgb(241, 241, 241),
-      rgba(156, 156, 156, 0.5)
-    );
+
   }
 
-  /* Comienza Footer */
-  footer {
-    height: 48px;
-  }
-  .lista-footer {
-    flex-direction: row;
-    justify-content: space-around;
-  }
+    /* Comienza Footer */
 
-  .lista-footer a {
-    margin: 0 16px;
-    font-size: 0.9em;
-  }
+  
+    footer {
+      height: 88px;
+      padding-top: 16px;
+    }
+    .lista-footer {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .lista-footer a {
+      margin: 0 16px;
+      font-size: 0.9em;
+    }
+  
+    .redes-sociales {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .redes-sociales i {
+      margin: 0 16px; 
+      font-size: 1.3em;
+    }
 
-  .redes-sociales {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .redes-sociales i {
-    /* margin: 0 16px; */
-    font-size: 1.3em;
-  }
-}
-
-@media (min-width: 1200px) {
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 20px;
-  }
-  ::-webkit-scrollbar-track-piece {
-    background: transparent;
-    border-radius: 20px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: gray;
-    border-radius: 20px;
-    height: 50px;
-  }
-  body {
-    /* position: absolute; */
-    overflow-y: overlay;
-    overflow-x: hidden;
-    /* position: relative; */
-  }
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 48px;
-  }
-
-  /* .fa-search {
-    position: absolute;
-    right: 22%;
-  } */
-  #banner-img {
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-  }
-  main {
-    width: calc(100vw);
-    /* position: absolute;
-    top: 40px;
-    left: 0; */
-  }
-  footer {
-    overflow-x: hidden;
-  }
-  .redes-sociales {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
 }
