@@ -1,0 +1,206 @@
+/* --------------estilos generales-------------- */
+*{
+    /* para no sumar a los elementos sus bordes y sus rellenos */
+    box-sizing: border-box;
+}
+
+
+
+body{
+    /* fondo de toda la pagina  */
+    background-color: #F2F2F2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+/* --------------estilos generales-------------- */
+
+#locacionPagina p{
+    margin: 7px 20px;
+    font-size: medium;
+    /* border: solid 1px red; */
+}
+
+/*---------------------------------- main -----------------------------------*/
+
+/* --------------vistaProducto-------------- */
+
+/* ------imagenProducto---- */
+#vistaProducto{
+    border: solid 1px black;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+#imagenProducto{
+    margin: 11px 0;
+    border: solid 1px black;
+    
+}
+/* ------imagenProducto---- */
+
+/* ----carrusel--- */
+#carrusel{
+    border: solid 1px black;
+    margin: 10px 0;
+    padding: 20px 0;
+}
+
+#carrusel > img{
+    width: 15%;
+    border: solid 1px black;
+}
+/* ----carrusel--- */
+
+/* --------------vistaProducto-------------- */
+
+/* --------------vistaDescripcion----------- */
+
+/* ----descripcion producto--- */
+#vistaDescripcion{
+    border: solid 1px black;
+    padding: 5px 20px;
+    background-color: #FFFFFF;
+}
+
+
+#descripcionProducto h2{
+    font-weight: 800;
+}
+
+#descripcion{
+    padding: 15px;
+}
+
+#descripcion ul{
+
+    margin: 0;
+    padding: 0;
+}
+
+#grados{
+    border: solid 1px white;
+}
+/* ----descripcion producto--- */
+
+/* ----costo a pagar--- */
+#CostoApagar{
+    width: 100%;
+    padding: 15px 15px;
+    border: solid 1px black;
+    margin-bottom: 15px;
+
+}
+
+#precios > *{
+    margin: 0 2px;
+}
+
+#cantidad{
+    width: 70px;
+    padding: 3px;
+    border: solid 1px black;
+}
+
+.botonPrimario{
+    background-color: #0071E3;
+    color:#FFFFFF;
+    border-radius: 5px;
+    padding: 10px;
+}
+/* ----costo a pagar--- */
+
+/* --------------vistaDescripcion----------- */
+
+/*---------------------------------- main -----------------------------------*/
+
+
+/* Breakpoints */
+/* media querys */
+
+
+/* medida movil pequeño*/
+@media (min-width:200px){
+    p{
+        font-size: 3vw;   
+    }
+
+    /* ----vistaProducto---- */
+    #imagenProducto{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #carrusel{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    /* ----vistaProducto---- */
+
+    /* ----costo a pagar--- */
+    #puntaje{
+        display: flex;
+    }
+
+    #grados{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #precios{
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    #cantidad{
+        display: flex;
+        justify-content: space-around;
+    }
+    /* ----costo a pagar--- */
+
+    /* correccion de para barra fija  */
+    #areaPrincipal{
+        margin-top: 48px;
+    }
+    /* correccion de para barra fija  */
+}
+
+/* medida escritorio */
+@media (min-width: 790px){
+    p{
+        font-size: 1vw;   
+    }
+    /*-------area principal -------*/
+    #areaPrincipal{
+        display: flex;
+    }
+    /*-------area principal -------*/
+    
+    /* ----vistaProducto---- */
+    #vistaProducto,
+    #vistaDescripcion{
+        width: 50%;
+    }
+    
+    #vistaProducto{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+/* medida pantallas*/
+@media (min-width: 1200px){
+    /*-------area principal -------*/
+    #areaPrincipal{
+        max-width: 1200px;
+        margin: auto;
+    }
+    /*-------area principal -------*/
+}

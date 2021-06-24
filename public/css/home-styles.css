@@ -1,0 +1,567 @@
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  }
+  
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+A:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+A:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+A:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+  /* Comienza Header */
+
+.header {
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  height: 48px;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  z-index: 100;
+  }
+
+.nav-bar {
+  display: none;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+  padding: 5px;
+  font-size: 17px;
+}
+
+.icono-header {
+  color: #f2f2f2;
+}
+
+#logo-principal {
+  margin: 0 16px;
+}
+
+.logo {
+  width: 32px;
+}
+
+/* Termina Header */
+
+.main{
+  width: 100%;
+  position: relative;
+  top: 56px;
+  padding: 0;
+  margin: 0;
+}
+
+.seccion-banner {
+  background-color: #f2f2f2;
+  width: 100%;
+}
+
+.seccion-banner ul, .seccion-banner ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+ul.slider li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  background-color: white;
+  transition: opacity 250ms;
+  margin: 0;
+}
+
+#img-banner-1{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+#letrero-banner-1 {
+  position: absolute;
+  bottom: 4px;
+  left: 8px;
+  font-size: 1rem;
+  color: #f2f2f2d5;
+}
+
+ul.slider li:first-child{
+  opacity: 1;
+}
+
+ul.slider li:target {
+  opacity: 1
+}
+
+.menu-slider {
+  text-align: center;
+  margin: 20px;
+  position: absolute;
+  top: 265px;
+  right: 8px;
+}
+
+.menu-slider li {
+  display: inline-block;
+  text-align: center;
+}
+
+.menu-slider li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-decoration: none;
+  background-color: rgba(190, 190, 190, 0.5);
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  border-radius: 100%;
+  margin: 0 8px;
+}
+
+.seccion-maquinita{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.contenedor-img-maquinita {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.img-maquinita{
+  object-fit: contain;
+  width: 100%;
+  background: linear-gradient(
+    70deg,
+    rgb(241, 241, 241),
+    rgba(190, 190, 190, 0.795)
+  );
+  margin: 0;
+}
+
+.boton-agregar {
+  background-color: #0071E3;
+  color: #f3f3f3;
+  display: block;
+  max-width: 50px;
+  padding: 8px 8px 8px 4px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.descripcion-y-juegos-maq {
+  display: flex;
+  flex-direction: column;
+}
+
+.descripcion {
+  align-content: space-around;
+  color: #f2f2f2;
+  margin: 0;
+}
+
+#descripcion-maq-1 {
+  text-align: left;
+  padding: 8px;
+  background: linear-gradient(to right, rgb(12, 12, 12), rgb(65, 65, 65));
+  margin: 0;
+}
+
+#descripcion-maq-2 {
+  text-align: center;
+  padding: 8px;
+  background: linear-gradient(30deg, rgb(63, 63, 63), rgb(107, 107, 107));
+  margin: 0;
+}
+
+#descripcion-maq-3 {
+  text-align: right;
+  padding: 8px;
+  background: linear-gradient(to right, rgb(65, 65, 65), rgb(12, 12, 12));
+  margin: 0;
+}
+
+.catalogo-juegos-maq {
+  padding: 16px;
+  background: linear-gradient(70deg, #107c10, #54b354);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.catalogo-juegos-maq img {
+  height: 96px;
+  width: 96px;
+  object-fit: cover; 
+  margin: 8px;
+}
+
+.seccion-tablero {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-img-tablero {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.img-tablero {
+  width: 100%;
+  background: linear-gradient(
+    70deg,
+    rgb(241, 241, 241),
+    rgba(190, 190, 190, 0.795));
+  display: block;
+  object-fit: contain;
+  margin: 0;
+  padding: 24px;
+}
+
+.descripcion-y-juegos-maq-tab {
+  display: flex;
+  flex-direction: column;
+}
+
+#descripcion-tab-1 {
+  text-align: left;
+  padding: 8px;
+  background: linear-gradient(to right, rgb(12, 12, 12), rgb(65, 65, 65));
+  margin: 0;
+}
+
+#descripcion-tab-2 {
+  text-align: right;
+  padding: 8px;
+  background: linear-gradient(to right,
+  rgb(65, 65, 65),
+  rgb(12, 12, 12));
+  margin: 0;
+}
+
+.catalogo-juegos-tab {
+  background: linear-gradient(
+    to bottom,
+    #3e7cce,
+    #00439c
+  );
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 16px 0;
+}
+
+.catalogo-juegos-tab img {
+  display: flex;
+  height: 64px;
+  width: 64px;
+  object-fit: cover;
+  margin: 8px;
+}
+
+.seccion-futbolito {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-img-futbolito {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.img-futbolito {
+  width: 100%;
+  background: linear-gradient(
+    70deg,
+    rgb(241, 241, 241),
+    rgba(190, 190, 190, 0.795));
+  display: block;
+  object-fit: contain;
+  padding: 24px;
+}
+
+#descripcion-futbolito-1 {
+  text-align: center;
+  padding: 8px;
+  background: linear-gradient(to right,
+   rgb(12, 12, 12),
+    rgb(65, 65, 65));
+  margin: 0;
+}
+
+.equipos {
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgb(46, 46, 46),
+    rgb(14, 13, 13)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.img-equipo {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  object-fit: cover;
+}
+
+.vs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #f3f3f3;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.vs img,
+.vs h3,
+.vs .boton-agregar {
+  margin: 16px;
+}
+
+.vs .boton-agregar-futbolito {
+  background-color: #0071E3;
+  color: #f3f3f3;
+  display: block;
+  max-width: 50px;
+  padding: 8px 8px 8px 4px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+/* Comienza Footer */
+
+footer {
+  background-color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  width: 100%;
+  position: relative;
+  top: 56px;
+  padding: 0;
+  margin: 0;
+}
+
+.info-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#logo-footer {
+  width: 40px;
+}
+
+.lista-footer {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: center;
+  padding: auto;
+  color: #ffffff;
+}
+
+.redes-sociales {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.redes-sociales i {
+  padding: 8px;
+}
+
+.legal {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+@media (min-width: 481px){
+  .catalogo-juegos-maq img{
+    width: 112px;
+    height: 112px;
+  }
+
+  .catalogo-juegos-tab img{
+    width: 104px;
+    height: 104px;
+  }
+
+  .img-equipo{
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (min-width: 720px){
+
+  #boton-hamburguesa {
+    display: none;
+  }
+
+  #logo-principal {
+    order: -1;
+  }
+
+  .nav-bar{
+    display: flex;
+    margin: 24px;
+  }
+
+  .nav-bar a{
+    margin: 0 4px;
+  }
+
+  #boton-buscador,
+  #boton-carrito,
+  #boton-login {
+    margin: 0 4px;
+  }
+
+  #boton-login{
+    margin-right: 16px;
+  }
+
+  /* Termina Header */
+
+  .seccion-maquinita {
+    flex-direction: row;
+  }
+
+  .contenedor-img-maquinita {
+    width: 60%;
+  }
+
+  .img-maquinita {
+    height: 100%;
+  }
+
+  .descripcion-y-juegos-maq {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+  }
+
+  .boton-agregar{
+    bottom: 32px;
+    right: 32px;
+    transform: scale(1.5);
+  }
+
+  #descripcion-tab-1{
+    padding-left: 10%;
+  }
+
+  #descripcion-tab-2{
+    padding-right: 10%;
+  }
+
+  .seccion-futbolito {
+    flex-direction: row;
+  }
+
+  .equipos {
+    order: -1;
+    width: 35%;
+
+  }
+
+  .contenedor-img-futbolito {
+    width: 65%;
+
+  }
+
+    /* Comienza Footer */
+
+  
+    footer {
+      height: 88px;
+      padding-top: 16px;
+    }
+    .lista-footer {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .lista-footer a {
+      margin: 0 16px;
+      font-size: 0.9em;
+    }
+  
+    .redes-sociales {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .redes-sociales i {
+      margin: 0 16px; 
+      font-size: 1.3em;
+    }
+
+}

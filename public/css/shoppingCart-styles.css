@@ -1,0 +1,183 @@
+/* --------------estilos generales-------------- */
+*{
+    /* para no sumar a los elementos sus bordes y sus rellenos */
+    box-sizing: border-box;
+}
+
+
+body{
+    /* fondo de toda la pagina  */
+    background-color: #F2F2F2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+/* --------------estilos generales-------------- */
+#locacionPagina p{
+    margin: 7px 20px;
+    font-size: medium;
+}
+
+/*---------------------------------- main -----------------------------------*/
+
+/*---------------------vistaCestadeProductos ---------------------*/
+#vistaCestadeProductos{
+    padding: 30px 20px;
+    border: solid 1px black;
+    background-color: #FFFFFF;
+}
+
+/*---------tabla con divs--------- */
+
+/* encabezado */
+#encabeados ,#productos{
+    width: 100%;
+    border: solid 1px black;
+}
+#encabeados div,#productos div{
+    width: 20%;
+    text-align: center;
+}
+/* encabezado */
+
+/* productos */
+#imagen{
+    margin: 10px 10px;
+}
+.miniatura{
+    width: 100px;
+    border: solid 1px black;
+}
+
+#cantidad{
+    width: 50px;
+    padding: 3px;
+    border: solid 1px black;
+}
+
+.textoTabla{
+    font-size: x-small;
+}
+/* productos */
+
+/*---------tabla con divs--------- */
+
+/*---------------------vistaCestadeProductos ---------------------*/
+
+
+
+/*----------------------------vistaPago---------------------------*/
+#vistaPago{
+    margin: 10px 0 25px; 
+    border: solid 1px black;
+    background-color: #FFFFFF;
+}
+.botonPrimario{
+    background-color: #0071E3;
+    color:#FFFFFF;
+    border-radius: 5px;
+    padding: 10px;
+}
+/*----------------------------vistaPago---------------------------*/
+
+/*---------------------------------- main -----------------------------------*/
+
+
+/* Breakpoints */
+/* media querys */
+
+/* medida movil pequeño*/
+@media (min-width:200px){
+    p{
+        font-size: 3vw;   
+    }
+
+    /*-----vistaCestadeProductos -----*/
+    #encabeados,#productos{
+        display: flex;
+    }
+
+    #cantidad{
+        display: flex;
+        justify-content: space-around;
+    }
+    .centrado{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /*-----vistaCestadeProductos -----*/
+    
+    /*-----vistaPago -----*/
+    #botonesPago{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #botonesPago div {
+        margin: 5px 0;
+    }
+    #botonesPago div > input[type="button"]{
+        /* border: solid 1px black; */
+        padding: 15px 0;
+        width: 150px;
+        margin: auto;
+    }
+    /*-----vistaPago -----*/
+   
+    /* correccion de para barra fija  */
+    #areaPrincipal{
+        margin-top: 48px;
+    }
+    /* correccion de para barra fija  */
+}
+
+
+/* medida escritorio */
+@media (min-width: 790px){
+    p{
+        font-size: 2vw;   
+    }
+
+   /*-------area principal -------*/
+   #areaPrincipal{
+       display: flex;
+   }
+   /*-------area principal -------*/
+
+   /*-------vistaCestadeProductos -------*/
+   #vistaCestadeProductos{
+       width: 70%;
+   }
+   /*-------vistaCestadeProductos -------*/
+
+   /*--------------vistaPago ------------*/
+   #vistaPago{
+        width: 30%;
+        margin: 0 0 25px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   }
+
+   #encabeados div strong p{
+    font-size: medium;
+   }
+   /*--------------vistaPago ------------*/
+
+}
+
+/* medida pantallas*/
+@media (min-width: 1200px){
+    /*-------area principal -------*/
+    #areaPrincipal{
+        max-width: 1200px;
+        margin: auto;
+    }
+    /*-------area principal -------*/
+}
