@@ -1,4 +1,5 @@
-1. Retrospectiva
+##--Sprint-1
+Retrospectiva
 
 ¿Qué hicimos bien?
  Tener buena comunicación.
@@ -17,4 +18,27 @@
  Repartir las tareas de forma inadecuada.
 ¿Que deberíamos seguir haciendo?
  Seguir teniendo con la comunicación, teniendo de 1-2 reuniones por semana.
+
+## --Sprint-2
+
+Retrospectiva
+
+1. Comenzar a hacer
+    Resolver la retrospectiva que nos dio Pako
+    Revisar los puntos del sprint-3
+
+2. Hacer más
+    Usar más html
+    Organizar mejor nuestro tiempo para trabajar más en el proyecto
+
+3. Continuar haciendo
+    Seguir haciendo reuniones cada3 a 5 días
+    Seguir comunicandonos
+
+4. Hacer menos
+    Dejar de usar archivos pesados
+
+5. Dejar de hacer
+    No dejar lapsos grandes de tiempo sin comunicarnos
+
  
