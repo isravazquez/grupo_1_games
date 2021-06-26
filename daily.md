@@ -17,3 +17,21 @@ Qué va a hacer hoy.
 Kevs: Unir login y registro al home page
 Edi: Corregir problemas con el cierre de carrito 
 Isra: Mejoras en home page
+
+24 de junio 2021
+
+Qué hizo ayer.
+Kevin: 
+Edi:
+Isra:
+
+Si se encontró algún impedimento.
+Kevin: No
+Edi: No 
+Isra: No 
+
+Qué va a hacer hoy.
+
+Kevs: Realizamos la configuracion de EJS
+Edi: Realizamos la configuracion de EJS
+Isra: Realizamos la configuracion de EJS
