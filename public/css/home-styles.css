@@ -515,6 +515,13 @@ footer {
 
   .seccion-futbolito {
     flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .descripcion-futbolito {
+    align-self: flex-start;
+    order: -1;
+    width: 100%;
   }
 
   .equipos {
