@@ -2,15 +2,17 @@ body {
   margin: 0;
 }
 
-.contenedor {
+.signup {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to right top, blue, lightblue);
+  background: rgba(255, 255, 255, 0.5);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1em;
+  position: absolute;
+  z-index: 2;
 }
 
 .cabecera {
@@ -49,10 +51,11 @@ body {
   border: none;
   overflow: hidden;
   box-shadow: 0 5px 15px #888;
+  position: absolute;
 }
 
 .cerrar-formulario {
-  background-color: #ff3b30;
+  background: rgba(255, 59, 48, 0.8);
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -102,6 +105,11 @@ form {
   justify-content: center;
   border: none;
   position: relative;
+  z-index: 2;
+}
+.cuerpo-formulario2 {
+  position: relative;
+  top: -17%;
 }
 .user-profile-input,
 .password-input,

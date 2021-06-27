@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet" />
-    <link rel="stylesheet" href="/css/home-styles.css">
-    <link rel="stylesheet" href="/css/modal-styles.css">
-    <title>Games</title>
-</head>
+<%- include("./head") %>
+<script>
+    function desplegar(){
+        let x = document.getElementById("login-page");
+        let y = document.getElementById("main");
+        let z = document.getElementById("signup-page");
+        if(x.style.display ==="none" & z.style.display ==="none"){
+            x.style.display = "flex";
+            y.style.filter ="blur(20px)";
+        }
+        else{
+            x.style.display = "none";
+            z.style.display = "none"
+            y.style.filter = "blur(0)";
+        }
+    }
+</script>
 <body>
     <header class="header">
         <a href="#" id="boton-hamburguesa">
@@ -32,9 +36,10 @@
         <label for="desplegar" id="boton-carrito">
             <i class="fas fa-shopping-cart btn_despiega icono-header"></i>
         </label>
-        <a href="/login" id="boton-login">
+        <button id="boton-login" onclick="desplegar()"><i class="fas fa-user icono-header" ></i></button>
+        <!-- <a href="/login" id="boton-login">
             <i class="fas fa-user icono-header"></i>
-        </a>
+        </a> -->
     </header>
     <input type="checkbox" name="desplegar" id="desplegar" hidden>
     <div class="model-overlay active" ><!--caja transparente-->
@@ -54,7 +59,7 @@
                                 <p class="nombreLista">
                                     Pro System Audiotek Tablero Arcade Videojuegos
                                 </p>
-                            </div>   
+                            </div>
                         </div>
                     </a>
                     <a href="/productDetail">
@@ -93,8 +98,15 @@
                 </form>
             </div>
         </div>
+    
     </div>
-    <main class="main">
+    <div>
+        <%- include("./login") %>
+    </div>
+    <div>
+        <%- include("./signup")%>
+    </div>
+    <main class="main" id="main">
         <section class="seccion-banner">
             <ul class="slider">
                 <li id="slide-1">
@@ -189,6 +201,20 @@
             </div>
         </section>
     </main>
+    <script>
+        let x = document.getElementById("login-page");
+        let y = document.getElementById("main");
+        let z = document.getElementById("signup-page");
+        x.style.display = "none";
+        y.style.filter = "none";
+        z.style.display= "none"
+        function showLogin(){
+            let x = document.getElementById("login-page");
+            let y = document.getElementById("signup-page");
+            x.style.display= "flex";
+            y.style.display="none"
+        }
+    </script>
     <footer>
         <div class="info-footer">
             <img src="/img/logo_160_x_160_blanco.svg" alt="logo" id="logo-footer">

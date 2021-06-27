@@ -1,15 +1,22 @@
 body {
   margin: 0;
 }
-
-.contenedor {
+.login {
+  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+/* .contenedor {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to right top, blue, lightblue);
-}
+  background: none;
+} */
 
 #logo-principal {
   width: 30px;
@@ -19,7 +26,7 @@ body {
   display: flex;
   height: 5%;
   width: 100%;
-  background-color: #333;
+  background: rgba(51, 51, 51, 0.8);
   color: #888;
   background-size: cover;
   border-top-right-radius: 50px;
@@ -44,11 +51,15 @@ body {
   flex-direction: column;
   width: 45vw;
   height: 73vh;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 30px;
   border: none;
   overflow: hidden;
   box-shadow: 0 5px 15px #888;
+  z-index: 2;
+  position: absolute;
+  top: 20%;
+  left: 30%;
 }
 .remember-form {
   display: none;
@@ -63,34 +74,34 @@ input[type="checkbox"]:checked {
 } */
 
 .cerrar-formulario {
-  background-color: #ff3b30;
+  background: rgba(255, 59, 48, 0.8);
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border-color: transparent;
 }
 .cerrar-formulario:hover {
-  background-color: #ff453a;
+  background: rgba(255, 49, 58, 0.9);
 }
 .maximizar-formulario {
-  background-color: #ffcc00;
+  background: rgba(255, 204, 0, 0.8);
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border-color: transparent;
 }
 .maximizar-formulario:hover {
-  background-color: #ffd60a;
+  background: rgba(255, 214, 10, 0.9);
 }
 .random-formulario {
-  background-color: #34c759;
+  background: rgba(52, 199, 89, 0.8);
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border-color: transparent;
 }
 .random-formulario:hover {
-  background-color: #32d74b;
+  background: rgba(52, 215, 75, 0.9);
 }
 
 .cuerpo-formulario {
@@ -144,7 +155,7 @@ input[type="checkbox"]:checked {
 
 .pie-formulario {
   display: flex;
-  background-color: #444;
+  background: rgba(51, 51, 51, 0.8);
   color: #888;
   height: 5%;
   width: 100%;
@@ -153,8 +164,10 @@ input[type="checkbox"]:checked {
   border-bottom-left-radius: 50px;
   overflow: hidden;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   opacity: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .password-olvidada {
   border-radius: 20px;
@@ -162,6 +175,7 @@ input[type="checkbox"]:checked {
   color: #0071e3;
   border: none;
   text-decoration: underline;
+  font-size: 1em;
 }
 .password-olvidada:hover {
   background-color: rgb(109, 109, 109);
