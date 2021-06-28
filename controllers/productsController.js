@@ -9,39 +9,62 @@ const productsController = {
       res.render("shoppingCart");
     },
     createProduct: (req, res) => {
-      
-      
-      // console.log(req.query.id);
-      // console.log(req.params.name);
-      // console.log(req.params.description);
-      // console.log(req.params.image);
-      // console.log(req.params.category);
-      // console.log(req.params.price);
-      // console.log(req.params.discountRate);
-      // console.log(req.params.discount);
-      // console.log(req.params.features);
-      // console.log(req.params.stock);
-      // console.log(req.params.registrationDate);
-      // console.log(req.params.checkInTime);
-      // console.log(req.params.userWhoRegistered);
-      console.log('datos recibidos..');
-      res.redirect('createProduct');
 
-      // let productTmp = {
-      //   id: req.body.id,
-      //   name: req.body.name,
-      //   description: req.body.description,
-      //   image: req.body.image,
-      //   category: req.body.category,
-      //   price: req.body.price,
-      //   discountRate: req.body.discountRate,
-      //   discount: req.body.discount,
-      //   stock: req.body.stock,
-      //   registrationDate: req.body.registrationDate,
-      //   checkInTime: req.body.checkInTime,
-      //   userWhoRegistered: req.body.userWhoRegistered,
-      // }; 
-      res.redirect('createProduct');
+      // muestreo de datod principales 
+      // console.log(req.body.id);
+      // console.log(req.body.name);
+      // console.log(req.body.category);
+      // console.log(req.body.price);
+      // console.log(req.body.discountRate);
+      // console.log(req.body.stock);
+      // console.log(req.body.features);
+      // console.log(req.body.description);
+      // console.log(req.body.image);
+      // console.log(req.body.userWhoRegistered);
+     
+      //extras
+      //console.log("-----")
+      //descuento
+      //console.log(`${((req.body.price-(req.body.discountRate/100)*req.body.price))}`); //total a pagar aplicando descuento 
+      
+      //hora 
+      let fecha = new Date();
+      //console.log(fecha.getHours()+":"+fecha.getMinutes()); //hora de registro del producto 12:32
+
+      //fecha 
+      const map = {
+        dd: fecha.getDate(),
+        mm:  fecha.getMonth()+1 <= 9 ? '0'+(fecha.getMonth()+1) : (fecha.getMonth()+1),     //podriamos arreglar que agregue un cero en el mes
+        yy: fecha.getFullYear().toString().slice(-2),
+        yyyy: fecha.getFullYear()
+      }
+
+    
+
+      //mensaje de confirmacion
+      res.send('datos recibidos..').status(200);
+      
+      
+      let productTmp = {
+        id: parseInt(req.body.id),
+        name: req.body.name,
+        category: req.body.category,
+        price: "$"+req.body.price,
+        discountRate: parseInt(req.body.discountRate),
+        discount: "$"+((req.body.price-(req.body.discountRate/100)*req.body.price)), //precio a pagar menos el descuento
+        stock: parseInt(req.body.stock),
+        description: req.body.description,
+        image: req.body.image,
+        features: req.body.features,
+        //extras
+        registrationDate: 'dd/mm/yy'.replace(/dd|mm|yy|yyy/gi, matched => map[matched]),
+        checkInTime: fecha.getHours()+":"+fecha.getMinutes()+" "+(fecha.getHours() >= 12 ? 'PM' : 'AM'),
+        userWhoRegistered: req.body.userWhoRegistered,
+      }; 
+
+      //objeto a insertar en archivo o base de datos 
+      console.log(productTmp);
+
     }
   };
   
