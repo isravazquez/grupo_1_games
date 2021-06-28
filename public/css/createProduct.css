@@ -1,0 +1,102 @@
+/* --------------estilos generales-------------- */
+
+h1, h5 {
+	text-align: center;
+}
+
+/* --------------estilos generales-------------- */
+
+
+
+/* --------------contenedor de formulario-------------- */
+
+
+#contenedorDeFormulario{
+	/*border: solid 1px green; */
+	width: 100%;
+	padding: 0 80px;
+	margin: auto;
+}
+
+
+#contenedorDeFormulario div{
+	width: 100%;
+}
+
+
+#contenedorDeFormulario div input{
+
+	width: 100%;
+	margin-bottom: 15px;	
+}
+#vistaCrearProductos{
+	margin: 70px 0;
+}
+#contenedorDeFormulario div input.inputWidth{
+
+	width: 30%;
+	display: inline;
+}
+
+.styleInput{
+	border: none;
+	outline: none;
+}
+
+#contenedorDeFormulario div textarea{
+	overflow-x:auto;
+	width: 325px; height: 75px 
+}
+
+.botonPrimario{
+    background-color: #0071E3;
+    color:#FFFFFF;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.descuento{
+    visibility: visible;
+}
+
+
+/* --------------contenedor de formulario-------------- */
+
+
+
+@media (min-width: 790px){
+
+	#areaPrincipal{
+		display: flex;
+        align-items: center;
+        justify-content: center;
+	}
+	/* --------------contenedor de formulario-------------- */
+	#contenedorDeFormulario div textarea{
+		width:335px; 
+	}
+
+	#contenedorDeFormulario{
+		width: 80%;
+	}
+
+	div #boton{
+	    width: 280px;
+	    margin: auto
+	}
+
+	
+	/* --------------contenedor de formulario-------------- */
+}
+
+
+@media (min-width: 1200px){
+
+
+	 /*-------area principal -------*/
+    #areaPrincipal{
+        max-width: 1200px;
+        margin: auto;
+    }
+    /*-------area principal -------*/
+}
