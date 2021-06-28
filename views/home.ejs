@@ -41,65 +41,7 @@
             <i class="fas fa-user icono-header"></i>
         </a> -->
     </header>
-    <input type="checkbox" name="desplegar" id="desplegar" hidden>
-    <div class="model-overlay active" ><!--caja transparente-->
-        <div class="modal"><!--caja blanca-->
-            <div id="form">
-                <h2>Lista de productos</h2>
-                <form action="/shoppingCart" method="get" id="formulario">
-                    <a href="/productDetail">
-                        <div class="productoLista">
-                            <div class="eliminar">
-                                <img src="/img/cancel_black_24dp.svg" alt="">
-                            </div>
-                            <div>
-                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
-                            </div>
-                            <div>
-                                <p class="nombreLista">
-                                    Pro System Audiotek Tablero Arcade Videojuegos
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/productDetail">
-                        <div class="productoLista">
-                            <div class="eliminar">
-                                <img src="/img/cancel_black_24dp.svg" alt="">
-                            </div>
-                            <div>
-                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
-                            </div>
-                            <div>
-                                <p class="nombreLista">
-                                    Pro System Audiotek Tablero Arcade Videojuegos
-                                </p>
-                            </div>   
-                        </div>
-                    </a>
-                    <a href="/productDetail">
-                        <div class="productoLista">
-                            <div class="eliminar">
-                                <img src="/img/cancel_black_24dp.svg" alt="">
-                            </div>
-                            <div>
-                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
-                            </div>
-                            <div>
-                                <p class="nombreLista">
-                                    Pro System Audiotek Tablero Arcade Videojuegos
-                                </p>
-                            </div>   
-                        </div>
-                    </a>
-                    <div class="input-group actions">
-                        <a href="/shoppingCart" type="submit" class="botonPrimario">Ver carrito</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    
-    </div>
+    <%- include('partials/modal') %>
     <div>
         <%- include("./login") %>
     </div>
