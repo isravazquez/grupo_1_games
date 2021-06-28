@@ -1,102 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet" />
-    <!-- fuentes externas -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300;600&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="/css/home-styles.css">
-    <link rel="stylesheet" href="/css/shoppingCart-styles.css">
-    <link rel="stylesheet" href="/css/modal-styles.css">
-    <title>Games Home</title>
-</head>
+<%- include('partials/head') %>
 <body>
-    <header class="header">
-        <a href="#" id="boton-hamburguesa">
-            <i class="fas fa-bars icono-header"></i>
-        </a>
-        <nav class="nav-bar">
-            <a href="#">Tableros</a>
-            <a href="#">Futbolitos</a>
-            <a href="#">Maquinitas</a>
-            <a href="#">Accesorios</a>
-            <a href="#">Contacto</a>
-        </nav>
-        <a href="#" id="boton-buscador">
-            <i class="fas fa-search icono-header"></i>
-        </a>
-        <a href="/" class="logo" id="logo-principal">
-            <img src="/img/logo_160_x_160_blanco.svg" alt="logo" class="logo">
-        </a>
-        <label for="desplegar" id="boton-carrito">
-            <i class="fas fa-shopping-cart btn_despiega icono-header"></i>
-        </label>
-        <a href="/login" id="boton-login">
-            <i class="fas fa-user icono-header"></i>
-        </a>
-    </header>
-    <input type="checkbox" name="desplegar" id="desplegar" hidden>
-    <div class="model-overlay active" ><!--caja transparente-->
-        <div class="modal"><!--caja blanca-->
-            <div id="form">
-                <h2>Lista de productos</h2>
-                <form action="/shoppingCart" method="get" id="formulario">
-                    <a href="/productDetail">
-                        <div class="productoLista">
-                            <div class="eliminar">
-                                <img src="/img/cancel_black_24dp.svg" alt="">
-                            </div>
-                            <div>
-                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
-                            </div>
-                            <div>
-                                <p class="nombreLista">
-                                    Pro System Audiotek Tablero Arcade Videojuegos
-                                </p>
-                            </div>   
-                        </div>
-                    </a>
-                    <a href="/productDetail">
-                        <div class="productoLista">
-                            <div class="eliminar">
-                                <img src="/img/cancel_black_24dp.svg" alt="">
-                            </div>
-                            <div>
-                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
-                            </div>
-                            <div>
-                                <p class="nombreLista">
-                                    Pro System Audiotek Tablero Arcade Videojuegos
-                                </p>
-                            </div>   
-                        </div>
-                    </a>
-                    <a href="/productDetail">
-                        <div class="productoLista">
-                            <div class="eliminar">
-                                <img src="/img/cancel_black_24dp.svg" alt="">
-                            </div>
-                            <div>
-                                <img src="/img/maquinita-izquierda.png" alt="imagen de producto" class="imagenLista">
-                            </div>
-                            <div>
-                                <p class="nombreLista">
-                                    Pro System Audiotek Tablero Arcade Videojuegos
-                                </p>
-                            </div>   
-                        </div>
-                    </a>
-                    <div class="input-group actions">
-                        <a href="/shoppingCart" type="submit" class="botonPrimario">Ver carrito</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <%- include('partials/header') %>
+    <%- include('partials/modal') %>
     <main id="areaPrincipal">
         <section id="vistaCestadeProductos">
             <div>
@@ -224,23 +131,6 @@ rel="stylesheet" />
             </form>
         </section>
     </main>
-    <footer>
-        <div class="info-footer">
-            <img src="/img/logo_160_x_160_blanco.svg" alt="logo" id="logo-footer">
-            <div class="lista-footer">
-                <a href="#AvisoPrivacidad"></a>Aviso de Privacidad</a>
-                <a href="#TerminosCondiciones"></a>Terminos y Condiciones</a>
-                <a href="#Politicas"></a> Póliticas de devolución</a>
-            </div>
-            <div class="redes-sociales">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-whatsapp"></i>
-            </div>
-        </div>
-        <div>
-            <a href="#Legal" class="legal">2021 GAMES</a>
-        </div>
-    </footer>
+     <%- include('partials/footer') %>
 </body>
 </html>

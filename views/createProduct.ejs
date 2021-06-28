@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/modal') %>
+    <main id="areaPrincipal">
+			<section id="vistaCrearProductos">
+				<h1>Creación de Producto</h1>
+				<div id="contenedorDeFormulario">
+					<form action="/products/createProduct" method="POST">
+						<div>
+							<!-- el valor del cambiante se agregara automaticamente -->
+							<label id="personal" for="userWhoRegistered">Personal que registra:</label>
+							<input type="text" name="userWhoRegistered" value="Admin Root" disabled class="inputWidth styleInput">
+						</div>
+						<div>
+							<input type="number" name="id" placeholder="ID" required>
+						</div>
+						<div>
+							<input type="text" name="name" placeholder="Nombre" required>
+						</div>
+						<div>
+							<input type="text" name="category" placeholder="Categoria" required>
+						</div>
+						<div>
+							<input type="number" name="price" placeholder="Precio" required>
+						</div>
+						<div>
+							<input type="number" name="discountRate" placeholder="Porcentaje de descuento" class="descuento" >
+						</div>
+						<div>
+							<input type="number" name="stock" placeholder="Existencias" min="1" required>
+						</div>
+						<div>
+							<input type="text" name="features" placeholder="Caracteristicas" min="1" required>
+						</div>
+						<div>
+							<label for="description">Descripción</label>
+							<br>
+							<textarea  name="description" class="desplamiento" required>
+							</textarea>
+						</div>
+						<div>
+							<label for="image">Cargar Imagen</label>
+							<input type="file" name="image" required>
+						</div>
+						<div id="boton">
+							<input type="submit" value="Crear" class="botonPrimario">
+						</div>
+					</form>
+				</div>
+			</section>
+	</main>
+    <%- include('partials/footer') %>
+</body>
+</html>
