@@ -62,6 +62,15 @@ input[type="checkbox"]:checked + .model-overlay{
     color: black;
 }
 
+/* .model{
+    position: relative;
+}
+
+#cierre{
+    position: absolute;
+    left: 540px;
+} */
+
 /* ---------vista del modal-------- */
 
 @media (min-width:200px){
