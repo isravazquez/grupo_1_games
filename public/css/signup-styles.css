@@ -31,6 +31,7 @@ body {
 .botones-cabecera-formulario {
   position: absolute;
   right: 5%;
+  height: 90%;
 }
 #NombrePagina {
   position: absolute;
@@ -40,11 +41,12 @@ body {
 .logo-cabecera-formulario {
   position: absolute;
   left: 5%;
+  height: 100%;
 }
 .formulario {
   display: flex;
   flex-direction: column;
-  width: 35vw;
+  width: 45vw;
   height: 73vh;
   background-color: white;
   border-radius: 30px;
@@ -197,6 +199,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 0;
   }
   .user-profile-input,
   .login-submit,
@@ -228,8 +231,8 @@ form {
     background-color: #333;
     color: #888;
     background-size: cover;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
     overflow: hidden;
     align-items: center;
     justify-content: space-evenly;

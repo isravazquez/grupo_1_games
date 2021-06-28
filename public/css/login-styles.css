@@ -21,6 +21,9 @@ body {
 #logo-principal {
   width: 30px;
 }
+#logo-principal-cabecera {
+  height: 90%;
+}
 .cabecera {
   position: relative;
   display: flex;
@@ -37,6 +40,7 @@ body {
 .botones-cabecera-formulario {
   position: absolute;
   right: 5%;
+  height: 90%;
 }
 #NombrePagina {
   position: absolute;
@@ -45,6 +49,7 @@ body {
 .logo-cabecera-formulario {
   position: absolute;
   left: 5%;
+  height: 100%;
 }
 .formulario {
   display: flex;
@@ -168,6 +173,7 @@ input[type="checkbox"]:checked {
   opacity: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  white-space: nowrap;
 }
 .password-olvidada {
   border-radius: 20px;
@@ -220,8 +226,7 @@ input[type="checkbox"]:checked {
     background-color: #333;
     color: #888;
     background-size: cover;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
+    border-radius: none;
     overflow: hidden;
     align-items: center;
     justify-content: space-evenly;
@@ -237,8 +242,14 @@ input[type="checkbox"]:checked {
     height: 100vh;
     background-color: white;
     border-radius: 0px;
-    border: none;
+    border: 0;
     overflow: visible;
     box-shadow: 0 5px 15px #888;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+  .pie-formulario {
+    border-radius: 0;
   }
 }
