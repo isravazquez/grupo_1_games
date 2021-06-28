@@ -11,20 +11,21 @@ const productsController = {
     createProduct: (req, res) => {
       
       
-      console.log(req.query.id);
-      console.log(req.params.name);
-      console.log(req.params.description);
-      console.log(req.params.image);
-      console.log(req.params.category);
-      console.log(req.params.price);
-      console.log(req.params.discountRate);
-      console.log(req.params.discount);
-      console.log(req.params.features);
-      console.log(req.params.stock);
-      console.log(req.params.registrationDate);
-      console.log(req.params.checkInTime);
-      console.log(req.params.userWhoRegistered);
-      res.render("datos recibidos...");
+      // console.log(req.query.id);
+      // console.log(req.params.name);
+      // console.log(req.params.description);
+      // console.log(req.params.image);
+      // console.log(req.params.category);
+      // console.log(req.params.price);
+      // console.log(req.params.discountRate);
+      // console.log(req.params.discount);
+      // console.log(req.params.features);
+      // console.log(req.params.stock);
+      // console.log(req.params.registrationDate);
+      // console.log(req.params.checkInTime);
+      // console.log(req.params.userWhoRegistered);
+      console.log('datos recibidos..');
+      res.redirect('createProduct');
 
       // let productTmp = {
       //   id: req.body.id,
