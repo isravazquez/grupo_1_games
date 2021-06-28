@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 const productsController = {
     viewCreateProduct: (req, res) => {
       res.render("createProduct");
@@ -9,6 +12,12 @@ const productsController = {
       res.render("shoppingCart");
     },
     createProduct: (req, res) => {
+
+      //apertura de archivo
+      let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
+      //conversion de objeto a cadena json
+      let listaProducts = JSON.parse(cadenaJsonA);
+
 
       // muestreo de datod principales 
       // console.log(req.body.id);
@@ -63,7 +72,14 @@ const productsController = {
       }; 
 
       //objeto a insertar en archivo o base de datos 
+      listaProducts.push(productTmp);
       console.log(productTmp);
+
+      //conversion de objeto a cadena json
+      let cadenaJsonE = JSON.stringify(listaProducts,null, 2);
+      //escritura de archivo
+
+      fs.writeFileSync(path.resolve(__dirname,'products.json'),cadenaJsonE); 
 
     }
   };
