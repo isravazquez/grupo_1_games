@@ -170,6 +170,8 @@ const productsController = {
         //escritura de archivo
         fs.writeFileSync(path.resolve(__dirname,'products.json'),cadenaJsonE); 
 
+        //reenvio de lista actualiada
+
         // apertura de archivo
         cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
         // cadena json a  objeto 
@@ -183,6 +185,38 @@ const productsController = {
       }
 
     }
-  };
+    ,deleteProduct(req, res){
+
+        // apertura de archivo
+        let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
+        // conversion  cadena json a  objeto 
+        let listaProducts = JSON.parse(cadenaJsonA);
+
+        // buscauada de indice
+        let indice = listaProducts.findIndex( (producto) => {
+            return producto.id == parseInt(req.params.id);
+        });
+
+        if(indice != -1){
+
+          //eliminacion del producto de la lista 
+          listaProducts.splice(indice, 1);
+
+
+          //reescritura y envio de lista actulisada
+
+          //conversion de objeto a cadena json
+          let cadenaJsonE = JSON.stringify(listaProducts,null, 2);
+          //escritura de archivo
+          fs.writeFileSync(path.resolve(__dirname,'products.json'),cadenaJsonE); 
+          
+          //redireccion a editar productos
+          res.render('listProducts', {products : listaProducts} );
+
+        }else{
+          res.send("producto no encontrado...");
+        } 
+    },
+}
   
-  module.exports = productsController;
+module.exports = productsController;
