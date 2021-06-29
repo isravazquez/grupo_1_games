@@ -1,17 +1,17 @@
 [
   {
     "id": 100,
-    "name": "maquina 1 de  mario",
+    "name": "300xCV",
     "category": "koh",
     "price": 12,
     "discountRate": 2,
     "discount": 11,
     "stock": 23,
-    "description": "maquina de mario\t\t\r\n\t\t\t\t\t\t\t",
-    "image": "Captura de pantalla (551).png",
+    "description": "sdfsdfsd",
+    "image": "Captura de pantalla (563).png",
     "features": "color rojo y negro",
     "registrationDate": "29/06/21",
-    "checkInTime": "11:52 AM",
+    "checkInTime": "12:14 PM",
     "userWhoRegistered": "Admin Root"
   },
   {

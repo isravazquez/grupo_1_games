@@ -169,9 +169,14 @@ const productsController = {
         let cadenaJsonE = JSON.stringify(listaProducts,null, 2);
         //escritura de archivo
         fs.writeFileSync(path.resolve(__dirname,'products.json'),cadenaJsonE); 
+
+        // apertura de archivo
+        cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
+        // cadena json a  objeto 
+        listaProducts = JSON.parse(cadenaJsonA);
         
         //redireccion a editar productos
-        res.render('listProducts');
+        res.render('listProducts', {products : listaProducts} );
 
       }else{
         res.send("producto no encontrado...");
