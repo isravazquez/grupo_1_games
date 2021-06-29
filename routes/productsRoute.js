@@ -14,4 +14,14 @@ router.get("/shoppingCart", productsController.viewShoppingCart);
 //crear producto en base de datos 
 router.post("/createProduct", productsController.createProduct);
 
+//vista listar productos
+router.get("/listProducts", productsController.listProducts);
+
+//vista edicion de produrcto
+router.get("/editProduct/:id", productsController.editProduct);
+
+//actulizar producto
+router.put("/updateProduct/:id", productsController.updateProduct);
+
+
 module.exports = router;
