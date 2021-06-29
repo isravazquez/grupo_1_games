@@ -59,7 +59,12 @@ h1, h5 {
     visibility: visible;
 }
 
-
+#botonVista{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
 /* --------------contenedor de formulario-------------- */
 
 
