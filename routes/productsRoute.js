@@ -23,5 +23,8 @@ router.get("/editProduct/:id", productsController.editProduct);
 //actulizar producto
 router.put("/updateProduct/:id", productsController.updateProduct);
 
+//eliminar producto
+router.delete("/deleteProduct/:id", productsController.deleteProduct);
+
 
 module.exports = router;
