@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <body>
+    <%- include('partials/header') %> 
+    <%- include('partials/modal') %>
+    <main id="areaPrincipal">
+      <section id="vistaListaProductos">
+        <h1>Lista de productos</h1>
+          <% for(let i= 0; i< products.length ; i++){%> 
+            <% if(i % 2 == 0 ){ %>
+            <div id="producto" class="colorTenue">
+                <div class="info">
+                  <p class="estiloParrafo">
+                      Nombre:
+                      <strong>
+                        <%= products[i].name%>
+                      </strong> 
+                      Categoria:
+                      <strong>
+                        <%= products[i].category%> 
+                      </strong>
+                      Stock:
+                      <strong>
+                        <%= products[i].stock %>
+                      </strong>
+                      <br>
+                      Precio:
+                      <strong>
+                        <%= products[i].price%>
+                      </strong>
+                      Descuento:
+                      <strong>
+                        <%= products[i].discount %>
+                      </strong>
+                      <br>
+                      Porcentaje de descuento:
+                      <strong>
+                        %<%= products[i].discountRate %> 
+                      </strong>
+                  </p>
+                </div>
+                <div class="botonera">
+                  <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonPrimario">
+                    Actualizar
+                  </a>
+                  <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonSecundario">
+                    Eliminar
+                  </a>
+                </div>
+            </div>
+          <% }else{%>
+            <div id="producto" class="colorOscuro">
+                <div class="info">
+                  <p class="estiloParrafo">
+                      Nombre:
+                      <strong>
+                        <%= products[i].name%>
+                      </strong> 
+                      Categoria:
+                      <strong>
+                        <%= products[i].category%> 
+                      </strong>
+                      stock:
+                      <strong>
+                        <%= products[i].stock %>
+                      </strong>
+                      <br>
+                      Precio:
+                      <strong>
+                        <%= products[i].price%>
+                      </strong>
+                      Descuento:
+                      <strong>
+                        <%= products[i].discount %>
+                      </strong>
+                      <br>
+                      Porcentaje de descuento:
+                      <strong>
+                        %<%= products[i].discountRate %> 
+                      </strong>
+                  </p>
+                </div>
+                <div class="botonera">
+                  <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonPrimario">
+                    Actualizar
+                  </a>
+                  <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonSecundario">
+                    Eliminar
+                  </a>
+                </div>
+            </div>
+        <%}%> <% } %>
+      </section>
+    </main>
+    <%- include('partials/footer') %>
+  </body>
+</html>
