@@ -3,11 +3,16 @@ const path = require("path");
 const app = express();
 const homeRoute = require("./routes/home");
 const productsRoute = require("./routes/productsRoute");
+const methodOverride = require('method-override');
 
 app.set("view engine", "ejs");
 
+// configurar los metodos post
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// configurar los metodos delete y put con method-override 
+app.use(methodOverride('_method'));
 
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.set("views", path.join(__dirname, "views"));
