@@ -34,7 +34,6 @@ header {
   top: 0;
   left: 0;
   z-index: 100;
-
 }
 
 .contenido-header {
@@ -43,6 +42,7 @@ header {
   align-items: center;
   padding: 0 16px;
   height: 48px;
+  width: 98%;
 }
 
 .nav-bar {
@@ -461,7 +461,6 @@ footer {
 }
 
 @media (min-width: 720px) {
-
   #boton-hamburguesa {
     display: none;
   }
@@ -486,8 +485,6 @@ footer {
     margin: 0 4px;
   }
 
-
-
   /* Termina Header */
 
   .seccion-maquinita {
@@ -507,7 +504,6 @@ footer {
     flex-direction: column;
     width: 40%;
   }
-
 
   .boton-agregar {
     bottom: 32px;
@@ -571,21 +567,19 @@ footer {
   }
 }
 
-@media (min-width: 1100px){
-
-  header{
+@media (min-width: 1100px) {
+  header {
     display: flex;
     justify-content: center;
   }
 
   .contenido-header {
-    width: 1000px;
+    width: 98%;
   }
 
-  .nav-bar{
-    width: 700px
-  };
+  .nav-bar {
+    width: 700px;
+  }
 
   /* Termina header */
-
 }
