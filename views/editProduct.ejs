@@ -51,6 +51,9 @@
 							<input type="submit" value="Actualizar" class="botonPrimario">
 						</div>
 					</form>
+					<form action="/products/deleteProduct/<%= product.id%>?_method=DELETE" method="post">
+						<input type="submit"  class="botonSecundario" value="Eliminar">
+					</form>
 				</div>
 			</section>
 	</main>
