@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const modelProducts = require('../models/modelProducts');
 
 const productsController = {
     viewCreateProduct: (req, res) => {
@@ -14,32 +15,12 @@ const productsController = {
     createProduct: (req, res) => {
 
       //apertura de archivo
-      let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
-      //conversion de objeto a cadena json
-      let listaProducts = JSON.parse(cadenaJsonA);
-
-
-      // muestreo de datod principales 
-      // console.log(req.body.id);
-      // console.log(req.body.name);
-      // console.log(req.body.category);
-      // console.log(req.body.price);
-      // console.log(req.body.discountRate);
-      // console.log(req.body.stock);
-      // console.log(req.body.features);
-      // console.log(req.body.description);
-      // console.log(req.body.image);
-      // console.log(req.body.userWhoRegistered);
-     
-      //extras
-      //console.log("-----")
-      //descuento
-      //console.log(`${((req.body.price-(req.body.discountRate/100)*req.body.price))}`); //total a pagar aplicando descuento 
+      let listaProducts = modelProducts.aperturaDeArchivo();
       
-      //hora 
-      let fecha = new Date();
-      //console.log(fecha.getHours()+":"+fecha.getMinutes()); //hora de registro del producto 12:32
 
+      //objeto hora 
+      let fecha = new Date();
+ 
       //fecha 
       const map = {
         dd: fecha.getDate(),
@@ -48,12 +29,6 @@ const productsController = {
         yyyy: fecha.getFullYear()
       }
 
-    
-
-      //mensaje de confirmacion
-      // res.send('datos recibidos..').status(200);
-      
-      
       let productTmp = {
         id: parseInt(req.body.id),
         name: req.body.name,
@@ -75,29 +50,24 @@ const productsController = {
       listaProducts.push(productTmp);
       console.log(productTmp);
 
-      //conversion de objeto a cadena json
-      let cadenaJsonE = JSON.stringify(listaProducts,null, 2);
       //escritura de archivo
-
-      fs.writeFileSync(path.resolve(__dirname,'products.json'),cadenaJsonE); 
+      modelProducts.escrituraDeArchivo(listaProducts);
+     
 
       res.redirect('createProduct');
     },
     listProducts: (req, res) => {
-      // apertura de archivo
-      let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
-      // conversion de objeto a cadena json
-      let listaProducts = JSON.parse(cadenaJsonA);
-      // retorno datos 
+      //apertura de archivo
+      let listaProducts = modelProducts.aperturaDeArchivo();
+      
+
       //envio de datos a vista 
       res.render('listProducts', { products: listaProducts});
     },
     editProduct:(req, res)=>{
-      // apertura de archivo
-      let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
-      // conversion de objeto a cadena json
-      let listaProducts = JSON.parse(cadenaJsonA);
-
+      //apertura de archivo
+      let listaProducts = modelProducts.aperturaDeArchivo();
+      
 
       let productoEncontrado = listaProducts.find( (producto) => {
         return producto.id == parseInt(req.params.id);
@@ -112,13 +82,9 @@ const productsController = {
 
     },
     updateProduct:(req, res)=>{
-    
-
-      // apertura de archivo
-      let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
-      // conversion de objeto a cadena json
-      let listaProducts = JSON.parse(cadenaJsonA);
-
+      //apertura de archivo
+      let listaProducts = modelProducts.aperturaDeArchivo();
+      
 
       let productoEncontrado = listaProducts.find( (producto) => {
         return producto.id == parseInt(req.params.id);
@@ -165,17 +131,10 @@ const productsController = {
         listaProducts[indice] = productoModificado;
 
 
-        //conversion de objeto a cadena json
-        let cadenaJsonE = JSON.stringify(listaProducts,null, 2);
-        //escritura de archivo
-        fs.writeFileSync(path.resolve(__dirname,'products.json'),cadenaJsonE); 
+        modelProducts.escrituraDeArchivo(listaProducts);
 
         //reenvio de lista actualiada
-
-        // apertura de archivo
-        cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
-        // cadena json a  objeto 
-        listaProducts = JSON.parse(cadenaJsonA);
+        listaProducts = modelProducts.aperturaDeArchivo();
         
         //redireccion a editar productos
         res.render('listProducts', {products : listaProducts} );
@@ -185,12 +144,11 @@ const productsController = {
       }
 
     }
-    ,deleteProduct(req, res){
+    ,deleteProduct:(req, res)=>{
 
-        // apertura de archivo
-        let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
-        // conversion  cadena json a  objeto 
-        let listaProducts = JSON.parse(cadenaJsonA);
+        //apertura de archivo
+        let listaProducts = modelProducts.aperturaDeArchivo();
+      
 
         // buscauada de indice
         let indice = listaProducts.findIndex( (producto) => {
@@ -205,18 +163,17 @@ const productsController = {
 
           //reescritura y envio de lista actulisada
 
-          //conversion de objeto a cadena json
-          let cadenaJsonE = JSON.stringify(listaProducts,null, 2);
           //escritura de archivo
-          fs.writeFileSync(path.resolve(__dirname,'products.json'),cadenaJsonE); 
-          
+          modelProducts.escrituraDeArchivo(listaProducts);
+          listaProducts = modelProducts.aperturaDeArchivo();
+        
           //redireccion a editar productos
           res.render('listProducts', {products : listaProducts} );
 
         }else{
           res.send("producto no encontrado...");
         } 
-    },
+    }
 }
   
 module.exports = productsController;
