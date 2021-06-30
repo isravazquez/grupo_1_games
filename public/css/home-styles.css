@@ -54,7 +54,7 @@ header {
   color: #ffffff;
   display: inline-block;
   padding: 5px;
-  font-size: 17px;
+  font-size: 14px;
 }
 
 .icono-header {
@@ -471,7 +471,6 @@ footer {
 
   .nav-bar {
     display: flex;
-    margin: 24px;
     justify-content: space-between;
   }
 
