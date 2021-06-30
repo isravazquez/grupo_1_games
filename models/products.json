@@ -1,0 +1,32 @@
+[
+  {
+    "id": 100,
+    "name": "gemepad",
+    "category": "12",
+    "price": 32,
+    "discountRate": 32,
+    "discount": 21,
+    "stock": 12,
+    "description": "game pad\t\t",
+    "image": "Captura de pantalla (552).png",
+    "features": "color rojo y negro",
+    "registrationDate": "29/06/21",
+    "checkInTime": "19:56 PM",
+    "userWhoRegistered": "Admin Root"
+  },
+  {
+    "id": 120,
+    "name": "sapato",
+    "category": "ert",
+    "price": 23,
+    "discountRate": 12,
+    "discount": 20,
+    "stock": 12,
+    "description": "dfdfgdf",
+    "image": "Captura de pantalla (563).png",
+    "features": "color rojo y negro",
+    "registrationDate": "29/06/21",
+    "checkInTime": "19:57 PM",
+    "userWhoRegistered": "Admin Root"
+  }
+]
