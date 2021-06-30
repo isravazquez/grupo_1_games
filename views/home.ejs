@@ -4,14 +4,25 @@
         let x = document.getElementById("login-page");
         let y = document.getElementById("main");
         let z = document.getElementById("signup-page");
-        if(x.style.display ==="none" & z.style.display ==="none"){
+        let xx =document.getElementById("formu");
+        let yy = document.getElementById("formus");
+        if(xx.style.animationName=="hide"){
             x.style.display = "flex";
-            y.style.filter ="blur(20px)";
+            xx.style.animationName="show";
+            yy.style.animationName="show";
+            xx.style.top= 64+"px";
+            yy.style.top= 64+"px";
+            // y.style.filter ="blur(20px)";
         }
         else{
-            x.style.display = "none";
-            z.style.display = "none"
-            y.style.filter = "blur(0)";
+              xx.style.animationName = "hide";
+              yy.style.animationName = "hide";
+              xx.style.top = -27+"vh";
+            yy.style.top = -47+"vh";
+            //   x.style.display = "none";
+            //   z.style.display = "none"
+            // y.style.filter = "blur(0)";
+            // xx.classList.add("formulario-hide");
         }
     }
 </script>

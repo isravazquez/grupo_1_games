@@ -1,32 +1,33 @@
 <div class="login" id="login-page">
-    <div class="formulario">
+    <div class="formulario" id="formu">
         <div class="cabecera">
             <div class="logo-cabecera-formulario">
                 <img src="/img/logo_160_x_160.svg" alt="logo" id="logo-principal-cabecera">
             </div>
             <h3 id="NombrePagina">Tableros Games</h3>
             <div class="botones-cabecera-formulario">
-                <button class="random-formulario"></button>
-                <button class="maximizar-formulario"></button>
-                <button class="cerrar-formulario" onclick="document.getElementById('login-page').style.display='none';document.getElementById('main').style.filter='none'"></button>
+                <!-- <button class="random-formulario"></button>
+                <button class="maximizar-formulario"></button> -->
+                <button class="cerrar-formulario" onclick="document.getElementById('login-page').style.display='none';document.getElementById('formulario').classList.add('formuario-hide')"></button>
             </div>
         </div>
         <div class="cuerpo-formulario">
             <form action="" method="get" classs="cuerpo-formulario">
             <input type="text" placeholder="Email or mobile number" class="user-profile-input" name="user-profile" required>
             <input type="password" placeholder=" Password" class="password-input" name="password" required>
-            <button class="login-submit">Log in</button>
-            <input type=button class="signup-redirection" onClick="showSingup()"value='Sign Up'>
-            <!-- <button class="signup-redirection">Sign Up</button> -->
+            <div class="botones-formularios">
+                <button class="login-submit">Log in</button>
+                <input type=button class="signup-redirection" onClick="showSingup()"value='Sign Up'>
+            </div>
         </form>
         <div class="remember-form">
             <input type="checkbox" checked="checked" name="remember">
             Remember me
         </div>
         </div>
-        <div class="pie-formulario">
+        <div class="pie-formulario" id="pie-formulario">
             <div class="remember-footer">
-            <input type="checkbox" checked="checked" name="remember" >
+            <input type="checkbox" checked="checked" name="remember" id="remember" >
             Remember me
         </div>
             <button class="password-olvidada">Forgot password</button>
@@ -39,4 +40,7 @@
             x.style.display= "none";
             y.style.display="flex"
         }
+        const miniFooterLogin = document.getElementsByClassName("pie-formulario");
+        const password_olvidada = document.getElementsByClassName("password-olvidada");
+        const remember = document.getElementById("remember");
     </script>
