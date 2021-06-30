@@ -56,6 +56,14 @@ body{
     font-size: 3vw;
 }
 
+#botonCrear{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+
 @media (min-width:200px){
     
     #producto{

@@ -5,8 +5,14 @@
     <%- include('partials/header') %> 
     <%- include('partials/modal') %>
     <main id="areaPrincipal">
+      
       <section id="vistaListaProductos">
         <h1>Lista de productos</h1>
+        <div id="botonCrear">
+          <a type="submit" href="/products/createProduct" class="botonPrimario">
+            <i class="fas fa-pen"></i>
+          </a>
+        </div>
           <% for(let i= 0; i< products.length ; i++){%> 
             <% if(i % 2 == 0 ){ %>
             <div id="producto" class="colorTenue">
@@ -43,9 +49,6 @@
                 <div class="botonera">
                   <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonPrimario">
                     Actualizar
-                  </a>
-                  <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonSecundario">
-                    Eliminar
                   </a>
                 </div>
             </div>
@@ -84,9 +87,6 @@
                 <div class="botonera">
                   <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonPrimario">
                     Actualizar
-                  </a>
-                  <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonSecundario">
-                    Eliminar
                   </a>
                 </div>
             </div>
