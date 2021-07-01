@@ -6,8 +6,6 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 100vh;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1em;
   position: absolute;
@@ -59,8 +57,24 @@ body {
     top: -25vh;
   }
 }
+@keyframes trans-signup-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes trans-signup-out {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
 .formulario-signup {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 25vw;
   height: 45vh;
@@ -138,8 +152,8 @@ form {
 }
 .user-profile-input,
 .password-input,
-.login-submit-form,
-.signup-redirection {
+.login-redirection,
+.signup-button {
   border-radius: 25px;
   width: 80%;
   margin: 10px;
@@ -148,7 +162,7 @@ form {
   text-align: center;
 }
 
-.login-submit-form {
+.login-redirection {
   background-color: #0071e3;
   color: whitesmoke;
   width: 50%;
@@ -162,14 +176,14 @@ form {
 .login-submit-form:hover {
   background-color: #0d77e0;
 }
-.signup-redirection {
+.signup-button {
   background-color: #0071e3;
   color: whitesmoke;
   border: none;
   width: 50%;
   max-width: 80px;
 }
-.signup-redirection:hover {
+.signup-button:hover {
   background-color: #0d77e0;
 }
 .user-profile-input {
@@ -259,8 +273,8 @@ form {
     border-radius: 0px;
     border: none;
     overflow: visible;
-    position: absolute;
-    top: 0;
-    left: 0;
+    top: 0%;
+    left: 0%;
+    visibility: hidden;
   }
 }
