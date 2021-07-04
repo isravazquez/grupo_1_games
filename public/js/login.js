@@ -1,6 +1,6 @@
 let formLogin = document.getElementById("formu");
 let formSignup = document.getElementById("formus");
-let profileButton = document.getElementById("boton-login");
+let profileButton = document.querySelector(".boton-login");
 let buttonSignUp = document.getElementsByClassName("signup-redirection")[0];
 let buttonLogin = document.getElementsByClassName("login-redirection")[0];
 let buttonPasswordOlvidada =
@@ -32,6 +32,7 @@ profileButton.addEventListener("click", () => {
   } else {
     if (
       (formLogin.style.display == "" ||
+        formLogin.style.display == "none" ||
         formLogin.style.animationName == "hide" ||
         formLogin.style.visibility == "hidden") &&
       (formSignup.style.display == "none" || formSignup.style.display == "")
