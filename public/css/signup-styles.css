@@ -2,27 +2,27 @@ body {
   margin: 0;
 }
 
-.contenedor {
+.signup {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to right top, blue, lightblue);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1em;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .cabecera {
   position: relative;
   display: flex;
-  height: 5%;
+  height: 40px;
   width: 100%;
   background-color: #333;
   color: #888;
   background-size: cover;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
   overflow: hidden;
   align-items: center;
 }
@@ -34,35 +34,71 @@ body {
   position: absolute;
   right: 35%;
   font-size: 0.8em;
+  color: white;
 }
 .logo-cabecera-formulario {
   position: absolute;
   left: 5%;
+  height: 100%;
 }
-.formulario {
-  display: flex;
+@keyframes show {
+  from {
+    top: -25vh;
+  }
+  to {
+    top: 64px;
+  }
+}
+@keyframes hide {
+  from {
+    top: 64px;
+  }
+  to {
+    top: -25vh;
+  }
+}
+@keyframes trans-signup-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes trans-signup-out {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+.formulario-signup {
+  display: none;
   flex-direction: column;
-  width: 35vw;
-  height: 73vh;
+  width: 25vw;
+  height: 45vh;
   background-color: white;
   border-radius: 30px;
   border: none;
   overflow: hidden;
   box-shadow: 0 5px 15px #888;
+  position: fixed;
+  top: 64px;
+  left: 73%;
+  animation-duration: 1s;
 }
 
 .cerrar-formulario {
-  background-color: #ff3b30;
-  width: 20px;
-  height: 20px;
+  background: rgba(255, 59, 48, 0.8);
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   border-color: transparent;
+  align-content: center;
 }
 .cerrar-formulario:hover {
   background-color: #ff453a;
-}
-.cerrar-formulario:active + .contenedor {
-  display: none;
 }
 .maximizar-formulario {
   background-color: #ffcc00;
@@ -102,11 +138,22 @@ form {
   justify-content: center;
   border: none;
   position: relative;
+  z-index: 2;
+}
+.cuerpo-formulario2 {
+  position: relative;
+  top: -17%;
+}
+.botones-formularios {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
 }
 .user-profile-input,
 .password-input,
-.login-submit-form,
-.signup-redirection {
+.login-redirection,
+.signup-button {
   border-radius: 25px;
   width: 80%;
   margin: 10px;
@@ -115,13 +162,13 @@ form {
   text-align: center;
 }
 
-.login-submit-form {
+.login-redirection {
   background-color: #0071e3;
   color: whitesmoke;
+  width: 50%;
   margin-bottom: 10px;
   border: none;
-  position: absolute;
-  top: 90%;
+  max-width: 80px;
 }
 .login-submit-footer {
   display: none;
@@ -129,12 +176,14 @@ form {
 .login-submit-form:hover {
   background-color: #0d77e0;
 }
-.signup-redirection {
+.signup-button {
   background-color: #0071e3;
   color: whitesmoke;
   border: none;
+  width: 50%;
+  max-width: 80px;
 }
-.signup-redirection:hover {
+.signup-button:hover {
   background-color: #0d77e0;
 }
 .user-profile-input {
@@ -145,18 +194,13 @@ form {
 }
 
 .pie-formulario {
-  display: flex;
   background-color: #444;
   color: #888;
-  height: 5%;
+  height: 40px;
   width: 100%;
   background-size: cover;
-  border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 50px;
   overflow: hidden;
-  align-items: center;
-  justify-content: space-evenly;
-  opacity: 100%;
+  border: 1px solid #444;
 }
 .password-olvidada {
   border-radius: 20px;
@@ -164,14 +208,14 @@ form {
   color: #0071e3;
   border: none;
   text-decoration: underline;
+  font-size: 1em;
 }
 .password-olvidada:hover {
   background-color: rgb(109, 109, 109);
 }
 
 @media only screen and (max-width: 600px) {
-  .logo-cabecera-formulario,
-  .login-submit-form {
+  .logo-cabecera-formulario {
     display: none;
   }
   .login-submit-footer {
@@ -189,28 +233,15 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .user-profile-input,
-  .login-submit,
-  .signup-redirection {
-    border-radius: 25px;
-    width: 80%;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid rgb(210, 210, 215);
-    box-sizing: border-box;
-    font-size: 0.8em;
+    border-radius: 0;
   }
   .login-submit {
     display: flex;
-    box-sizing: border-box;
     background-color: #0071e3;
     color: whitesmoke;
     margin-bottom: 10px;
     border: none;
-    width: auto;
-    padding: 0 10%;
+    width: 128px;
   }
   .cabecera {
     position: relative;
@@ -220,8 +251,8 @@ form {
     background-color: #333;
     color: #888;
     background-size: cover;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
     overflow: hidden;
     align-items: center;
     justify-content: space-evenly;
@@ -229,19 +260,21 @@ form {
   .botones-cabecera-formulario {
     position: absolute;
     right: 2.5%;
-    display: flex;
+    display: none;
     width: 30%;
     justify-content: space-around;
   }
-  .formulario {
+  .formulario-signup {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 32px);
     background-color: white;
     border-radius: 0px;
     border: none;
     overflow: visible;
-    box-shadow: 0 5px 15px #888;
+    top: 32px;
+    left: 0%;
+    visibility: hidden;
   }
 }

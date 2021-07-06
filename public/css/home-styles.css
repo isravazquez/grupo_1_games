@@ -1,12 +1,24 @@
 * {
   box-sizing: border-box;
   font-family: "Montserrat";
-  }
-  
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
 body {
   background-color: #f2f2f2;
   margin: 0;
   padding: 0;
+  overflow: overlay;
 }
 
 A:link {
@@ -22,9 +34,9 @@ A:visited {
   text-decoration: none;
 }
 
-  /* Comienza Header */
+/* Comienza Header */
 
-.header {
+header {
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
@@ -33,12 +45,17 @@ A:visited {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
+}
+
+.contenido-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
-  z-index: 100;
-  }
+  height: 48px;
+  width: 100%;
+}
 
 .nav-bar {
   display: none;
@@ -49,7 +66,7 @@ A:visited {
   color: #ffffff;
   display: inline-block;
   padding: 5px;
-  font-size: 17px;
+  font-size: 14px;
 }
 
 .icono-header {
@@ -64,12 +81,19 @@ A:visited {
   width: 32px;
 }
 
+#boton-login {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
 /* Termina Header */
 
-.main{
+.main {
   width: 100%;
   position: relative;
-  top: 56px;
+  top: 32px;
   padding: 0;
   margin: 0;
 }
@@ -79,7 +103,8 @@ A:visited {
   width: 100%;
 }
 
-.seccion-banner ul, .seccion-banner ul li {
+.seccion-banner ul,
+.seccion-banner ul li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -103,7 +128,7 @@ ul.slider li {
   margin: 0;
 }
 
-#img-banner-1{
+#img-banner-1 {
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -117,12 +142,12 @@ ul.slider li {
   color: #f2f2f2d5;
 }
 
-ul.slider li:first-child{
+ul.slider li:first-child {
   opacity: 1;
 }
 
 ul.slider li:target {
-  opacity: 1
+  opacity: 1;
 }
 
 .menu-slider {
@@ -151,7 +176,7 @@ ul.slider li:target {
   margin: 0 8px;
 }
 
-.seccion-maquinita{
+.seccion-maquinita {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
@@ -163,7 +188,7 @@ ul.slider li:target {
   margin: 0;
 }
 
-.img-maquinita{
+.img-maquinita {
   object-fit: contain;
   width: 100%;
   background: linear-gradient(
@@ -175,7 +200,7 @@ ul.slider li:target {
 }
 
 .boton-agregar {
-  background-color: #0071E3;
+  background-color: #0071e3;
   color: #f3f3f3;
   display: block;
   max-width: 50px;
@@ -191,6 +216,7 @@ ul.slider li:target {
 .descripcion-y-juegos-maq {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 
 .descripcion {
@@ -233,7 +259,7 @@ ul.slider li:target {
 .catalogo-juegos-maq img {
   height: 96px;
   width: 96px;
-  object-fit: cover; 
+  object-fit: cover;
   margin: 8px;
 }
 
@@ -255,7 +281,8 @@ ul.slider li:target {
   background: linear-gradient(
     70deg,
     rgb(241, 241, 241),
-    rgba(190, 190, 190, 0.795));
+    rgba(190, 190, 190, 0.795)
+  );
   display: block;
   object-fit: contain;
   margin: 0;
@@ -277,18 +304,12 @@ ul.slider li:target {
 #descripcion-tab-2 {
   text-align: right;
   padding: 8px;
-  background: linear-gradient(to right,
-  rgb(65, 65, 65),
-  rgb(12, 12, 12));
+  background: linear-gradient(to right, rgb(65, 65, 65), rgb(12, 12, 12));
   margin: 0;
 }
 
 .catalogo-juegos-tab {
-  background: linear-gradient(
-    to bottom,
-    #3e7cce,
-    #00439c
-  );
+  background: linear-gradient(to bottom, #3e7cce, #00439c);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -323,7 +344,8 @@ ul.slider li:target {
   background: linear-gradient(
     70deg,
     rgb(241, 241, 241),
-    rgba(190, 190, 190, 0.795));
+    rgba(190, 190, 190, 0.795)
+  );
   display: block;
   object-fit: contain;
   padding: 24px;
@@ -332,19 +354,13 @@ ul.slider li:target {
 #descripcion-futbolito-1 {
   text-align: center;
   padding: 8px;
-  background: linear-gradient(to right,
-   rgb(12, 12, 12),
-    rgb(65, 65, 65));
+  background: linear-gradient(to right, rgb(12, 12, 12), rgb(65, 65, 65));
   margin: 0;
 }
 
 .equipos {
   width: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgb(46, 46, 46),
-    rgb(14, 13, 13)
-  );
+  background: linear-gradient(to bottom, rgb(46, 46, 46), rgb(14, 13, 13));
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -375,7 +391,7 @@ ul.slider li:target {
 }
 
 .vs .boton-agregar-futbolito {
-  background-color: #0071E3;
+  background-color: #0071e3;
   color: #f3f3f3;
   display: block;
   max-width: 50px;
@@ -384,7 +400,6 @@ ul.slider li:target {
   text-align: center;
   font-size: 16px;
 }
-
 
 /* Comienza Footer */
 
@@ -440,26 +455,24 @@ footer {
   color: #ffffff;
 }
 
-
-@media (min-width: 481px){
-  .catalogo-juegos-maq img{
-    width: 112px;
-    height: 112px;
+@media (min-width: 481px) {
+  .catalogo-juegos-maq img {
+    width: 12vw;
+    height: 12vw;
   }
 
-  .catalogo-juegos-tab img{
+  .catalogo-juegos-tab img {
     width: 104px;
     height: 104px;
   }
 
-  .img-equipo{
+  .img-equipo {
     width: 80px;
     height: 80px;
   }
 }
 
-@media (min-width: 720px){
-
+@media (min-width: 720px) {
   #boton-hamburguesa {
     display: none;
   }
@@ -468,12 +481,12 @@ footer {
     order: -1;
   }
 
-  .nav-bar{
+  .nav-bar {
     display: flex;
-    margin: 24px;
+    justify-content: space-between;
   }
 
-  .nav-bar a{
+  .nav-bar a {
     margin: 0 4px;
   }
 
@@ -481,10 +494,6 @@ footer {
   #boton-carrito,
   #boton-login {
     margin: 0 4px;
-  }
-
-  #boton-login{
-    margin-right: 16px;
   }
 
   /* Termina Header */
@@ -507,61 +516,81 @@ footer {
     width: 40%;
   }
 
-  .boton-agregar{
+  .boton-agregar {
     bottom: 32px;
     right: 32px;
     transform: scale(1.5);
   }
 
-  #descripcion-tab-1{
+  #descripcion-tab-1 {
     padding-left: 10%;
   }
 
-  #descripcion-tab-2{
+  #descripcion-tab-2 {
     padding-right: 10%;
   }
 
   .seccion-futbolito {
     flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .descripcion-futbolito {
+    align-self: flex-start;
+    order: -1;
+    width: 100%;
   }
 
   .equipos {
     order: -1;
     width: 35%;
-
   }
 
   .contenedor-img-futbolito {
     width: 65%;
-
   }
 
-    /* Comienza Footer */
+  /* Comienza Footer */
 
-  
-    footer {
-      height: 88px;
-      padding-top: 16px;
-    }
-    .lista-footer {
-      flex-direction: row;
-      justify-content: space-around;
-    }
-  
-    .lista-footer a {
-      margin: 0 16px;
-      font-size: 0.9em;
-    }
-  
-    .redes-sociales {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-    }
-  
-    .redes-sociales i {
-      margin: 0 16px; 
-      font-size: 1.3em;
-    }
+  footer {
+    height: 88px;
+    padding-top: 16px;
+  }
+  .lista-footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
+  .lista-footer a {
+    margin: 0 16px;
+    font-size: 0.9em;
+  }
+
+  .redes-sociales {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .redes-sociales i {
+    margin: 0 16px;
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 1100px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .contenido-header {
+    width: 1000px;
+  }
+
+  .nav-bar {
+    width: 700px;
+  }
+
+  /* Termina header */
 }

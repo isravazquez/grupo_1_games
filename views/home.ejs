@@ -1,0 +1,111 @@
+<%- include("./partials/head") %>
+<body>
+    <%- include('partials/header2') %>
+    <script src="/js/header.js"></script>
+    <%- include('partials/modal') %>
+    <div>
+        <%- include("./login") %>
+    </div>
+    <div>
+        <%- include("./signup")%>
+    </div>
+    <script src="/js/login.js"></script>
+    <main class="main" id="main">
+        <section class="seccion-banner">
+            <ul class="slider">
+                <li id="slide-1">
+                    <h2 id="letrero-banner-1">Desde $3,490.00 MXN</h2>
+                    <img src="/img/banner.png" alt="banner" id="img-banner-1">
+                </li>
+                <li id="slide-2">
+                    <img src="/img/banner.png" alt="banner" id="img-banner-1">
+                </li>
+                <li id="slide-3">
+                    <img src="/img/banner.png" alt="banner" id="img-banner-1">
+                </li>
+            </ul>
+            <ul class="menu-slider">
+                <li>
+                    <a href="#slide-1"></a>
+                </li>
+                <li>
+                    <a href="#slide-2"></a>
+                </li>
+                <li>
+                    <a href="#slide-3"></a>
+                </li>
+            </ul>
+        </section>
+        <section class="seccion-maquinita">
+            <div class="contenedor-img-maquinita">
+                <img src="/img/maquinita-derecha.png" alt="img-maquinita" class="img-maquinita">
+                <a href="#agregar-maquinita" class="boton-agregar"><i class="fas fa-cart-plus"></i></a>
+            </div>
+            <div class="descripcion-y-juegos-maq">
+                <div class="descripcion">
+                    <h3 id="descripcion-maq-1">Maquinita de Mario Bros</h3>
+                    <h3 id="descripcion-maq-2">Incluye más de 6000 juegos de múltiples sistemas</h3>
+                    <h3 id="descripcion-maq-3">Y 60 titulos de XB360</h3>
+                </div>
+                <div class="catalogo-juegos-maq">
+                    <img src="/img/gtav.jpg" alt="gtav">
+                    <img src="/img/halo4.jpg" alt="halo4">
+                    <img src="/img/minecraft.jpg" alt="minecraft">
+                    <img src="/img/fifa19.jpg" alt="fifa19">
+                </div>
+        </section>
+        <section class="seccion-tablero">
+            <div class="contenedor-img-tablero">
+                <img src="/img/tablero.png" alt="img-tablero" class="img-tablero">
+                <a href="#agregar-tablero" class="boton-agregar"><i class="fas fa-cart-plus"></i></a>
+            </div>
+            <div class="descripcion-y-juegos-tab">
+                <div class="descripcion">
+                    <h3 id="descripcion-tab-1">Tablero Marvel vs Capcom</h3>
+                    <h3 id="descripcion-tab-2">Incluye más de 5000 juegos de múltiples sistemas</h3>
+                </div>
+                <div class="catalogo-juegos-tab">
+                    <img src="/img/kof.png" alt="kof">
+                    <img src="/img/street-fighter.png" alt="street-fighter">
+                    <img src="/img/metal-slug.jpg" alt="metal-slug">
+                    <img src="/img/mario-bros.jpg" alt="mario-bros">
+                    <img src="/img/donkey-kong.png" alt="donkey-kong">
+                    <img src="/img/pac-man.jpg" alt="pac-man">
+                    <img src="/img/bomberman.png" alt="bomberman">
+                    <img src="/img/cadillacs.jpg" alt="cadillacs">
+                </div>
+            </div>
+        </section>
+        <section class="seccion-futbolito">
+            <div class="contenedor-img-futbolito">
+                <img src="/img/futbolito.png" alt="img-futbolito" class="img-futbolito">
+            </div>
+            <div class="descripcion descripcion-futbolito">
+                <h3 id="descripcion-futbolito-1">Futbolito</h3>
+            </div>
+            <div class="equipos">
+                <div class="vs">
+                    <img src="/img/chivas.png" alt="chivas" class="img-equipo">
+                    <h3>VS</h3>
+                    <img src="/img/america.png" alt="america" class="img-equipo">
+                    <a href="#agregar-futbolito-chivas-america" class="boton-agregar-futbolito"><i class="fas fa-cart-plus"></i></a>
+                </div>
+                <div class="vs">
+                    <img src="/img/barcelona.png" alt="barcelona" class="img-equipo">
+                    <h3>VS</h3>
+                    <img src="/img/real-madrid.png" alt="real-madrid" class="img-equipo">
+                    <a href="#agregar-futbolito-barca-madrid" class="boton-agregar-futbolito"><i class="fas fa-cart-plus"></i></a>
+                </div>
+                <div class="vs">
+                    <img src="/img/mexico.png" alt="mexico" class="img-equipo">
+                    <h3>VS</h3>
+                    <img src="/img/brasil.png" alt="brasil" class="img-equipo">
+                    <a href="#agregar-futbolito-mexico-brasil" class="boton-agregar-futbolito"><i class="fas fa-cart-plus"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
