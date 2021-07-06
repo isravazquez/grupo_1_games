@@ -1,3 +1,57 @@
+Sprint 4
+
+2 de Julio 2021
+
+Qué hizo ayer.
+
+Kevs: Mejoré header
+Edi: Hice las vistas del detalle de los productos
+Isra: Seleccione los campos del prudct JSON
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+Qué va a hacer hoy.
+
+Kevs: Pulir el login y signup y pulir header
+Edi: Empezar con las funcionalidades CRUD (List, Create)
+Isra: Hacer archivo prduct JSON
+
+7 de Julio 2021
+
+Qué hizo ayer.
+
+Kevs: 
+Edi: Hice las vistas del detalle de los productos
+Isra: Seleccione los campos del prudct JSON
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+Qué va a hacer hoy.
+
+Kevs: Pulir el login y signup y pulir header
+Edi: Empezar con las funcionalidades CRUD (List, Create)
+Isra: Hacer archivo prduct JSON
+
+
+
+
+
+
+
+
+
+
+
+Sprint 3
+
 22 de Junio 2021
 
 Qué hizo ayer.
