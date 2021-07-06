@@ -1,0 +1,102 @@
+.header-container {
+  width: 100vw;
+  height: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(25em, 25%), 1fr));
+  grid-auto-rows: 32px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.logo {
+  height: 32px;
+  justify-self: center;
+}
+.nav-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-bar a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0;
+  margin: 12px;
+  font-size: 0.875em;
+  text-align: center;
+}
+.nav-bar button {
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+.nav-bar-drop {
+  display: grid;
+  visibility: hidden;
+  width: 100vw;
+  grid-template-columns: repeat(auto-fit, minmax(min(6em, 100%), 1fr));
+  position: absolute;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.icono-header {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-self: self-end;
+  align-items: center;
+  padding-right: 1vw;
+}
+.icono-header button {
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.icono-header form {
+  padding: 4px 0;
+}
+#search-bar {
+  visibility: visible;
+  width: 0;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+  transform-origin: left center;
+  text-align: center;
+  border: none;
+  padding: 0;
+}
+.show {
+  /* display: grid; */
+  visibility: visible;
+  top: 32px;
+}
+@keyframes slide-in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40vw;
+  }
+}
+@keyframes slide-out {
+  from {
+    width: 40vw;
+  }
+  to {
+    width: 0;
+  }
+}

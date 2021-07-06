@@ -1,33 +1,7 @@
 <%- include("./partials/head") %>
-<script>
-    function desplegar(){
-        let x = document.getElementById("login-page");
-        let y = document.getElementById("main");
-        let z = document.getElementById("signup-page");
-        let xx =document.getElementById("formu");
-        let yy = document.getElementById("formus");
-        if(xx.style.animationName=="hide"){
-            x.style.display = "flex";
-            xx.style.animationName="show";
-            yy.style.animationName="show";
-            xx.style.top= 64+"px";
-            yy.style.top= 64+"px";
-            // y.style.filter ="blur(20px)";
-        }
-        else{
-              xx.style.animationName = "hide";
-              yy.style.animationName = "hide";
-              xx.style.top = -27+"vh";
-            yy.style.top = -47+"vh";
-            //   x.style.display = "none";
-            //   z.style.display = "none"
-            // y.style.filter = "blur(0)";
-            // xx.classList.add("formulario-hide");
-        }
-    }
-</script>
 <body>
-    <%- include('partials/header') %>
+    <%- include('partials/header2') %>
+    <script src="/js/header.js"></script>
     <%- include('partials/modal') %>
     <div>
         <%- include("./login") %>
@@ -35,6 +9,7 @@
     <div>
         <%- include("./signup")%>
     </div>
+    <script src="/js/login.js"></script>
     <main class="main" id="main">
         <section class="seccion-banner">
             <ul class="slider">
@@ -130,20 +105,7 @@
             </div>
         </section>
     </main>
-    <script>
-        let x = document.getElementById("login-page");
-        let y = document.getElementById("main");
-        let z = document.getElementById("signup-page");
-        x.style.display = "none";
-        y.style.filter = "none";
-        z.style.display= "none"
-        function showLogin(){
-            let x = document.getElementById("login-page");
-            let y = document.getElementById("signup-page");
-            x.style.display= "flex";
-            y.style.display="none"
-        }
-    </script>
+
     <%- include('partials/footer') %>
 </body>
 </html>

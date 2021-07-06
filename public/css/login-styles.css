@@ -2,10 +2,8 @@ body {
   margin: 0;
 }
 .login {
-  display: none;
+  display: flex;
   position: absolute;
-  width: 100%;
-  height: 100vh;
   z-index: 2;
   overflow-x: hidden;
 }
@@ -71,7 +69,24 @@ body {
     top: -25vh;
   }
 }
+@keyframes trans-login-out {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+@keyframes trans-login-in {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
 .formulario {
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   width: 25vw;
@@ -205,6 +220,9 @@ input[type="checkbox"]:checked {
   padding-right: 20px;
   white-space: nowrap;
 }
+.remember-footer {
+  font-size: 1em;
+}
 .password-olvidada {
   border-radius: 20px;
   background-color: transparent;
@@ -250,22 +268,22 @@ input[type="checkbox"]:checked {
     justify-content: space-evenly;
   }
   .botones-cabecera-formulario {
-    display: flex;
+    display: none;
     justify-content: left;
   }
   .formulario {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 32px);
     background-color: white;
     border-radius: 0px;
     border: 0;
     overflow: visible;
     box-shadow: 0 5px 15px #888;
-    position: absolute;
-    top: 0%;
+    top: 32px;
     left: 0%;
+    visibility: hidden;
   }
   .pie-formulario {
     border-radius: 0;

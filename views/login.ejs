@@ -8,7 +8,7 @@
             <div class="botones-cabecera-formulario">
                 <!-- <button class="random-formulario"></button>
                 <button class="maximizar-formulario"></button> -->
-                <button class="cerrar-formulario" onclick="document.getElementById('login-page').style.display='none';document.getElementById('formulario').classList.add('formuario-hide')"></button>
+                <button class="cerrar-formulario" onclick="document.getElementById('formu').style.display='none',document.getElementById('formus').style.display='none'"></button>
             </div>
         </div>
         <div class="cuerpo-formulario">
@@ -17,7 +17,7 @@
             <input type="password" placeholder=" Password" class="password-input" name="password" required>
             <div class="botones-formularios">
                 <button class="login-submit">Log in</button>
-                <input type=button class="signup-redirection" onClick="showSingup()"value='Sign Up'>
+                <input type=button class="signup-redirection" value='Sign Up'>
             </div>
         </form>
         <div class="remember-form">
@@ -30,17 +30,6 @@
             <input type="checkbox" checked="checked" name="remember" id="remember" >
             Remember me
         </div>
-            <button class="password-olvidada">Forgot password</button>
+            <button class="password-olvidada" id="password-olvidada">Forgot password</button>
         </div>
     </div>
-    <script>
-        function showSingup(){
-            let x = document.getElementById("login-page");
-            let y = document.getElementById("signup-page");
-            x.style.display= "none";
-            y.style.display="flex"
-        }
-        const miniFooterLogin = document.getElementsByClassName("pie-formulario");
-        const password_olvidada = document.getElementsByClassName("password-olvidada");
-        const remember = document.getElementById("remember");
-    </script>
