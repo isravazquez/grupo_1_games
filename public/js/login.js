@@ -21,11 +21,15 @@ profileButton.addEventListener("click", () => {
   if (window.innerWidth < 650) {
     formLogin.style.removeProperty("aninamation-name");
     if (
-      formLogin.style.visibility == "hidden" ||
-      formLogin.style.visibility == ""
+      (formLogin.style.visibility == "hidden" ||
+        formLogin.style.visibility == "") &&
+      (formSignup.style.visibility == "hidden" ||
+        formSignup.style.visibility == "")
     ) {
-      formLogin.style.top = 0 + "px";
+      formLogin.style.top = 32 + "px";
       formLogin.style.visibility = "visible";
+    } else if (formSignup.style.visibility == "visible") {
+      formSignup.style.visibility = "hidden";
     } else {
       formLogin.style.visibility = "hidden";
     }
@@ -35,7 +39,8 @@ profileButton.addEventListener("click", () => {
         formLogin.style.display == "none" ||
         formLogin.style.animationName == "hide" ||
         formLogin.style.visibility == "hidden") &&
-      (formSignup.style.display == "none" || formSignup.style.display == "")
+      (formSignup.style.visibility == "hidden" ||
+        formSignup.style.display == "")
     ) {
       formLogin.style.display = "flex";
       formLogin.style.animationName = "show";
@@ -44,6 +49,8 @@ profileButton.addEventListener("click", () => {
     } else {
       formLogin.style.animationName = "hide";
       formLogin.style.top = -27 + "vh";
+      formLogin.style.visibility = "hidden";
+      formSignup.style.visibility = "hidden";
     }
   }
 });
@@ -60,6 +67,7 @@ buttonSignUp.addEventListener("click", () => {
     if (formLogin.style.display == "flex") {
       formLogin.style.display = "none";
       formSignup.style.display = "flex";
+      formSignup.style.visibility = "visible";
       formLogin.style.animation = "trans-login-out 0.5s";
       formSignup.style.animation = "trans-signup-in 0.5s";
     }

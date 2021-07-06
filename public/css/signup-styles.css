@@ -260,7 +260,7 @@ form {
   .botones-cabecera-formulario {
     position: absolute;
     right: 2.5%;
-    display: flex;
+    display: none;
     width: 30%;
     justify-content: space-around;
   }
@@ -268,12 +268,12 @@ form {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 32px);
     background-color: white;
     border-radius: 0px;
     border: none;
     overflow: visible;
-    top: 0%;
+    top: 32px;
     left: 0%;
     visibility: hidden;
   }

@@ -268,20 +268,20 @@ input[type="checkbox"]:checked {
     justify-content: space-evenly;
   }
   .botones-cabecera-formulario {
-    display: flex;
+    display: none;
     justify-content: left;
   }
   .formulario {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 32px);
     background-color: white;
     border-radius: 0px;
     border: 0;
     overflow: visible;
     box-shadow: 0 5px 15px #888;
-    top: 0%;
+    top: 32px;
     left: 0%;
     visibility: hidden;
   }
