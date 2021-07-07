@@ -1,6 +1,9 @@
 body{
     font-family: 'KoHo', sans-serif;
+   
 }
+
+
 
 #vistaListaProductos{
     overflow-x: scroll;
@@ -20,6 +23,11 @@ body{
     /* border: solid 1px red; */
 }
 
+.miniaturaImage{
+    width: 50px;
+    margin: 0 10px;
+}
+
 .colorTenue{
     background-color:#F2F2F2;
 }
@@ -37,19 +45,11 @@ body{
     
 }
 
-.botonSecundario{
-    background-color: #EF0000;
-    color:#FFFFFF;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-}
-
 .info{
     width: 75%;
 }
 .botonera{
-    width: 25%;
+    width: 10%;
 }
 
 .estiloParrafo{
@@ -64,6 +64,23 @@ body{
 }
 
 
+.botonSecundario{
+
+    background-color: #EF0000;
+    color:#FFFFFF;
+    border-radius: 5px;
+    padding: 12px;
+    text-align: center;
+}
+
+.botonera > a{
+    text-decoration: none;
+}
+
+#linkDetail{
+    color: blue;
+}
+
 @media (min-width:200px){
     
     #producto{
@@ -73,11 +90,24 @@ body{
     .botonera{
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
+        /* border: solid red 1px; */
+        height: 100px;
+        width: 150px;
+    
     }
 }
 
+
 @media (min-width: 790px){
+
+    #diveliminar{
+		display:flex;
+		justify-content: space-between;
+		margin-bottom: 10px;
+	}
+    
     .estiloParrafo{
         font-size: 2vw;
     }
