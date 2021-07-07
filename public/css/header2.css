@@ -42,7 +42,7 @@
   display: grid;
   visibility: hidden;
   width: 100vw;
-  grid-template-columns: repeat(auto-fit, minmax(min(6em, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(9em, 100%), 1fr));
   position: absolute;
   top: 0px;
   background: rgba(0, 0, 0, 0.5);
@@ -82,7 +82,11 @@
 .show {
   /* display: grid; */
   visibility: visible;
-  top: 32px;
+  top: -2px;
+  left: 0px;
+}
+.hidelogo {
+  visibility: hidden;
 }
 @keyframes slide-in {
   from {

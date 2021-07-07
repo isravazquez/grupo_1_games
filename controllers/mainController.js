@@ -9,7 +9,10 @@ const mainController = {
     res.render("shoppingCart");
   },
   login: (req, res) => {
-    res.render("login");
+    res.render("login2");
+  },
+  signup: (req, res) => {
+    res.render("signup2");
   },
 };
 

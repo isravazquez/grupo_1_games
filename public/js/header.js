@@ -1,8 +1,10 @@
-let searchIcon = document.getElementsByClassName("buscador-icon")[0];
-let searchBar = document.getElementById("search-bar");
+const searchIcon = document.getElementsByClassName("buscador-icon")[0];
+const searchBar = document.getElementById("search-bar");
 var searchBarStatus = searchBar.style.width;
-let navBarMenu = document.querySelector(".dropButton");
-let dropMenu = document.querySelector(".nav-bar-drop");
+const navBarMenu = document.querySelector(".dropButton");
+const dropMenu = document.querySelector(".nav-bar-drop");
+const logo = document.querySelector(".logo");
+const main = document.querySelector("#main");
 searchIcon.addEventListener("click", () => {
   if (searchBarStatus == "0vw" || searchBarStatus == "") {
     searchBarStatus = 40 + "vw";
@@ -17,4 +19,14 @@ searchIcon.addEventListener("click", () => {
 
 navBarMenu.addEventListener("click", () => {
   dropMenu.classList.toggle("show");
+  logo.classList.toggle("hidelogo");
+  navBarMenu.classList.toggle("hidelogo");
+});
+
+main.addEventListener("click", () => {
+  if (dropMenu.classList[1] === "show") {
+    dropMenu.classList.toggle("show");
+    logo.classList.toggle("hidelogo");
+    navBarMenu.classList.toggle("hidelogo");
+  }
 });
