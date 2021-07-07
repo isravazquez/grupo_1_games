@@ -9,41 +9,42 @@
         <!-- area imagenes -->
              <div> <!--para centrar despues en vista grande -->
                 <article id="imagenProducto">
-                    <img src="/img/maquinita-izquierda.png" alt="imagen Principal">
+                    <img src="/img/imagesProducts/<%= product.image ? product.image : 'default-image.png' %>" alt="imagen producto">
                 </article>
                 <article id="carrusel">
-                    <div class=flecha>
+                    <div class="flecha">
                         <img src="/img/chevron_left_black_24dp.svg" alt="" srcset="">
                     </div>
-                    <img src="/img/maquinita-izquierda.png" alt="vista1">
-                    <img src="/img/maquinita-frente.png" alt="vista2">
-                    <img src="/img/maquinita-derecha.png" alt="vista3">
-                    <img src="/img/maquinita-izquierda.png" alt="vista4">
-                    <div class=flecha>
+                    <img src="/img/1.webp" alt="">
+                    <img src="/img/2.webp" alt="">
+                    <img src="/img/3.webp" alt="">
+                    <img src="/img/4.webp" alt="">
+                    <div class="flecha">
                         <img src="/img/chevron_right_black_24dp.svg" alt="" srcset="">
                     </div>
                 </article>
             </div>
-        <!-- area imagenes -->
+
+            <!-- </div> -->
         </section>
         <section id="vistaDescripcion">
         <!-- area descripcion -->
             <article id="descripcionProducto">
                 <strong>
                     <h2>
-                        Pro System Audiotek Tablero Arcade Videojuegos Consola de Videojuegos 3000+ Juegos Joystick Palanca Pandora 5s TV PC Gamer 2 Jugadores Tablero Arcade Multijuegos Pandora Box
+                        <%= product.name %> 
                     </h2>
                 </strong>
                 <h4>
-                    ID referencia: 235566 
+                    ID referencia: <%=  product.id %> 
                 </h4>
                 <div id="grados">
                     <div id="puntaje">
-                        <img src="img/grade_black_24dp.svg" alt="" srcset="">
-                        <img src="img/grade_black_24dp.svg" alt="" srcset="">
-                        <img src="img/grade_black_24dp.svg" alt="" srcset="">
-                        <img src="img/grade_black_24dp.svg" alt="" srcset="">
-                        <img src="img/grade_black_24dp.svg" alt="" srcset="">
+                        <img src="/img/grade_black_24dp.svg" alt="" srcset="">
+                        <img src="/img/grade_black_24dp.svg" alt="" srcset="">
+                        <img src="/img/grade_black_24dp.svg" alt="" srcset="">
+                        <img src="/img/grade_black_24dp.svg" alt="" srcset="">
+                        <img src="/img/grade_black_24dp.svg" alt="" srcset="">
                         <p>(55)</p>
                     </div>
                 </div>
@@ -51,23 +52,36 @@
                     <p>
                         Disponible. 
                     </p>
+                    <h3>
+                        Descripción. 
+                    </h3>
+                    <p>
+                        <%=  product.description %> 
+                    </p>
+                    <h3>
+                        Caracteristicas. 
+                    </h3>
                     <ul>
-                        <li>3400 JUEGOS INCLUIDOS Con el Tablero arcadeodrás disfrutar de los juegos clásicos de todo tipo de género: Plataformas, Peleas, Carreras, Beat em Up, puzzles, etc.</li>
-                        <li>PERFECTA PARA 1 O 2 JUGADORES El tablero aracde está diseñado para 1 o 2 personas, comparte la experiencia de revivir tus juegos favoritos.</li>
-                        <li>ALTA DEFINICIÓN Este tablero arcade incluye salidas VGA, USB y tipo Jack, por lo que se puede conectar a una gran variedad de televisores o monitores.</li>
-                        <li>DIVERSIÓN A DONDE QUIERA QUE VAYAS Este tablero arcade es un modelo portátil,la consola mide 63 cm de largo y 22 cm de ancho, dimensiones perfectas para transportar de manera sencilla.</li>
-                        <li>INCREÍBLE DISEÑO RETRO El tablero arcade cuenta con 2 palancas y 12 botones para realizar distintos movimientos.</li>
+
+                    </ul>
+                        <% 
+                        let caracteristicas = product.features.split(",");
+                        console.log(caracteristicas);
+                        console.log(caracteristicas.length);
+                        for(let i=0 ; i < caracteristicas.length ;i++){%>
+                            <li><%= caracteristicas[i]%>.</li>
+                        <% } %>
                     </ul>
                     <br>
                 </div>
             </article>
             <article id="CostoApagar">
                 <div id="precios">
-                    <h4>US$ 139.99</h4>
-                    <h5>US$199.99</h5>
-                    <h6>-30%</h6>
+                    <h4><%= product.price %>$</h4>
+                    <h5><%= product.discount %>$</h5>
+                    <h6><%= product.discountRate %>%</h6>
                 </div>
-                <p>Stock: 7</p>
+                <p>Stock: <%= product.stock %></p>
                 <p>Cantidad:</p>
                 <div id="cantidad">
                     <div>-</div>
