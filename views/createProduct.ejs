@@ -6,55 +6,68 @@
     <%- include('partials/modal') %>
     <main id="areaPrincipal">
 			<section id="vistaCrearProductos">
-				<h1>Creación de Producto</h1>
+				<h1>Registrar de Producto</h1>
+				
 				<div id="botonVista">
 					<a type="submit" href="/products/listProducts" class="botonPrimario">
 						<i class="fas fa-list-alt"></i>
 					</a>
-				  </div>
+				</div>
 				<div id="contenedorDeFormulario">
-					<form action="/products/createProduct" method="POST">
-						<div>
-							<!-- el valor del cambiante se agregara automaticamente -->
-							<label id="personal" for="userWhoRegistered">Personal que registra:</label>
-							<input type="text" name="userWhoRegistered" readonly value="Admin Root" class="inputWidth styleInput">
-						</div>
-						<div>
-							<input type="number" name="id" placeholder="ID" required>
-						</div>
-						<div>
-							<input type="text" name="name" placeholder="Nombre" required>
-						</div>
-						<div>
-							<input type="text" name="category" placeholder="Categoria" required>
-						</div>
-						<div>
-							<input type="number" name="price" placeholder="Precio" required>
-						</div>
-						<div>
-							<input type="number" name="discountRate" placeholder="Porcentaje de descuento" class="descuento" required>
-						</div>
-						<div>
-							<input type="number" name="stock" placeholder="Existencias" min="1" required>
-						</div>
-						<div>
-							<input type="text" name="features" placeholder="Caracteristicas" min="1" required>
-						</div>
-						<div>
-							<label for="description">Descripción</label>
-						</div>
-						<div>
-							<textarea  name="description" class="desplamiento" required>
-							</textarea>
-						</div>
-						<div>
-							<label for="image">Cargar Imagen</label>
-							<input type="file" name="image" required>
-						</div>
-						<div id="boton">
-							<input type="submit" value="Crear" class="botonPrimario">
-						</div>
-					</form>
+					<!-- <% if( locals.msgsErrors ){ %>
+						<% msgsErrors.forEach( error => { %>
+							<p class="errorDatosE"> <%= error.msg %> </p>
+						<% }); %>
+						
+					<% } else { %>
+
+					<% } %> -->
+						<form action="/products/createProduct" method="POST" enctype="multipart/form-data">
+							<div>
+								<!-- el valor del cambiante se agregara automaticamente -->
+								<label id="personal" for="userWhoRegistered">Personal que registra:</label>
+								<input type="text" name="userWhoRegistered" readonly value="Admin Root" class="inputWidth styleInput">
+							</div>
+							<div>
+								<input type="number" name="id" placeholder="ID" required>
+							</div>
+							<div>
+								<input type="text" name="name" placeholder="Nombre" required>
+							</div>
+							<div>
+								<input type="text" name="category" placeholder="Categoria" required>
+							</div>
+							<div>
+								<input type="number" name="price" placeholder="Precio"  min="1" required>
+							</div>
+							<div>
+								<input type="number" name="discountRate" placeholder="Porcentaje de descuento"   min="1" class="descuento" required>
+							</div>
+							<div>
+								<input type="number" name="stock" placeholder="Existencias" min="1" required>
+							</div>
+							<div>
+								<input type="text" name="features" placeholder="Caracteristicas" required>
+							</div>
+							<div>
+								<label for="description">Descripción</label>
+							</div>
+							<div>
+								<textarea  name="description" class="desplamiento" required>
+								</textarea>
+							</div>
+							<div>
+								<label for="imageProducto">Imagen principal</label>
+								<input type="file" name="imageProducto" > <!---al no requerir y no cargan imagen al mostrar las imgenes de producto madaremos una por defatul -->
+							</div>
+							<!-- <div>
+								<label for="imageSecundariasProducto">Imagenes Secundarias</label>
+								<input type="file" name="imageSecundariasProducto" multiple> 
+							</div> -->
+							<div id="boton">
+								<input type="submit" value="Crear" class="botonPrimario">
+							</div>
+						</form>
 				</div>
 			</section>
 	</main>
