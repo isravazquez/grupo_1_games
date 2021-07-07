@@ -66,8 +66,6 @@
                     </ul>
                         <% 
                         let caracteristicas = product.features.split(",");
-                        console.log(caracteristicas);
-                        console.log(caracteristicas.length);
                         for(let i=0 ; i < caracteristicas.length ;i++){%>
                             <li><%= caracteristicas[i]%>.</li>
                         <% } %>

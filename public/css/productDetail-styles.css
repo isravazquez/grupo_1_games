@@ -31,7 +31,7 @@ img{
 
 /* ------imagenProducto---- */
 #vistaProducto{
-    border: solid 1px black;
+    /* border: solid 1px black; */
     padding: 20px;
     background-color: #FFFFFF;
 }
