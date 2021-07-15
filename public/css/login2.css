@@ -40,7 +40,8 @@
   flex-direction: column;
   height: 100%;
 }
-#loginform * {
+#loginform *,
+#signupform * {
   margin: 10px 0;
 }
 .passwordinput,
@@ -60,7 +61,7 @@
   /* padding: 5px 8px 0 16px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(5em, 25%), 1fr));
-  width: 90%;
+  width: 100%;
 }
 
 .passwordcontainer input {
@@ -68,20 +69,27 @@
   border: none;
   height: 36px;
 }
-#email {
+#email,
+#name {
   background: whitesmoke;
   text-align: center;
   margin: 10px 0;
 }
 #password,
-#password2 {
+#password2,
+#name {
   border: 1px solid #dfe1e5;
   background: whitesmoke;
-  text-align: center;
+  /* text-align: center; */
+  padding-left: 10px;
   width: 80%;
   max-width: 350px;
   height: 44px;
   border-radius: 24px;
+}
+#signupform > #password,
+#password2 {
+  text-align: center;
 }
 #fpassword {
   position: absolute;
@@ -120,4 +128,23 @@ input:focus {
 #SignUp:hover,
 #login:hover {
   font-size: 14px;
+}
+@media screen and (max-width: 426px) {
+  .loginleft {
+    display: none;
+  }
+  .loginform-container {
+    grid-template-columns: 1fr;
+  }
+  #fpassword {
+    display: none;
+  }
+  #password,
+  #password2 {
+    height: 42px;
+    text-align: center;
+  }
+  .passwordcontainer > #password {
+    width: 100%;
+  }
 }
