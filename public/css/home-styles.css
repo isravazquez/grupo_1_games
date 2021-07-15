@@ -36,64 +36,14 @@ A:visited {
 
 /* Comienza Header */
 
-header {
-  width: 100vw;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  height: 48px;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-}
 
-.contenido-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
-  height: 48px;
-  width: 100%;
-}
-
-.nav-bar {
-  display: none;
-}
-
-.nav-bar a {
-  text-decoration: none;
-  color: #ffffff;
-  display: inline-block;
-  padding: 5px;
-  font-size: 14px;
-}
-
-.icono-header {
-  color: #f2f2f2;
-}
-
-#logo-principal {
-  margin: 0 16px;
-}
-
-.logo {
-  width: 32px;
-}
-
-#boton-login {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1em;
-}
 
 /* Termina Header */
 
 .main {
   width: 100%;
   position: relative;
-  top: 32px;
+  top: 50px;
   padding: 0;
   margin: 0;
 }
