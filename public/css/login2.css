@@ -8,8 +8,8 @@
 .loginform-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 80vw;
-  height: 80vh;
+  width: 80%;
+  height: 80%;
   background: blue;
   position: absolute;
   top: 50%;
@@ -35,16 +35,19 @@
 .loginright {
   background: whitesmoke;
 }
-#loginform {
+#loginform,
+#signupform {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-#loginform * {
+#loginform *,
+#signupform * {
   margin: 10px 0;
 }
 .passwordinput,
-#email {
+#email,
+#name {
   border: 1px solid #dfe1e5;
   border-radius: 24px;
   height: 44px;
@@ -60,7 +63,7 @@
   /* padding: 5px 8px 0 16px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(5em, 25%), 1fr));
-  width: 90%;
+  width: 100%;
 }
 
 .passwordcontainer input {
@@ -68,7 +71,8 @@
   border: none;
   height: 36px;
 }
-#email {
+#email,
+#name {
   background: whitesmoke;
   text-align: center;
   margin: 10px 0;
@@ -77,12 +81,17 @@
 #password2 {
   border: 1px solid #dfe1e5;
   background: whitesmoke;
-  text-align: center;
   width: 80%;
   max-width: 350px;
   height: 44px;
   border-radius: 24px;
+  padding-left: 8px;
 }
+#signupform > #password,
+#password2 {
+  text-align: center;
+}
+
 #fpassword {
   position: absolute;
   top: -10px;
@@ -120,4 +129,23 @@ input:focus {
 #SignUp:hover,
 #login:hover {
   font-size: 14px;
+}
+@media screen and (max-width: 426px) {
+  .loginleft {
+    display: none;
+  }
+  .loginform-container {
+    grid-template-columns: 1fr;
+  }
+  #fpassword {
+    display: none;
+  }
+  #password,
+  #password2 {
+    height: 42px;
+    text-align: center;
+  }
+  .passwordcontainer > #password {
+    width: 100%;
+  }
 }

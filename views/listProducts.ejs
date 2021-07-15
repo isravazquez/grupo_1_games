@@ -2,17 +2,17 @@
 <html lang="en">
   <%- include('partials/head') %>
   <body>
-    <%- include('partials/header') %> 
+    <%- include('partials/header') %>
     <%- include('partials/modal') %>
     <main id="areaPrincipal">
       <section id="vistaListaProductos">
         <h1>Lista de productos</h1>
         <div id="botonCrear">
           <a type="submit" href="/products/createProduct" class="botonPrimario">
-            <i class="fas fa-pen"></i>
-          </a>	
+            <i class="fas fa-pen"></i> Create Product
+          </a>
         </div>
-          <% for(let i= 0; i< products.length ; i++){ %> 
+          <% for(let i= 0; i< products.length ; i++){ %>
             <% if(i % 2 == 0 ){ %>
             <div id="producto" class="colorTenue">
               <div class="miniaturaImage">
@@ -24,11 +24,11 @@
                       Nombre:
                       <strong>
                         <%= products[i].name%>
-                      </strong> 
+                      </strong>
                       <br>
                       Categoria:
                       <strong>
-                        <%= products[i].category%> 
+                        <%= products[i].category%>
                       </strong>
                       stock:
                       <strong>
@@ -48,9 +48,9 @@
                       <strong>
                        <%= products[i].discountRate %>%
                       </strong>
-                      <br>  
+                      <br>
                       <a id="linkDetail" href="/products/detailProduct/<%= products[i].id %> ">Ver detalles</a>
-                </p> 
+                </p>
               </div>
               <div class="botonera">
                 <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonPrimario">
@@ -71,11 +71,11 @@
                         Nombre:
                         <strong>
                           <%= products[i].name%>
-                        </strong> 
+                        </strong>
                         <br>
                         Categoria:
                         <strong>
-                          <%= products[i].category%> 
+                          <%= products[i].category%>
                         </strong>
                         stock:
                         <strong>
@@ -93,7 +93,7 @@
                         <br>
                         Porcentaje de descuento:
                         <strong>
-                          %<%= products[i].discountRate %> 
+                          %<%= products[i].discountRate %>
                         </strong>
                         <br>
                         <a id="linkDetail" href="/products/detailProduct/<%= products[i].id %> ">Ver detalles</a>

@@ -1,18 +1,67 @@
 [
-  {
-    "id": 100,
-    "name": "sapato",
-    "category": "Accesorios",
-    "price": 2345,
-    "discountRate": 21,
-    "discount": 1852,
-    "stock": 1,
-    "description": "\t\t\t\t\t\t\tasdas\t\t\t\r\n\t\t\t\t\t\t",
-    "image": "imageProducto-1625627778069.png",
-    "imagesSec": null,
-    "features": "verde",
-    "registrationDate": "6/07/21",
-    "checkInTime": "22:16 PM",
-    "userWhoRegistered": "Admin Root"
-  }
+ {
+  "id": 100,
+  "name": "sapato",
+  "category": "Accesorios",
+  "price": 2345,
+  "discountRate": 21,
+  "discount": 1852,
+  "stock": 1,
+  "description": "\t\t\t\t\t\t\tasdas\t\t\t\r\n\t\t\t\t\t\t",
+  "image": "imageProducto-1625627778069.png",
+  "imagesSec": null,
+  "features": "verde",
+  "registrationDate": "6/07/21",
+  "checkInTime": "22:16 PM",
+  "userWhoRegistered": "Admin Root"
+ },
+ {
+  "id": 45,
+  "name": "ProbandoKev",
+  "category": "Futbolitos",
+  "price": 1500,
+  "discountRate": 10,
+  "discount": 1350,
+  "stock": 15,
+  "description": "Describiendo el producto.\t\t\t\t\t\t\t",
+  "image": null,
+  "imagesSec": null,
+  "features": "Grande, Futbol Mexicano",
+  "registrationDate": "13/07/21",
+  "checkInTime": "16:14 PM",
+  "userWhoRegistered": "Admin Root"
+ },
+ {
+  "userWhoRegistered": "Admin Root",
+  "id": "11",
+  "name": "adfa",
+  "category": "ads",
+  "price": "123",
+  "discountRate": "11",
+  "stock": "13",
+  "features": "sadfa",
+  "description": "\t\t\tadsfadf\t\t\t\t\t"
+ },
+ {
+  "userWhoRegistered": "Admin Root",
+  "id": "23",
+  "name": "adfdf",
+  "category": "dfsdf",
+  "price": "3123",
+  "discountRate": "39",
+  "stock": "2",
+  "features": "Mediano",
+  "description": "\tadfadf\t\t\t\t\t\t\t"
+ },
+ {
+  "userWhoRegistered": "Admin Root",
+  "id": "45",
+  "name": "A",
+  "category": "Maquinitas",
+  "price": "5680",
+  "discountRate": "50",
+  "stock": "25",
+  "features": "Med",
+  "description": "Raro raro\t\t\t\t\t\t\t\t"
+ }
 ]

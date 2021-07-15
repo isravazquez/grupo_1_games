@@ -1,4 +1,5 @@
 <%- include("./partials/head") %>
+<%- include("./partials/header") %>
 <div class="login-container">
     <div class="loginform-container">
         <div class="loginleft"></div>
@@ -8,12 +9,12 @@
                 <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico">
                 <div class="passwordinput">
                     <div class="passwordcontainer">
-                        <input type="password" name="password" id="paswword" placeholder="Contraseña">
+                        <input type="password" name="password" id="password" placeholder="Contraseña">
                         <input type="button" value="¿Olvidaste la contraseña" id="fpassword">
                     </div>
                 </div>
                 <input type="submit" value="CONECTAR" id="conectar">
-                <a href="/signup" id="SignUp">Crea tu cuenta</a>
+                <a href="users/create" id="SignUp">Crea tu cuenta</a>
             </form>
         </div>
     </div>
