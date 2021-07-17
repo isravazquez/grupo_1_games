@@ -1,0 +1,46 @@
+[
+  {
+    "id": 3312,
+    "name": "Maquinita Arcade Multijuegos Pacman 3288 Juegos",
+    "category": " Maquinitas ",
+    "price": 13500,
+    "discountRate": 12,
+    "discount": 11880,
+    "stock": 32,
+    "description": "Mueble Fabricado en Triplay\r\nLaminado antigraffiti Diseño Pacman\r\nSistema Pandora Box 9H 3D Internet\r\n3288 Juegos Arcade, modifica la dificultad!\r\nPantalla Led 19.5''\r\nPalancas Joystick Marca Calle Originales\r\nBotones Planos Material de Primera\r\nMicroswitch y Bocina Interna",
+    "image": "imagesProducto-1626468494559.webp",
+    "imagesSec": [
+      "imagesProducto-1626468494559.webp",
+      "imagesProducto-1626468494563.webp",
+      "imagesProducto-1626468494565.webp",
+      "imagesProducto-1626468494570.webp",
+      "imagesProducto-1626468494572.webp"
+    ],
+    "features": "Diseño del ploteo: Pac-Man,  Número de sistemas: 1, Tipo de conexión: VGA, Tipo de pantalla: LED, Ancho: 64.5 cm",
+    "registrationDate": "16/07/21",
+    "checkInTime": "15:48 PM",
+    "userWhoRegistered": "Admin Root"
+  },
+  {
+    "id": 9250,
+    "name": "Maquinita Tablero Arcade Joystick Pandora Box Para Pc Y Tv",
+    "category": " Tableros ",
+    "price": 3390,
+    "discountRate": 12,
+    "discount": 2983,
+    "stock": 102,
+    "description": "– Fabricado con Madera 16mm, reforzado.\r\n– Pintura automotriz chocolate obscuro, con acabado brillante!.\r\n– Cómodo diseño, ergonómico y fácil de sujetar.\r\n– Acabados de lujo y componentes de Alta Calidad:\r\n*Palanca con micro suave.\r\n*Botón nacional Azul.",
+    "image": "imagesProducto-1626468835479.webp",
+    "imagesSec": [
+      "imagesProducto-1626468835479.webp",
+      "imagesProducto-1626468835481.webp",
+      "imagesProducto-1626468835482.webp",
+      "imagesProducto-1626468835483.webp",
+      "imagesProducto-1626468835484.webp"
+    ],
+    "features": "Diseño del ploteo: Liso, Tipo de conexión: HDMI",
+    "registrationDate": "16/07/21",
+    "checkInTime": "15:53 PM",
+    "userWhoRegistered": "Admin Root"
+  }
+]
