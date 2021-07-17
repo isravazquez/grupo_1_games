@@ -1,8 +1,11 @@
-const productsController = require("../controllers/productsController");
+
 const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require('multer');
+
+const productsController = require("../controllers/productsController");
+const validacionesFormProducto = require('../middlewares/validacionesFormProducto');
 
 
 let storage = multer.diskStorage({
@@ -22,28 +25,28 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 
 //vista crear producto
-router.get("/createProduct", productsController.viewCreateProduct);
+router.get("/create", productsController.viewCreateProduct);
 
 //vista detalle producto
-router.get("/detailProduct/:id", productsController.viewDetailProduct);
+router.get("/:id", productsController.viewDetailProduct);
 
 //vista carrilo de compra
 router.get("/shoppingCart", productsController.viewShoppingCart);
 
 //crear producto en base de datos 
-router.post("/createProduct", upload.single('imageProducto'), productsController.createProduct);
+router.post('/', upload.any('imagesProducto'), validacionesFormProducto, productsController.createProduct);
 
 //vista listar productos
-router.get("/listProducts", productsController.listProducts);
+router.get("/", productsController.listProducts);
 
 //vista edicion de produrcto
-router.get("/editProduct/:id", productsController.editProduct);
+router.get("/:id/edit", productsController.editProduct);
 
 //actulizar producto
-router.put("/updateProduct/:id", upload.single('imageProducto'), productsController.updateProduct);
+router.put("/:id",  upload.any('imageProducto'), validacionesFormProducto, productsController.updateProduct);
 
 //eliminar producto
-router.delete("/deleteProduct/:id", productsController.deleteProduct);
+router.delete("/:id", productsController.deleteProduct);
 
 
 module.exports = router;
