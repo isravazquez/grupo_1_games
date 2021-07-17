@@ -8,7 +8,7 @@ let modelProducts = {
      
     aperturaDeArchivo: function () {
         //apertura de archivo
-        let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'products.json'),'utf-8');
+        let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'../data/products.json'),'utf-8');
         //conversion de objeto a cadena json
         let listaProductos = JSON.parse(cadenaJsonA);
 
@@ -35,23 +35,31 @@ let modelProducts = {
        }
 
         
-    // ---------validacion de imagen---------------
-        //para validar que exite una imagen desde el formulario
-        let nombreImagen = '';
+    // ---------validacion de imagenes---------------
+        
+        //para validar se han cargado imagenes desde el formulario
+        let imagenes = [];
+        // req.files.imageProducto[0].filename
+        if(req.files){
+            //imagenes 
+            // console.log(req.files);
             
-        if(req.file){
-            //si exite el archivo entrante
-            nombreImagen = req.file.filename;
+            req.files.forEach( imagen => {
+                // console.log(imagen);
+                imagenes.push(imagen.filename);
+            });
+
         }else{
-            //si no exite el archivo entrante colocamos en null el campo y ... se pondra una una imagen por default en las vistas
-            nombreImagen = null;
-        }      
-    // ---------validacion de imagen---------------
+            imagenes = [];
+        }
+
+        //console.log(imagenes);
+    // ---------validacion de imagenes---------------
 
         
         //creacion de objeto temporal que almacena los datos entrantes de la vista crear producto
         let productoTmp = {
-            id: parseInt(req.body.id),
+            id: parseInt(Math.random() * (10000 - 1) + 1),
             name: req.body.name,
             category: req.body.category,
             price: parseInt(req.body.price),
@@ -59,8 +67,8 @@ let modelProducts = {
             discount: parseInt(((req.body.price-(req.body.discountRate/100)*req.body.price))), //precio a pagar menos el descuento
             stock: parseInt(req.body.stock),
             description: req.body.description,
-            image: nombreImagen,//para imagen principal 
-            imagesSec: null, //para imagenes secundarias
+            image: imagenes[0],     //para imagen principal 
+            imagesSec: imagenes,    //para imagenes secundarias
             features: req.body.features,
             //extras fecha de registro, hora de registro y usuario que hio el registro 
             registrationDate: 'dd/mm/yy'.replace(/dd|mm|yy|yyy/gi, matched => map[matched]),
@@ -71,7 +79,7 @@ let modelProducts = {
 
         return productoTmp;
     },
-    estructurarObjetoPUT: function (req, nombreDeimagenNoModificada) {
+    estructurarObjetoPUT: function (req, vectorImagenes) {
         
         let fecha = new Date();
  
@@ -88,28 +96,36 @@ let modelProducts = {
              let nombreImagen = '';
              
              
-             if(req.file){
-                //si exite el archivo 
-                nombreImagen = req.file.filename;
-
-                //si es, el caso que que si se valla a cargar otra nueva imagen, se carga la ue viene desde el formulario de edicion
+        // ---------validacion de imagenes---------------
+        
+            //para validar se han cargado imagenes desde el formulario
+            let imagenes = [];
+            // req.files.imageProducto[0].filename
+            if(req.files){
+                //imagenes 
+                // console.log(req.files);
                 
-                //hay que eliminar la imagen anterior anterior 
-                //eliminacion de imagen previamente cargada al crear el producto por otra y no que no exista despues de ser actualisada con la nueva imagen
-                this.eliminarArchivoImagen(nombreDeimagenNoModificada);
-             }else{
-               //si no exite el archivo entrante , se usa la misma que ya se tenia cargada desde creciacion de producto 
-                nombreImagen = nombreDeimagenNoModificada;
-                // console.log("no se cargo la imagen adecuadamente... se pondra una por default");
-             }    
- 
-           
-           // ---------validacion de imagen---------------
+                req.files.forEach( imagen => {
+                    // console.log(imagen);
+                    imagenes.push(imagen.filename);
+                });
+
+                //aliminacion de imagenes  creadas por primera ves que se encuentran en carpeta, para no acumular repetidas
+                vectorImagenes.forEach(nombreImagen => {
+                    this.eliminarArchivoImagen(nombreImagen);
+                });
+
+            }else{
+                imagenes = [];
+            }
+
+            //console.log(imagenes);
+        // ---------validacion de imagenes---------------
  
          
-         //creacion de objeto temporal que almacena los datos entrantes de la vista crear producto
+        //creacion de objeto temporal que almacena los datos entrantes de la vista crear producto
         let productoTmp = {
-            id: parseInt(req.body.id),
+            id: parseInt(Math.random() * (10000 - 1) + 1),
             name: req.body.name,
             category: req.body.category,
             price: parseInt(req.body.price),
@@ -117,14 +133,14 @@ let modelProducts = {
             discount: parseInt(((req.body.price-(req.body.discountRate/100)*req.body.price))), //precio a pagar menos el descuento
             stock: parseInt(req.body.stock),
             description: req.body.description,
-            image: nombreImagen,//para imagen principal 
-            imagesSec: null, //para imagenes secundarias
+            image: imagenes[0],     //para imagen principal 
+            imagesSec: imagenes,    //para imagenes secundarias
             features: req.body.features,
             //extras fecha de registro, hora de registro y usuario que hio el registro 
             registrationDate: 'dd/mm/yy'.replace(/dd|mm|yy|yyy/gi, matched => map[matched]),
             checkInTime: fecha.getHours()+":"+fecha.getMinutes()+" "+(fecha.getHours() >= 12 ? 'PM' : 'AM'),
             userWhoRegistered: req.body.userWhoRegistered,
-        }; 
+        };
  
  
          return productoTmp;
