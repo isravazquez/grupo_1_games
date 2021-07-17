@@ -9,64 +9,109 @@
 				<h1>Registrar de Producto</h1>
 				
 				<div id="botonVista">
-					<a type="submit" href="/products/listProducts" class="botonPrimario">
-						<i class="fas fa-list-alt"></i>
+					<a type="submit" href="/products" class="botonPrimario">
+						<i class="fas fa-list-alt"></i> Lista productos 
 					</a>
 				</div>
 				<div id="contenedorDeFormulario">
-					<!-- <% if( locals.msgsErrors ){ %>
-						<% msgsErrors.forEach( error => { %>
-							<p class="errorDatosE"> <%= error.msg %> </p>
-						<% }); %>
-						
-					<% } else { %>
-
-					<% } %> -->
-						<form action="/products/createProduct" method="POST" enctype="multipart/form-data">
+						<form action="/products/" method="POST" enctype="multipart/form-data">
 							<div>
 								<!-- el valor del cambiante se agregara automaticamente -->
 								<label id="personal" for="userWhoRegistered">Personal que registra:</label>
 								<input type="text" name="userWhoRegistered" readonly value="Admin Root" class="inputWidth styleInput">
 							</div>
 							<div>
-								<input type="number" name="id" placeholder="ID" required>
+								<input type="text" name="name" placeholder="Nombre" value="<%= locals.DataOld ? DataOld.name : null %>" >
+								<div class="errorDatosE">
+									<% if( locals.msgsErrors && msgsErrors.name){ %>
+										<p class="errorDatosE" ><%= msgsErrors.name.msg %></p>
+									<% } %>
+								</div>
 							</div>
 							<div>
-								<input type="text" name="name" placeholder="Nombre" required>
+								<select 
+										name="category" 
+										id="SelectOp"
+									>
+										<option  value="" > Elige una categoria </option>
+										
+										<%
+											let categorias = ['Tableros','Futbolitos','Maquinitas','Accesorios'];
+										%>
+
+										<% for (const categoria of categorias) { %>
+											
+											<option  value=" <%= categoria %> " 
+												
+												<%= locals.DataOld && (categoria === DataOld.category.trim()) ? "selected" : null %> > 
+												
+												<%= categoria %> </option>
+
+										<% } %>
+
+									</select>
+								<div class="errorDatosE">
+									<% if( locals.msgsErrors && msgsErrors.category){ %>
+										<p class="errorDatosE" ><%= msgsErrors.category.msg %></p>
+									<% } %>
+								</div>
 							</div>
 							<div>
-								<input type="text" name="category" placeholder="Categoria" required>
+								<input type="number" name="price" placeholder="Precio"  min="1" value="<%= locals.DataOld ? DataOld.price : null %>" >
+								<div class="errorDatosE">
+									<% if( locals.msgsErrors && msgsErrors.price){ %>
+										<p class="errorDatosE" ><%= msgsErrors.price.msg %></p>
+									<% } %>
+								</div>
 							</div>
 							<div>
-								<input type="number" name="price" placeholder="Precio"  min="1" required>
+								<input type="number" name="discountRate" placeholder="Porcentaje de descuento"   min="1" class="descuento" value="<%= locals.DataOld ? DataOld.discountRate : null %>" >
+								<div class="errorDatosE">
+									<% if( locals.msgsErrors && msgsErrors.discountRate){ %>
+										<p class="errorDatosE" ><%= msgsErrors.discountRate.msg %></p>
+									<% } %>
+								</div>
 							</div>
 							<div>
-								<input type="number" name="discountRate" placeholder="Porcentaje de descuento"   min="1" class="descuento" required>
+								<input type="number" name="stock" placeholder="Existencias" min="1" value="<%= locals.DataOld ? DataOld.stock : null %>" >
+								<div class="errorDatosE">
+									<% if( locals.msgsErrors && msgsErrors.stock){ %>
+										<p class="errorDatosE" ><%= msgsErrors.stock.msg %></p>
+									<% } %>
+								</div>
 							</div>
 							<div>
-								<input type="number" name="stock" placeholder="Existencias" min="1" required>
+								<input type="text" name="features" placeholder="Caracteristicas"  value="<%= locals.DataOld ? DataOld.features : null %>" >
+								<div class="errorDatosE">
+									<% if( locals.msgsErrors && msgsErrors.features){ %>
+										<p class="errorDatosE" ><%= msgsErrors.features.msg %></p>
+									<% } %>
+								</div>
+							</div>
+							<div>	
+								<strong>Descripción:</strong>
+									
+								<textarea id="descrip" type="text" name="description"><%= locals.DataOld ? DataOld.description : null %></textarea>
+								
+								<div class="errorDatosE">
+									<% if( locals.msgsErrors && msgsErrors.description){ %>
+										<p class="errorDatosE" ><%= msgsErrors.description.msg %></p>
+									<% } %>
+								</div>
 							</div>
 							<div>
-								<input type="text" name="features" placeholder="Caracteristicas" required>
+								<label for="imagesProducto">Imagenes del producto</label>
+								<input type="file" name="imagesProducto" multiple>
+								<div class="errorDatosE">
+									<% if( locals.msgsErrors && msgsErrors.imagesProducto){ %>
+										<p class="errorDatosE" ><%= msgsErrors.imagesProducto.msg %></p>
+									<% } %>
+								</div> 
 							</div>
-							<div>
-								<label for="description">Descripción</label>
-							</div>
-							<div>
-								<textarea  name="description" class="desplamiento" required>
-								</textarea>
-							</div>
-							<div>
-								<label for="imageProducto">Imagen principal</label>
-								<input type="file" name="imageProducto" > <!---al no requerir y no cargan imagen al mostrar las imgenes de producto madaremos una por defatul -->
-							</div>
-							<!-- <div>
-								<label for="imageSecundariasProducto">Imagenes Secundarias</label>
-								<input type="file" name="imageSecundariasProducto" multiple> 
-							</div> -->
 							<div id="boton">
 								<input type="submit" value="Crear" class="botonPrimario">
 							</div>
+					
 						</form>
 				</div>
 			</section>
