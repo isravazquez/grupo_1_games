@@ -8,6 +8,7 @@
         <section id="vistaProducto">
         <!-- area imagenes -->
              <div> <!--para centrar despues en vista grande -->
+
                 <article id="imagenProducto">
                     <img src="/img/imagesProducts/<%= product.image ? product.image : 'default-image.png' %>" alt="imagen producto">
                 </article>
@@ -15,10 +16,14 @@
                     <div class="flecha">
                         <img src="/img/chevron_left_black_24dp.svg" alt="" srcset="">
                     </div>
-                    <img src="/img/1.webp" alt="">
-                    <img src="/img/2.webp" alt="">
-                    <img src="/img/3.webp" alt="">
-                    <img src="/img/4.webp" alt="">
+
+                     <% for(let i=0 ; i< product.imagesSec.length ; i++){  %>
+                        <a href="#">
+                            <img class="min" src="/img/imagesProducts/<%= product.imagesSec[i]%>" alt="">
+                        </a>
+                        <img class="max" src="/img/imagesProducts/<%= product.imagesSec[i]%>" alt="">
+                    <% } %>
+
                     <div class="flecha">
                         <img src="/img/chevron_right_black_24dp.svg" alt="" srcset="">
                     </div>
