@@ -1,4 +1,5 @@
 const modelProducts = require('../models/modelProducts');
+const {validationResult} = require('express-validator');
 
 const productsController = {
     viewCreateProduct: (req, res) => {
@@ -24,25 +25,34 @@ const productsController = {
     },
     viewShoppingCart: (req, res) => {
       res.status(200);
-      res.render("shoppingCart");
+      res.redirect("shoppingCart");
     },
     createProduct: (req, res) => {
 
-        //apertura de archivo
-        let listProducts = modelProducts.aperturaDeArchivo();
-
-        //creacion de objeto temporal 
-        let productTmp = modelProducts.estructurarObjetoPOST(req);
+        let errores = validationResult(req);
         
-        //objeto a insertar en archivo o base de datos 
-        listProducts.push(productTmp);
-          
-        //escritura de archivo
-        modelProducts.escrituraDeArchivo(listProducts);
+        //validacion de si existen errores
+        if(errores.isEmpty()){
+          //apertura de archivo
+          let listProducts = modelProducts.aperturaDeArchivo();
 
-        //retorno a crear otro producto
-        res.status(200);
-        res.redirect('listProducts');
+          //creacion de objeto temporal 
+          let productTmp = modelProducts.estructurarObjetoPOST(req);
+          
+          //objeto a insertar en archivo o base de datos 
+          listProducts.push(productTmp);
+            
+          //escritura de archivo
+          modelProducts.escrituraDeArchivo(listProducts);
+
+          //retorno a crear otro producto
+          res.status(200); 
+          res.render('listProducts', { products: listProducts});
+        }else{
+          console.log(errores);
+          res.render('createProduct', { msgsErrors : errores.mapped(), DataOld  : req.body } );// otra forma de hacerlo 
+        }  
+        
     },
     listProducts: (req, res) => {
 
@@ -75,40 +85,46 @@ const productsController = {
     },
     updateProduct:(req, res)=>{
 
-
-      //apertura de archivo
-      let listProducts = modelProducts.aperturaDeArchivo();
-
-      //busqueda de producto
-      let productE = modelProducts.buscarProducto(listProducts, req);
-
-      if(productE != null){
-
-        //crear objeto temporal
-        let productTmp = modelProducts.estructurarObjetoPUT(req, productE.image);
-
-        let productM={};
-        productM = Object.assign(productM, productE, productTmp);
-
-        //buscar indice
-        let indice = modelProducts.buscarIndice(listProducts, req);
-
-        listProducts[indice] = productM;
-
-        //escritura de archivo
-        modelProducts.escrituraDeArchivo(listProducts);
-
-        //apertura de archivo
-        listProducts = modelProducts.aperturaDeArchivo();
+      let errores = validationResult(req);
         
+      //validacion de si existen errores
+      if(errores.isEmpty()){
+        //apertura de archivo
+        let listProducts = modelProducts.aperturaDeArchivo();
 
-        //redireccion a editar productos
-        res.status(200);
-        res.render('listProducts', {products : listProducts } );
+        //busqueda de producto
+        let productE = modelProducts.buscarProducto(listProducts, req);
 
+        if(productE != null){
+
+          //crear objeto temporal
+          let productTmp = modelProducts.estructurarObjetoPUT(req, productE.imagesSec);
+
+          let productM={};
+          productM = Object.assign(productM, productE, productTmp);
+
+          //buscar indice
+          let indice = modelProducts.buscarIndice(listProducts, req);
+
+          listProducts[indice] = productM;
+
+          //escritura de archivo
+          modelProducts.escrituraDeArchivo(listProducts);
+
+          //apertura de archivo
+          listProducts = modelProducts.aperturaDeArchivo();
+          
+
+          //redireccion a editar productos
+          res.status(200);
+          res.render('listProducts', {products : listProducts } );
+
+        }else{
+          res.status(404);
+          res.render("not-found");
+        }
       }else{
-        res.status(404);
-        res.render("not-found");
+        res.render('editProduct', { msgsErrors : errores.mapped(), DataOld  : req.body } );// otra forma de hacerlo 
       }
 
     }
@@ -123,7 +139,9 @@ const productsController = {
        if(indice != -1){
 
          //eliminacion de imagen previamente cargada y no exista despues de ser eliminada
-         modelProducts.eliminarArchivoImagen(listProducts[indice].image);
+          for(let i= 0 ; i< listProducts[indice].imagesSec.length ;i++){
+            modelProducts.eliminarArchivoImagen(listProducts[indice].imagesSec[i]);
+          }
 
          //eliminacion del producto de la lista 
          listProducts.splice(indice, 1);
