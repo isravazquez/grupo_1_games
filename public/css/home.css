@@ -226,9 +226,16 @@ ul.slider li:target {
   object-fit: contain;
 }
 
-.add-cart{
+.add-cart-button{
   background-color: #0071e3;
   color: #f2f2f2;
+  width: fit-content;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.info-button{
+  background-color: #f2f2f2;
   width: fit-content;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -376,6 +383,8 @@ ul.slider li:target {
   .catalogo-juegos-maq img {
     width: 12vw;
     height: 12vw;
+    max-width: 180px;
+    max-height: 180px;
   }
 
   .catalogo-juegos-tab img {
@@ -409,11 +418,6 @@ ul.slider li:target {
     width: 40%;
   }
 
-  .boton-agregar {
-    bottom: 32px;
-    right: 32px;
-    transform: scale(1.5);
-  }
 
   #descripcion-tab-1 {
     padding-left: 10%;

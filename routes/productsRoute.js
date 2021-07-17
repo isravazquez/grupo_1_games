@@ -45,5 +45,11 @@ router.put("/updateProduct/:id", upload.single('imageProducto'), productsControl
 //eliminar producto
 router.delete("/deleteProduct/:id", productsController.deleteProduct);
 
+//categorias de productos
+router.get("/tableros", productsController.tablerosIndex);
+router.get("/maquinitas", productsController.maquinitasIndex);
+router.get("/futbolitos", productsController.futbolitosIndex);
+router.get("/accesorios", productsController.accesoriosIndex);
+
 
 module.exports = router;
