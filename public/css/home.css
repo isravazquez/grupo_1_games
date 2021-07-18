@@ -19,6 +19,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: overlay;
+  min-width: 320px;
 }
 
 A:link {
@@ -34,18 +35,18 @@ A:visited {
   text-decoration: none;
 }
 
-/* Comienza Header */
 
-
-
-/* Termina Header */
 
 .main {
   width: 100%;
+  max-width: 1200px;
   position: relative;
   top: 50px;
   padding: 0;
-  margin: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .seccion-banner {
@@ -149,19 +150,6 @@ ul.slider li:target {
   margin: 0;
 }
 
-.boton-agregar {
-  background-color: #0071e3;
-  color: #f3f3f3;
-  display: block;
-  max-width: 50px;
-  padding: 8px 8px 8px 4px;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 16px;
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-}
 
 .descripcion-y-juegos-maq {
   display: flex;
@@ -211,6 +199,46 @@ ul.slider li:target {
   width: 96px;
   object-fit: cover;
   margin: 8px;
+}
+
+.catalog{
+  width: 90%;
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, minmax(20rem,1fr));
+}
+
+.item-catalog{
+  grid-column: span 1;
+  background: linear-gradient(
+    70deg,
+    rgb(241, 241, 241),
+    rgba(190, 190, 190, 0.795)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.img-item-catalog{
+  object-fit: contain;
+}
+
+.add-cart-button{
+  background-color: #0071e3;
+  color: #f2f2f2;
+  width: fit-content;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.info-button{
+  background-color: #f2f2f2;
+  width: fit-content;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .seccion-tablero {
@@ -351,64 +379,12 @@ ul.slider li:target {
   font-size: 16px;
 }
 
-/* Comienza Footer */
-
-footer {
-  background-color: #333333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 8px;
-  width: 100%;
-  position: relative;
-  top: 56px;
-  padding: 0;
-  margin: 0;
-}
-
-.info-footer {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#logo-footer {
-  width: 40px;
-}
-
-.lista-footer {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  text-align: center;
-  padding: auto;
-  color: #ffffff;
-}
-
-.redes-sociales {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: #ffffff;
-}
-
-.redes-sociales i {
-  padding: 8px;
-}
-
-.legal {
-  text-decoration: none;
-  color: #ffffff;
-}
-
 @media (min-width: 481px) {
   .catalogo-juegos-maq img {
     width: 12vw;
     height: 12vw;
+    max-width: 180px;
+    max-height: 180px;
   }
 
   .catalogo-juegos-tab img {
@@ -423,30 +399,6 @@ footer {
 }
 
 @media (min-width: 720px) {
-  #boton-hamburguesa {
-    display: none;
-  }
-
-  #logo-principal {
-    order: -1;
-  }
-
-  .nav-bar {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-bar a {
-    margin: 0 4px;
-  }
-
-  #boton-buscador,
-  #boton-carrito,
-  #boton-login {
-    margin: 0 4px;
-  }
-
-  /* Termina Header */
 
   .seccion-maquinita {
     flex-direction: row;
@@ -466,11 +418,6 @@ footer {
     width: 40%;
   }
 
-  .boton-agregar {
-    bottom: 32px;
-    right: 32px;
-    transform: scale(1.5);
-  }
 
   #descripcion-tab-1 {
     padding-left: 10%;
@@ -500,47 +447,4 @@ footer {
     width: 65%;
   }
 
-  /* Comienza Footer */
-
-  footer {
-    height: 88px;
-    padding-top: 16px;
-  }
-  .lista-footer {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .lista-footer a {
-    margin: 0 16px;
-    font-size: 0.9em;
-  }
-
-  .redes-sociales {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .redes-sociales i {
-    margin: 0 16px;
-    font-size: 1.3em;
-  }
-}
-
-@media (min-width: 1100px) {
-  header {
-    display: flex;
-    justify-content: center;
-  }
-
-  .contenido-header {
-    width: 1000px;
-  }
-
-  .nav-bar {
-    width: 700px;
-  }
-
-  /* Termina header */
 }

@@ -48,5 +48,11 @@ router.put("/:id",  upload.any('imageProducto'), validacionesFormProducto, produ
 //eliminar producto
 router.delete("/:id", productsController.deleteProduct);
 
+//categorias de productos
+router.get("/tableros", productsController.tablerosIndex);
+router.get("/maquinitas", productsController.maquinitasIndex);
+router.get("/futbolitos", productsController.futbolitosIndex);
+router.get("/accesorios", productsController.accesoriosIndex);
+
 
 module.exports = router;

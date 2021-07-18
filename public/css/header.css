@@ -1,5 +1,11 @@
+main{
+  min-height: 100vh;
+  position: relative;
+  top: 50px;
+}
 header {
   width: 100%;
+  min-width: 320px;
   background-color: #333333;
   display: flex;
   justify-content: center;

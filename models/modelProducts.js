@@ -18,7 +18,7 @@ let modelProducts = {
         //conversion de objeto a cadena json
         let cadenaJsonE = JSON.stringify(listaProducts,null, 2);
         //escritura de archivo
-        fs.writeFileSync(path.resolve(__dirname,'products.json'),cadenaJsonE); 
+        fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),cadenaJsonE); 
         
     },
     estructurarObjetoPOST: function (req) {
