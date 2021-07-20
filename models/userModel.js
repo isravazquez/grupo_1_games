@@ -11,7 +11,9 @@ const usersModel = {
   },
   write: (req, res) => {
     const users = usersModel.openFile();
+    const id = users.length;
     const userInfo = {
+      id: id + 1,
       ...req.body,
       password: bcrypt.hashSync(req.body.password),
     };

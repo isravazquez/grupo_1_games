@@ -78,7 +78,7 @@
   margin: 10px 0;
 }
 #password,
-#password2 {
+#lastname {
   border: 1px solid #dfe1e5;
   background: whitesmoke;
   width: 80%;
@@ -88,7 +88,7 @@
   padding-left: 8px;
 }
 #signupform > #password,
-#password2 {
+#lastname {
   text-align: center;
 }
 

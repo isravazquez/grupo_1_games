@@ -5,8 +5,11 @@
   "password": "admin"
  },
  {
-  "email": "a@gmail.com",
-  "name": "Elia A B",
-  "password": "$2a$10$S8kwDGCri6whzIVWrrMRX.Q5MqZKNNxCrhLMqW5gY.lwGY0H9PRT."
+  "id": 2,
+  "email": "ab@gmail.com",
+  "name": "A",
+  "lastname": "BC",
+  "password": "$2a$10$AmrHFzzcV0VT8FQrnPeRbet.SpVxa6p1xiPBBN98mMIVX5BuchK9u",
+  "image": "certificado-curso-curso-online.png"
  }
 ]
