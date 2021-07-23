@@ -1,179 +1,176 @@
-const fs = require('fs');
-const path = require('path');
 const modelProducts = require('../models/modelProducts');
+const {validationResult} = require('express-validator');
 
 const productsController = {
-    viewCreateProduct: (req, res) => {
-      res.render("createProduct");
-    },
-    viewDetailProduct: (req, res) => {
-      res.render("productDetail");
-    },
-    viewShoppingCart: (req, res) => {
-      res.render("shoppingCart");
-    },
-    createProduct: (req, res) => {
+  viewCreateProduct: (req, res) => {
+    res.status(200);
+    res.render("createProduct");
+  },
+  viewDetailProduct: (req, res) => {
+    //apertura de archivo
+    let listProducts = modelProducts.aperturaDeArchivo();
+    
+    //busqueda de producto
+    let productE = modelProducts.buscarProducto(listProducts, req);
 
-      //apertura de archivo
-      let listaProducts = modelProducts.aperturaDeArchivo();
-      
-
-      //objeto hora 
-      let fecha = new Date();
- 
-      //fecha 
-      const map = {
-        dd: fecha.getDate(),
-        mm:  fecha.getMonth()+1 <= 9 ? '0'+(fecha.getMonth()+1) : (fecha.getMonth()+1),     //podriamos arreglar que agregue un cero en el mes
-        yy: fecha.getFullYear().toString().slice(-2),
-        yyyy: fecha.getFullYear()
-      }
-
-      let productTmp = {
-        id: parseInt(req.body.id),
-        name: req.body.name,
-        category: req.body.category,
-        price: parseInt(req.body.price),
-        discountRate: parseInt(req.body.discountRate),
-        discount: parseInt(((req.body.price-(req.body.discountRate/100)*req.body.price))), //precio a pagar menos el descuento
-        stock: parseInt(req.body.stock),
-        description: req.body.description,
-        image: req.body.image,
-        features: req.body.features,
-        //extras
-        registrationDate: 'dd/mm/yy'.replace(/dd|mm|yy|yyy/gi, matched => map[matched]),
-        checkInTime: fecha.getHours()+":"+fecha.getMinutes()+" "+(fecha.getHours() >= 12 ? 'PM' : 'AM'),
-        userWhoRegistered: req.body.userWhoRegistered,
-      }; 
-
-      //objeto a insertar en archivo o base de datos 
-      listaProducts.push(productTmp);
-      console.log(productTmp);
-
-      //escritura de archivo
-      modelProducts.escrituraDeArchivo(listaProducts);
-     
-
-      res.redirect('createProduct');
-    },
-    listProducts: (req, res) => {
-      //apertura de archivo
-      let listaProducts = modelProducts.aperturaDeArchivo();
-      
-
-      //envio de datos a vista 
-      res.render('listProducts', { products: listaProducts});
-    },
-    editProduct:(req, res)=>{
-      //apertura de archivo
-      let listaProducts = modelProducts.aperturaDeArchivo();
-      
-
-      let productoEncontrado = listaProducts.find( (producto) => {
-        return producto.id == parseInt(req.params.id);
-      });
-
-      console.log(productoEncontrado.price);
-      if(productoEncontrado != null){
-        res.render('editProduct', { product: productoEncontrado});
-      }else{
-        res.send("producto no encontrado...");
-      }
-
-    },
-    updateProduct:(req, res)=>{
-      //apertura de archivo
-      let listaProducts = modelProducts.aperturaDeArchivo();
-      
-
-      let productoEncontrado = listaProducts.find( (producto) => {
-        return producto.id == parseInt(req.params.id);
-      });
-
-      if(productoEncontrado != null){
-
-        console.log(productoEncontrado);
-        
-        let fecha = new Date();
-      
-        //fecha 
-        const map = {
-          dd: fecha.getDate(),
-          mm:  fecha.getMonth()+1 <= 9 ? '0'+(fecha.getMonth()+1) : (fecha.getMonth()+1),     //podriamos arreglar que agregue un cero en el mes
-          yy: fecha.getFullYear().toString().slice(-2),
-          yyyy: fecha.getFullYear()
-        }
-
-        let productTmp = {
-          id: parseInt(req.body.id),
-          name: req.body.name,
-          category: req.body.category,
-          price: parseInt(req.body.price),
-          discountRate: parseInt(req.body.discountRate),
-          discount: parseInt(((req.body.price-(req.body.discountRate/100)*req.body.price))), //precio a pagar menos el descuento
-          stock: parseInt(req.body.stock),
-          description: req.body.description,
-          image: req.body.image,
-          features: req.body.features,
-          //extras
-          registrationDate: 'dd/mm/yy'.replace(/dd|mm|yy|yyy/gi, matched => map[matched]),
-          checkInTime: fecha.getHours()+":"+fecha.getMinutes()+" "+(fecha.getHours() >= 12 ? 'PM' : 'AM'),
-          userWhoRegistered: req.body.userWhoRegistered,
-        }; 
-
-        let productoModificado={};
-        productoModificado = Object.assign(productoModificado, productoEncontrado, productTmp);
-
-        let indice = listaProducts.findIndex( (producto) => {
-              return producto.id == parseInt(req.params.id);
-        });
-
-        listaProducts[indice] = productoModificado;
-
-
-        modelProducts.escrituraDeArchivo(listaProducts);
-
-        //reenvio de lista actualiada
-        listaProducts = modelProducts.aperturaDeArchivo();
-        
-        //redireccion a editar productos
-        res.render('listProducts', {products : listaProducts} );
-
-      }else{
-        res.send("producto no encontrado...");
-      }
-
+    //verificacion de no estar vacio 
+    if(productE != null){
+      res.status(200);
+      res.render("productDetail", { product : productE});
+    }else{
+      res.status(404);
+      res.render("not-found");
     }
-    ,deleteProduct:(req, res)=>{
+
+  },
+  viewShoppingCart: (req, res) => {
+    res.status(200);
+    res.render("shoppingCart");
+  },
+  createProduct: (req, res) => {
+
+    let errores = validationResult(req);
+    
+    //validacion de si existen errores
+    if(errores.isEmpty()){
+      //apertura de archivo
+      let listProducts = modelProducts.aperturaDeArchivo();
+
+      //creacion de objeto temporal 
+      let productTmp = modelProducts.estructurarObjetoPOST(req);
+      
+      //objeto a insertar en archivo o base de datos 
+      listProducts.push(productTmp);
+        
+      //escritura de archivo
+      modelProducts.escrituraDeArchivo(listProducts);
+
+      //retorno a crear otro producto
+      res.status(200); 
+      res.render('listProducts', { products: listProducts});
+    }else{
+      console.log(errores);
+      res.render('createProduct', { msgsErrors : errores.mapped(), DataOld  : req.body } );// otra forma de hacerlo 
+    }  
+    
+  },
+  listProducts: (req, res) => {
+
+    //apertura de archivo
+    let listProducts = modelProducts.aperturaDeArchivo();
+
+    //envio de datos a vista
+    res.status(200); 
+    res.render('listProducts', { products: listProducts});
+
+  },
+  editProduct:(req, res)=>{
+    
+    //apertura de archivo
+    let listProducts = modelProducts.aperturaDeArchivo();
+
+    //busqueda de producto
+    let productE =  modelProducts.buscarProducto(listProducts, req);
+
+    //verificacion de no estar vacio 
+    if(productE != null){
+      //si exiten errores de validacion se envian 
+      res.status(200);
+      res.render('editProduct', { product: productE  });
+    }else{
+      res.status(404);
+      res.render("not-found");
+    }  
+  },
+  updateProduct:(req, res)=>{
+
+    let errores = validationResult(req);
+      
+    //validacion de si existen errores
+    if(errores.isEmpty()){
+      //apertura de archivo
+      let listProducts = modelProducts.aperturaDeArchivo();
+
+      //busqueda de producto
+      let productE = modelProducts.buscarProducto(listProducts, req);
+
+      if(productE != null){
+
+        //crear objeto temporal
+        let productTmp = modelProducts.estructurarObjetoPUT(req, productE.imagesSec);
+
+        let productM={};
+        productM = Object.assign(productM, productE, productTmp);
+
+        //buscar indice
+        let indice = modelProducts.buscarIndice(listProducts, req);
+
+        listProducts[indice] = productM;
+
+        //escritura de archivo
+        modelProducts.escrituraDeArchivo(listProducts);
 
         //apertura de archivo
-        let listaProducts = modelProducts.aperturaDeArchivo();
-      
-
-        // buscauada de indice
-        let indice = listaProducts.findIndex( (producto) => {
-            return producto.id == parseInt(req.params.id);
-        });
-
-        if(indice != -1){
-
-          //eliminacion del producto de la lista 
-          listaProducts.splice(indice, 1);
-
-
-          //reescritura y envio de lista actulisada
-
-          //escritura de archivo
-          modelProducts.escrituraDeArchivo(listaProducts);
-          listaProducts = modelProducts.aperturaDeArchivo();
+        listProducts = modelProducts.aperturaDeArchivo();
         
-          //redireccion a editar productos
-          res.render('listProducts', {products : listaProducts} );
 
-        }else{
-          res.send("producto no encontrado...");
-        } 
+        //redireccion a editar productos
+        res.status(200);
+        res.render('listProducts', {products : listProducts } );
+
+      }else{
+        res.status(404);
+        res.render("not-found");
+      }
+    }else{
+      res.render('editProduct', { msgsErrors : errores.mapped(), DataOld  : req.body } );// otra forma de hacerlo 
     }
+
+  },
+  deleteProduct:(req, res)=>{
+
+    //apertura de archivo
+    let listProducts = modelProducts.aperturaDeArchivo();
+
+    // buscauada de indice
+    let indice = modelProducts.buscarIndice(listProducts, req);
+
+    if(indice != -1){
+
+      //eliminacion de imagen previamente cargada y no exista despues de ser eliminada
+       for(let i= 0 ; i< listProducts[indice].imagesSec.length ;i++){
+         modelProducts.eliminarArchivoImagen(listProducts[indice].imagesSec[i]);
+       }
+
+      //eliminacion del producto de la lista 
+      listProducts.splice(indice, 1);
+
+      //escritura de archivo
+      modelProducts.escrituraDeArchivo(listProducts);
+      
+      //redireccion a editar productos
+      res.status(200);
+      res.render('listProducts', {  products : listProducts} );          
+      
+    }else{
+      res.status(404);
+      res.render("not-found");
+    } 
+  },
+  tablerosIndex: (req, res) => {
+    res.render("./categoryIndex/tablerosIndex");
+  },
+  maquinitasIndex: (req, res) => {
+    res.render("./categoryIndex/maquinitasIndex");
+  },
+  futbolitosIndex: (req, res) => {
+    res.render("./categoryIndex/futbolitosIndex");
+  },
+  accesoriosIndex: (req, res) => {
+    res.render("./categoryIndex/accesoriosIndex");
+  },
+
 }
+
   
 module.exports = productsController;

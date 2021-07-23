@@ -1,0 +1,165 @@
+main{
+  min-height: 100vh;
+  position: relative;
+  top: 50px;
+}
+header {
+  width: 100%;
+  min-width: 320px;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 999;
+}
+
+#site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 24px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.header-icon {
+  color: #f2f2f2;
+}
+
+.logo-image {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+}
+
+
+
+/******** Estilos de menu********/
+
+input[type="checkbox"]:checked + .navbar-menu, 
+input[type="checkbox"]:checked + .navbar-submenu,
+input[type="checkbox"]:checked + .cart-menu  {
+  display: block;
+}
+
+.search-button{
+  display: none;
+}
+
+.navbar-menu, .cart-menu {
+  position: absolute;
+  top: 50px;
+}
+
+.navbar-menu, .navbar-submenu, .cart-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  color: #f2f2f2;
+  width: 100%;
+}
+
+.navbar-menu > li,
+.cart-menu > li {
+  width: 100%;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, .05);
+  border-width: 0 0 1px;
+  text-align: center;
+  background-color: rgb(167, 167, 167);
+  display: block;
+  min-height: 40px;
+  padding: 9px 8px 7px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-submenu > li {
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+  background-color: darkred;
+  border: solid 1px #33333317;
+}
+
+
+
+@media (min-width: 768px){
+  .menu-icon {
+    display: none;
+  }
+
+  .search-button{
+    display: block;
+  }
+
+
+  .navbar-menu{
+    display: flex;
+    position: absolute;
+    width: 80%;
+    top: 4px;
+    max-width: 800px;
+
+  }
+
+  .navbar-menu > li{
+    background: none;
+    height: min-content;
+    border: none;
+  }
+
+
+
+  .search-element{
+    order: 100;
+  }
+
+  .navbar-search {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked + .navbar-search  {
+    display: block;
+    position: absolute;
+    width: max-content;
+    top: 50px;
+  }
+
+  input[type="checkbox"]:checked + .cart-menu  {
+    display: block;
+    position: absolute;
+    width: 120px;
+    top: 50px;
+    right: 0;
+  }
+
+}
+
+@media(min-width: 1001px){
+  .cart-menu{
+    margin-left: 50%;
+    left: 380px;
+    right: auto;
+  }
+}
+
+
+
+
+
+
+
+

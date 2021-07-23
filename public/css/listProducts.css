@@ -1,5 +1,16 @@
+*{
+    /* para no sumar a los elementos sus bordes y sus rellenos */
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'KoHo', sans-serif;
+   
+}
+
+
+img{
+    max-width: 100%;
 }
 
 #vistaListaProductos{
@@ -20,6 +31,11 @@ body{
     /* border: solid 1px red; */
 }
 
+.miniaturaImage{
+    width: 50px;
+    margin: 0 10px;
+}
+
 .colorTenue{
     background-color:#F2F2F2;
 }
@@ -34,35 +50,46 @@ body{
     border-radius: 5px;
     padding: 10px;
     text-align: center;
+    font-size: 0.7em;
     
-}
-
-.botonSecundario{
-    background-color: #EF0000;
-    color:#FFFFFF;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
 }
 
 .info{
     width: 75%;
 }
-.botonera{
-    width: 25%;
-}
 
-.estiloParrafo{
-    font-size: 3vw;
-}
 
 #botonCrear{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
-    
+    justify-content: center;
+    margin-bottom: 8px;
+
 }
 
+
+.botonSecundario{
+
+    background-color: #EF0000;
+    color:#FFFFFF;
+    border-radius: 5px;
+    padding: 12px;
+    text-align: center;
+    font-size: 0.7em;
+}
+
+.botonera{
+    width: 10%;
+
+}
+
+.botonera > a{
+    text-decoration: none;
+}
+
+#linkDetail{
+    color: blue;
+}
 
 @media (min-width:200px){
     
@@ -73,12 +100,33 @@ body{
     .botonera{
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
+        /*border: solid red 1px; */
+        height: 100px;
+        width: 150px;   
+        padding: 0;
+    }
+
+    .estiloParrafo{
+        font-size: 0.7em;
     }
 }
 
+
 @media (min-width: 790px){
+
+    #diveliminar{
+		display:flex;
+		justify-content: space-between;
+		margin-bottom: 10px;
+	}
+    
     .estiloParrafo{
-        font-size: 2vw;
+        font-size: 0.95em;
+    }
+
+    .estiloParrafo{
+        font-size: 0.8em;
     }
 }

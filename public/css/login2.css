@@ -1,0 +1,150 @@
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: rgb(0 0 0 / 10%);
+  margin: 0;
+}
+.loginform-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80vw;
+  height: 80vh;
+  background: blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 5px 50px 0 rgb(0 0 0 / 15%);
+  overflow: hidden;
+}
+.loginleft img {
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.loginleft {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-image: url("/img/chivas.png");
+  background-size: cover;
+  background-position: center;
+}
+.loginright {
+  background: whitesmoke;
+}
+#loginform {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#loginform *,
+#signupform * {
+  margin: 10px 0;
+}
+.passwordinput,
+#email {
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  height: 44px;
+  width: 80%;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.passwordcontainer {
+  align-items: center;
+  /* padding: 5px 8px 0 16px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(5em, 25%), 1fr));
+  width: 100%;
+}
+
+.passwordcontainer input {
+  background: whitesmoke;
+  border: none;
+  height: 36px;
+}
+#email,
+#name {
+  background: whitesmoke;
+  text-align: center;
+  margin: 10px 0;
+}
+#password,
+#password2,
+#name {
+  border: 1px solid #dfe1e5;
+  background: whitesmoke;
+  /* text-align: center; */
+  padding-left: 10px;
+  width: 80%;
+  max-width: 350px;
+  height: 44px;
+  border-radius: 24px;
+}
+#signupform > #password,
+#password2 {
+  text-align: center;
+}
+#fpassword {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 12px;
+  line-height: 44px;
+  color: #44a8f2;
+  cursor: pointer;
+  transition: font-size, 0.5s;
+}
+#fpassword:hover {
+  font-size: 13px;
+}
+input:focus {
+  outline: none;
+}
+.loginright a {
+  color: #44a8f2;
+  cursor: pointer;
+}
+#conectar {
+  background: #44a8f2;
+  color: white;
+  border: 1px solid;
+  height: 44px;
+  width: 80%;
+  max-width: 350px;
+  cursor: pointer;
+}
+#SignUp,
+#login {
+  font-size: 12px;
+  transition: font-size, 0.5s;
+}
+#SignUp:hover,
+#login:hover {
+  font-size: 14px;
+}
+@media screen and (max-width: 426px) {
+  .loginleft {
+    display: none;
+  }
+  .loginform-container {
+    grid-template-columns: 1fr;
+  }
+  #fpassword {
+    display: none;
+  }
+  #password,
+  #password2 {
+    height: 42px;
+    text-align: center;
+  }
+  .passwordcontainer > #password {
+    width: 100%;
+  }
+}

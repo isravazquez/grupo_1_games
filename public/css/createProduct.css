@@ -19,12 +19,12 @@ h1, h5 {
 }
 
 
-#contenedorDeFormulario div{
+#contenedorDeFormulario div, select {
 	width: 100%;
 }
 
 
-#contenedorDeFormulario div input{
+#contenedorDeFormulario div input , select{
 
 	width: 100%;
 	margin-bottom: 15px;	
@@ -45,7 +45,7 @@ h1, h5 {
 
 #contenedorDeFormulario div textarea{
 	overflow-x:auto;
-	width: 325px; height: 75px 
+	width: 135px; height: 75px 
 }
 
 .botonPrimario{
@@ -62,14 +62,38 @@ h1, h5 {
 #botonVista{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin-bottom: 8px;
     
 }
+
+#botonera{
+	/* border: solid red 1px; */
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+
 /* --------------contenedor de formulario-------------- */
 
+/* --------------validación de errores en el formulario -------------- */
+.errorDatosE{
+	background-color: #BC1010;
+	color: white;
+	/* font-weight: bold; */
+	padding: 0 5px;
+	font-size: 14px;
+	border-radius: 4px;
+	/* margin-bottom: 2px; */
+}
+
+/* --------------validación de errores en el formulario -------------- */
 
 
 @media (min-width: 790px){
+
+	
 
 	#areaPrincipal{
 		display: flex;

@@ -31,7 +31,7 @@ img{
 
 /* ------imagenProducto---- */
 #vistaProducto{
-    border: solid 1px black;
+    /* border: solid 1px black; */
     padding: 20px;
     background-color: #FFFFFF;
 }
@@ -49,10 +49,32 @@ img{
     padding: 20px 0;
 }
 
-#carrusel > img{
+#carrusel > a{
     width: 15%;
     border: solid 1px black;
 }
+
+
+#carrusel .max{
+    list-style-type: none;
+}
+
+#carrusel .max{
+    visibility: hidden;  
+}
+
+#carrusel > a:hover + .max{
+     
+    visibility: visible;
+}
+
+/*#carrusel > a:hover ~ img .min{
+     
+    visibility: hidden;
+}
+*/
+
+
 /* ----carrusel--- */
 
 /* --------------vistaProducto-------------- */
@@ -96,7 +118,7 @@ img{
 }
 
 #precios > *{
-    margin: 0 2px;
+    margin: 0 4px;
 }
 
 #cantidad{
@@ -140,6 +162,13 @@ img{
         justify-content: space-around;
         align-items: center;
     }
+
+    #carrusel .max{
+        width: 88%;
+        position: absolute;
+        top: 131px;
+        left: 29px;  
+    }
     /* ----vistaProducto---- */
 
     /* ----costo a pagar--- */
@@ -162,12 +191,6 @@ img{
         justify-content: space-around;
     }
     /* ----costo a pagar--- */
-
-    /* correccion de para barra fija  */
-    #areaPrincipal{
-        margin-top: 48px;
-    }
-    /* correccion de para barra fija  */
 }
 
 /* medida escritorio */
@@ -193,6 +216,13 @@ img{
         justify-content: center;
     }
 
+    #carrusel .max{
+        width: 45%;
+        position: absolute;
+        top: 173px;
+        left: 25px;  
+    }
+
 }
 
 /* medida pantallas*/
@@ -201,6 +231,13 @@ img{
     #areaPrincipal{
         max-width: 1200px;
         margin: auto;
+    }
+
+    #carrusel .max{
+        width:36%;
+        position: absolute;
+        top: 180px;
+        left: 128px;  
     }
     /*-------area principal -------*/
 }

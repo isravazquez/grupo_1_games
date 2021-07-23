@@ -1,0 +1,20 @@
+<%- include("../partials/head") %>
+<body>
+    <%- include('../partials/header') %>
+    <%- include('../partials/modal') %>
+    <main>
+        <section class="catalog">
+            <%for(let i = 0; i < 12; i++){%>
+                <div class="item-catalog">
+                    <img src="/img/tablero.png" alt="" class="img-item-catalog">
+                    <h3>Tablero Marvel V Capcom</h3>
+                    <h4>$3,990.00</h4>
+                    <button class="add-cart-button">Añadir al Carrito</button>
+                    <button class="info-button">Información</button>
+                </div>
+            <%}%>
+        </section>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,28 +1,83 @@
-
 <header>
-    <div class="contenido-header">
-        <a href="#" id="boton-hamburguesa">
-            <i class="fas fa-bars icono-header"></i>
-        </a>
-        <nav class="nav-bar">
-            <a href="#">Tableros</a>
-            <a href="#">Futbolitos</a>
-            <a href="#">Maquinitas</a>
-            <a href="#">Accesorios</a>
-            <a href="#">Contacto</a>
-            <a href="/products/listProducts">Productos</a>
-        </nav>
-        <a href="#" id="boton-buscador">
-            <i class="fas fa-search icono-header"></i>
-        </a>
-        <a href="/" class="logo" id="logo-principal">
-            <img src="/img/logo_160_x_160_blanco.svg" alt="logo" class="logo">
-        </a>
-        <label for="desplegar" id="boton-carrito">
-            <i class="fas fa-shopping-cart btn_despiega icono-header"></i>
-        </label>
-        <button id="boton-login">
-            <i class="fas fa-user icono-header" ></i>
-        </button>
+    <div id="site-header">
+        <div class="icon-container menu-icon">
+            <label for="show-menu">
+                <span class="fas fa-bars header-icon"></span>
+            </label>
+        </div>
+
+        <div class="icon-container">
+            <a href="/" id="logo-button">
+                <img src="/img/logo_160_x_160_blanco.svg" alt="logo" class="logo-image">
+            </a>
+        </div>
+        <div class="icon-container cart-icon">
+            <label for="show-cart">
+                <span class="fas fa-shopping-cart header-icon"></span>
+            </label>
+        </div>
     </div>
-</header>
+
+    <input type="checkbox" id="show-menu" hidden>
+    <ul class="navbar-menu">
+        <li class="search-element">
+            <label for="show-submenu-search" class="search-button">
+                <span class="fas fa-search header-icon"></span>
+            </label>
+            <input type="checkbox" id="show-submenu-search" hidden>
+            <form action="" class="navbar-search">
+                <input type="search" name="search" placeholder="Buscar">
+                <button><i class="fas fa-search"></i></button>
+            </form>  
+        </li>
+        <li>
+            <label for="show-submenu-tableros">Tableros</label>
+            <input type="checkbox" id="show-submenu-tableros" hidden>
+            <ul class="navbar-submenu">
+                <li><a href="/products/tableros">Pro</a></li>
+                <li><a href="/products/tableros">Air</a></li>
+                <li><a href="/products/tableros">Base</a></li>
+            </ul>
+        </li>
+        <li>
+            <label for="show-submenu-maquinitas">Maquinitas</label>
+            <input type="checkbox" id="show-submenu-maquinitas" hidden>
+            <ul class="navbar-submenu">
+                <li><a href="/products/maquinitas">Max</a></li>
+                <li><a href="/products/maquinitas">Arturito</a></li>
+            </ul>
+        </li>
+        <li>
+            <label for="show-submenu-futbolitos">Futbolitos</label>
+            <input type="checkbox" id="show-submenu-futbolitos" hidden>
+            <ul class="navbar-submenu">
+                <li><a href="/products/futbolitos">Estandar</a></li>
+                <li><a href="/products/futbolitos">Pro</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/products/accesorios">Accesorios</a>
+        </li>
+        <li>
+            <a href="/products">Productos</a>
+        </li>
+    </ul>
+
+    <input type="checkbox" id="show-cart" hidden>
+    <ul class="cart-menu">
+        <li>
+            <label for="desplegar" id="boton-carrito">
+                <a>Carrito</a>
+            </label>
+        </li>
+        <li>
+            <a href="#">Favoritos</a>
+        </li>
+        <li>
+            <a href="#">Cuenta</a>
+        </li>
+        <li>
+            <a href="/login">Iniciar Sesión</a>
+        </li>
+    </ul>
+</header>    

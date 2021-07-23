@@ -5,61 +5,27 @@
     <%- include('partials/header') %> 
     <%- include('partials/modal') %>
     <main id="areaPrincipal">
-      
       <section id="vistaListaProductos">
         <h1>Lista de productos</h1>
         <div id="botonCrear">
-          <a type="submit" href="/products/createProduct" class="botonPrimario">
-            <i class="fas fa-pen"></i>
-          </a>
+          <a type="submit" href="/products/create" class="botonPrimario">
+            <!-- <i class="fas fa-pen"></i> -->
+            <i class="fas fa-plus"></i> Registrar otro 
+          </a>	
         </div>
-          <% for(let i= 0; i< products.length ; i++){%> 
+          <% for(let i= 0; i< products.length ; i++){ %> 
             <% if(i % 2 == 0 ){ %>
             <div id="producto" class="colorTenue">
-                <div class="info">
-                  <p class="estiloParrafo">
+              <div class="miniaturaImage">
+                <img src="/img/imagesProducts/<%= products[i].image ? products[i].image : 'default-image.png' %>" alt="imagenProducto">
+              </div>
+              <div class="info">
+                <p class="estiloParrafo">
                       Nombre:
                       <strong>
                         <%= products[i].name%>
                       </strong> 
-                      Categoria:
-                      <strong>
-                        <%= products[i].category%> 
-                      </strong>
-                      Stock:
-                      <strong>
-                        <%= products[i].stock %>
-                      </strong>
                       <br>
-                      Precio:
-                      <strong>
-                        <%= products[i].price%>
-                      </strong>
-                      Descuento:
-                      <strong>
-                        <%= products[i].discount %>
-                      </strong>
-                      <br>
-                      Porcentaje de descuento:
-                      <strong>
-                        %<%= products[i].discountRate %> 
-                      </strong>
-                  </p>
-                </div>
-                <div class="botonera">
-                  <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonPrimario">
-                    Actualizar
-                  </a>
-                </div>
-            </div>
-          <% }else{%>
-            <div id="producto" class="colorOscuro">
-                <div class="info">
-                  <p class="estiloParrafo">
-                      Nombre:
-                      <strong>
-                        <%= products[i].name%>
-                      </strong> 
                       Categoria:
                       <strong>
                         <%= products[i].category%> 
@@ -71,24 +37,76 @@
                       <br>
                       Precio:
                       <strong>
-                        <%= products[i].price%>
+                        <%= products[i].price%>$
                       </strong>
                       Descuento:
                       <strong>
-                        <%= products[i].discount %>
+                        <%= products[i].discount %>$
                       </strong>
                       <br>
                       Porcentaje de descuento:
                       <strong>
-                        %<%= products[i].discountRate %> 
+                       <%= products[i].discountRate %>%
                       </strong>
+                      <br>  
+                      <a id="linkDetail" href="/products/<%= products[i].id %> ">Ver detalles</a>
+                </p> 
+              </div>
+              <div class="botonera">
+                <a type="submit" href="/products/<%= products[i].id%>/edit" class="botonPrimario">
+                 Actualizar
+                </a>
+                <form id="diveliminar" action="/products/<%= products[i].id%>?_method=DELETE" method="post">
+                  <input type="submit"  class="botonSecundario" value="Eliminar">
+                </form>
+              </div>
+            </div>
+          <% }else{%>
+            <div id="producto" class="colorOscuro">
+                <div class="miniaturaImage">
+                  <img src="/img/imagesProducts/<%= products[i].image ? products[i].image : 'default-image.png' %>" alt="imagenProducto">
+                </div>
+                <div class="info">
+                  <p class="estiloParrafo">
+                        Nombre:
+                        <strong>
+                          <%= products[i].name%>
+                        </strong> 
+                        <br>
+                        Categoria:
+                        <strong>
+                          <%= products[i].category%> 
+                        </strong>
+                        stock:
+                        <strong>
+                          <%= products[i].stock %>
+                        </strong>
+                        <br>
+                        Precio:
+                        <strong>
+                          <%= products[i].price%>
+                        </strong>
+                        Descuento:
+                        <strong>
+                          <%= products[i].discount %>
+                        </strong>
+                        <br>
+                        Porcentaje de descuento:
+                        <strong>
+                          %<%= products[i].discountRate %> 
+                        </strong>
+                        <br>
+                        <a id="linkDetail" href="/products/<%= products[i].id %>">Ver detalles</a>
                   </p>
                 </div>
                 <div class="botonera">
-                  <a type="submit" href="/products/editProduct/<%= products[i].id%>" class="botonPrimario">
-                    Actualizar
-                  </a>
-                </div>
+                <a type="submit" href="/products/<%= products[i].id%>/edit" class="botonPrimario">
+                 Actualizar
+                </a>
+                <form id="diveliminar" action="/products/<%= products[i].id%>?_method=DELETE" method="post">
+                  <input type="submit"  class="botonSecundario" value="Eliminar">
+                </form>
+              </div>
             </div>
         <%}%> <% } %>
       </section>

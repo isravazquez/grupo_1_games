@@ -1,15 +1,10 @@
 <%- include("./partials/head") %>
 <body>
-    <%- include('partials/header2') %>
-    <script src="/js/header.js"></script>
+    <%- include('partials/header') %>
     <%- include('partials/modal') %>
-    <div>
-        <%- include("./login") %>
-    </div>
-    <div>
-        <%- include("./signup")%>
-    </div>
-    <script src="/js/login.js"></script>
+    <!-- %- include("./signup")%  -->
+    <!-- script src="/js/login.js"></script  -->
+
     <main class="main" id="main">
         <section class="seccion-banner">
             <ul class="slider">
@@ -39,7 +34,6 @@
         <section class="seccion-maquinita">
             <div class="contenedor-img-maquinita">
                 <img src="/img/maquinita-derecha.png" alt="img-maquinita" class="img-maquinita">
-                <a href="#agregar-maquinita" class="boton-agregar"><i class="fas fa-cart-plus"></i></a>
             </div>
             <div class="descripcion-y-juegos-maq">
                 <div class="descripcion">
@@ -53,11 +47,24 @@
                     <img src="/img/minecraft.jpg" alt="minecraft">
                     <img src="/img/fifa19.jpg" alt="fifa19">
                 </div>
+            </div>
         </section>
+
+        <section class="catalog">
+            <%for(let i = 0; i < 3; i++){%>
+                <div class="item-catalog">
+                    <img src="/img/maquinita-frente.png" alt="" class="img-item-catalog">
+                    <h3>Maquinita XB 360 Mario Bros</h3>
+                    <h4>$11,490.00</h4>
+                    <button class="add-cart-button">Añadir al Carrito</button>
+                    <button class="info-button">Información</button>
+                </div>
+            <%}%>
+        </section>
+
         <section class="seccion-tablero">
             <div class="contenedor-img-tablero">
                 <img src="/img/tablero.png" alt="img-tablero" class="img-tablero">
-                <a href="#agregar-tablero" class="boton-agregar"><i class="fas fa-cart-plus"></i></a>
             </div>
             <div class="descripcion-y-juegos-tab">
                 <div class="descripcion">
@@ -76,6 +83,20 @@
                 </div>
             </div>
         </section>
+
+
+        <section class="catalog">
+            <%for(let i = 0; i < 3; i++){%>
+                <div class="item-catalog">
+                    <img src="/img/tablero.png" alt="" class="img-item-catalog">
+                    <h3>Tablero Marvel V Capcom</h3>
+                    <h4>$3,990.00</h4>
+                    <button class="add-cart-button">Añadir al Carrito</button>
+                    <button class="info-button">Información</button>
+                </div>
+            <%}%>
+        </section>
+
         <section class="seccion-futbolito">
             <div class="contenedor-img-futbolito">
                 <img src="/img/futbolito.png" alt="img-futbolito" class="img-futbolito">
@@ -105,7 +126,7 @@
             </div>
         </section>
     </main>
-
+    <!-- script src="/js/header.js"></script -->
     <%- include('partials/footer') %>
 </body>
 </html>
