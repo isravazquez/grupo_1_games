@@ -2,7 +2,7 @@ const fs = require("fs");
 const fs2 = require("fs").promises;
 const path = require("path");
 const bcrypt = require("bcryptjs");
-const userFilePath = path.join(__dirname, "users.json");
+const userFilePath = path.join(__dirname, "../data/users.json");
 
 const usersModel = {
   openFile: () => {

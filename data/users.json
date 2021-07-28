@@ -1,1 +1,10 @@
-[]
+[
+ {
+  "id": 1,
+  "email": "ab@gmail.com",
+  "name": "A",
+  "lastname": "BC",
+  "password": "$2a$10$sVK6ea/.ywF6QVbhAAJEGu9y/hJDsnOqbjkxRaVcPcqNk5TseEuki",
+  "image": "zoomhomework.png"
+ }
+]

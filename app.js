@@ -19,7 +19,7 @@ app.use(express.static(path.resolve(__dirname, "./public")));
 app.set("views", path.join(__dirname, "views"));
 app.use("/", homeRoute);
 app.use("/products", productsRoute);
-app.use("/users", productsRoute);
+app.use("/users", usersRoute);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Servidor corriendo en el puerto 3000");

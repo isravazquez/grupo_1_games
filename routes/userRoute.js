@@ -18,6 +18,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 
 // Define routes
+console.log("Rutas...");
 router.get("/create", usersController.view);
 router.post("/create", upload.single("image"), usersController.createUser);
 
