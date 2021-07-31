@@ -22,4 +22,6 @@ console.log("Rutas...");
 router.get("/create", usersController.view);
 router.post("/create", upload.single("image"), usersController.createUser);
 
+router.post("/login", usersController.loginUser);
+
 module.exports = router;
