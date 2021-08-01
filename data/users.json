@@ -6,5 +6,21 @@
   "lastname": "BC",
   "password": "$2a$10$sVK6ea/.ywF6QVbhAAJEGu9y/hJDsnOqbjkxRaVcPcqNk5TseEuki",
   "image": "zoomhomework.png"
+ },
+ {
+  "id": 2,
+  "email": "jaimepedobear@gmail.com",
+  "name": "Jaime Israel",
+  "lastname": "Bernal",
+  "password": "$2a$10$B9dz7FhnZIfA50KLU.XJruvNhE0mDaiud0AUu0B8BbBLAl0CEXC4K",
+  "image": "IMG-20210519-WA0007.jpg"
+ },
+ {
+  "id": 3,
+  "email": "jaimepedobear@gmail.com",
+  "name": "Jaime Israel",
+  "lastname": "Bernal",
+  "password": "$2a$10$wjTBf.M8.ccm3hHQN.X6qOuRoEuv88bMgRJa23YhZcun2.7fK1dhi",
+  "image": "IMG-20210519-WA0007.jpg"
  }
 ]
