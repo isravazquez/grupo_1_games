@@ -9,18 +9,18 @@
  },
  {
   "id": 2,
-  "email": "jaimepedobear@gmail.com",
-  "name": "Jaime Israel",
-  "lastname": "Bernal",
-  "password": "$2a$10$B9dz7FhnZIfA50KLU.XJruvNhE0mDaiud0AUu0B8BbBLAl0CEXC4K",
-  "image": "IMG-20210519-WA0007.jpg"
+  "email": "k_hintze_m@hotmail.com",
+  "name": "Kevin",
+  "lastname": "Maldonado",
+  "password": "$2a$10$5ym0vysQlZRfKAmAOzyGteeQIIxKKnG2w6la9mbTt7jBgbcgMomAG",
+  "image": "zoomhomework.png"
  },
  {
   "id": 3,
-  "email": "jaimepedobear@gmail.com",
-  "name": "Jaime Israel",
-  "lastname": "Bernal",
-  "password": "$2a$10$wjTBf.M8.ccm3hHQN.X6qOuRoEuv88bMgRJa23YhZcun2.7fK1dhi",
-  "image": "IMG-20210519-WA0007.jpg"
+  "email": "abc@gmail.com",
+  "name": "Abe",
+  "lastname": "Bece",
+  "password": "$2a$10$GYavm2lKQj97gJVKI6F8U./yINL7YfN55ELJJmAr9S2PLufuQioY6",
+  "image": "zoomhomework.png"
  }
 ]

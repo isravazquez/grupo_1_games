@@ -12,8 +12,9 @@
             </a>
         </div>
         <div class="icon-container cart-icon">
+            <% let logged %> 
             <label for="show-cart">
-                <span class="fas fa-shopping-cart header-icon"></span>
+                <span class="fas fa-shopping-cart header-icon"><% if(logged=== true){%><%= user.name%> <%} %></span>
             </label>
         </div>
     </div>
