@@ -5,12 +5,13 @@ const homeRoute = require("./routes/home");
 const productsRoute = require("./routes/productsRoute");
 const usersRoute = require("./routes/userRoute");
 const methodOverride = require("method-override");
-
+const session = require("express-session");
 app.set("view engine", "ejs");
 
 // configurar los metodos post
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(session({ secret: "secreto" }));
 
 // configurar los metodos delete y put con method-override
 app.use(methodOverride("_method"));

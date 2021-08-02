@@ -34,6 +34,10 @@ const usersModel = {
       const check1 = bcrypt.compareSync(req.body.password, user.password);
       if (check1) {
         console.log(`User ${user.name} logged in`);
+        let usuarioLogeado = user;
+        req.session.logged = usuarioLogeado;
+        // res.cookie("logged", "true", { maxAge: 900000, signup: "true" });
+        // let logged = req.session.logged;
         res.render("home", { user, logged: true });
       } else {
         console.log("Wrong password");
