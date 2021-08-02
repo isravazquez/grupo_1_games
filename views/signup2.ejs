@@ -6,7 +6,7 @@
         <div class="loginright">
             <form action="/users/create" method="POST" id="signupform">
                 <h1>Registro</h1>
-                <% if(repeated ===true) { %>
+                <% let repeated; if(repeated ===true) { %>
                     <h1>El email de usuario ya existe</h1>
                     <% } %> 
                 <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico" required>
