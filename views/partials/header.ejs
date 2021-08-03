@@ -13,7 +13,11 @@
         </div>
         <div class="icon-container cart-icon">
             <label for="show-cart">
-                <span class="fas fa-shopping-cart header-icon"></span>
+                <span class="fas fa-shopping-cart header-icon">
+                    <% if (locals.logged) { %>
+                        <%= user.name %>
+                        <%}%>
+                </span>
             </label>
         </div>
     </div>
