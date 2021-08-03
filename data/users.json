@@ -1,26 +1,18 @@
 [
- {
-  "id": 1,
-  "email": "ab@gmail.com",
-  "name": "A",
-  "lastname": "BC",
-  "password": "$2a$10$sVK6ea/.ywF6QVbhAAJEGu9y/hJDsnOqbjkxRaVcPcqNk5TseEuki",
-  "image": "zoomhomework.png"
- },
- {
-  "id": 2,
-  "email": "k_hintze_m@hotmail.com",
-  "name": "Kevin",
-  "lastname": "Maldonado",
-  "password": "$2a$10$5ym0vysQlZRfKAmAOzyGteeQIIxKKnG2w6la9mbTt7jBgbcgMomAG",
-  "image": "zoomhomework.png"
- },
- {
-  "id": 3,
-  "email": "abc@gmail.com",
-  "name": "Abe",
-  "lastname": "Bece",
-  "password": "$2a$10$GYavm2lKQj97gJVKI6F8U./yINL7YfN55ELJJmAr9S2PLufuQioY6",
-  "image": "zoomhomework.png"
- }
+  {
+    "id": 1,
+    "email": "ab@gmail.com",
+    "name": "Abelardo",
+    "lastname": "BC",
+    "password": "$2a$10$sVK6ea/.ywF6QVbhAAJEGu9y/hJDsnOqbjkxRaVcPcqNk5TseEuki",
+    "image": "zoomhomework.png"
+  },
+  {
+    "id": 2,
+    "email": "abc@gmail.com",
+    "name": "Benito",
+    "lastname": "Bece",
+    "password": "$2a$10$GYavm2lKQj97gJVKI6F8U./yINL7YfN55ELJJmAr9S2PLufuQioY6",
+    "image": "zoomhomework.png"
+  }
 ]

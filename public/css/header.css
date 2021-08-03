@@ -1,4 +1,4 @@
-main{
+main {
   min-height: 100vh;
   position: relative;
   top: 50px;
@@ -40,27 +40,33 @@ header {
   height: 34px;
   object-fit: cover;
 }
-
-
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f2f2f2;
+}
 
 /******** Estilos de menu********/
 
-input[type="checkbox"]:checked + .navbar-menu, 
+input[type="checkbox"]:checked + .navbar-menu,
 input[type="checkbox"]:checked + .navbar-submenu,
-input[type="checkbox"]:checked + .cart-menu  {
+input[type="checkbox"]:checked + .cart-menu {
   display: block;
 }
 
-.search-button{
+.search-button {
   display: none;
 }
 
-.navbar-menu, .cart-menu {
+.navbar-menu,
+.cart-menu {
   position: absolute;
   top: 50px;
 }
 
-.navbar-menu, .navbar-submenu, .cart-menu {
+.navbar-menu,
+.navbar-submenu,
+.cart-menu {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -73,7 +79,7 @@ input[type="checkbox"]:checked + .cart-menu  {
 .cart-menu > li {
   width: 100%;
   border-style: solid;
-  border-color: rgba(0, 0, 0, .05);
+  border-color: rgba(0, 0, 0, 0.05);
   border-width: 0 0 1px;
   text-align: center;
   background-color: rgb(167, 167, 167);
@@ -94,36 +100,30 @@ input[type="checkbox"]:checked + .cart-menu  {
   border: solid 1px #33333317;
 }
 
-
-
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .menu-icon {
     display: none;
   }
 
-  .search-button{
+  .search-button {
     display: block;
   }
 
-
-  .navbar-menu{
+  .navbar-menu {
     display: flex;
     position: absolute;
     width: 80%;
     top: 4px;
     max-width: 800px;
-
   }
 
-  .navbar-menu > li{
+  .navbar-menu > li {
     background: none;
     height: min-content;
     border: none;
   }
 
-
-
-  .search-element{
+  .search-element {
     order: 100;
   }
 
@@ -131,35 +131,26 @@ input[type="checkbox"]:checked + .cart-menu  {
     display: none;
   }
 
-  input[type="checkbox"]:checked + .navbar-search  {
+  input[type="checkbox"]:checked + .navbar-search {
     display: block;
     position: absolute;
     width: max-content;
     top: 50px;
   }
 
-  input[type="checkbox"]:checked + .cart-menu  {
+  input[type="checkbox"]:checked + .cart-menu {
     display: block;
     position: absolute;
     width: 120px;
     top: 50px;
     right: 0;
   }
-
 }
 
-@media(min-width: 1001px){
-  .cart-menu{
+@media (min-width: 1001px) {
+  .cart-menu {
     margin-left: 50%;
     left: 380px;
     right: auto;
   }
 }
-
-
-
-
-
-
-
-
