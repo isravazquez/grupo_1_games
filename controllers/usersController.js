@@ -16,6 +16,10 @@ const usersController = {
     // res.status(200);
     // res.redirect("/");
   },
+  profileUser: (req, res) => {
+    // res.status(200);
+    res.render("profileUser");
+  },
 };
 
 module.exports = usersController;
