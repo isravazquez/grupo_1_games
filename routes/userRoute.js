@@ -3,6 +3,9 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require("multer");
+//verificaicon de session activa 
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -19,9 +22,11 @@ let upload = multer({ storage: storage });
 
 // Define routes
 console.log("Rutas...");
-router.get("/create", usersController.view);
-router.post("/create", upload.single("image"), usersController.createUser);
+router.get("/create", guestMiddleware ,usersController.view);
+router.post("/create", guestMiddleware , upload.single("image"), usersController.createUser);
 
-router.post("/login", usersController.loginUser);
+router.post("/login", guestMiddleware ,usersController.loginUser);
+//ruta perfil de uauario
+router.get("/profileUser", authMiddleware , usersController.profileUser);
 
 module.exports = router;

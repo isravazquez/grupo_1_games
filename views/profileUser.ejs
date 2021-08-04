@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head") %>
+    <body>
+        <!-- vista parcial de header -->
+        <%- include('partials/header') %>
+        <main id="areaPrincipal">
+            <section>
+                <div id="usuario" class="colorTenue">
+                 
+                    <div class="info">
+                      <p class="estiloParrafo">
+                            Nombre:
+                            <strong>
+                              <%= locals.usuarioLogeado.name%>
+                              <%= locals.usuarioLogeado.lastName%> 
+                            </strong> 
+                            <br>
+                            Email:
+                            <strong>
+                              <%= locals.usuarioLogeado.email %>
+                            </strong>
+                      </p> 
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- vista parcial de Footer -->
+           <%- include('partials/footer') %>
+    </body>
+</html>
