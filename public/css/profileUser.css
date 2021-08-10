@@ -1,0 +1,61 @@
+#areaPrincipal{
+
+    /* background-image: url('../img/logo_160_x_160_blanco.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom; */
+
+}
+.info{
+    width: 75%;
+}
+
+#usuario{
+    padding: 30px;
+    border: dashed black 1px;
+}
+
+.miniaturaImage{
+    width: 40%;
+    margin: 0 10px;
+    
+}
+
+.miniaturaImage.user img{
+    border-radius: 75px;
+    border: solid 3px black;
+}
+
+
+
+
+
+@media (min-width:200px){
+    #areaPrincipal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #usuario{
+      
+        display: flex;
+        justify-content: center;
+    }
+
+    .info{
+        /* border: solid red 1px; */
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    
+}
+
+
+@media (min-width: 790px){
+    .miniaturaImage.user img{
+        border-radius: 90px;
+        border: solid 3px black;
+    }
+}
