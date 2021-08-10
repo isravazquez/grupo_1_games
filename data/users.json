@@ -1,18 +1,25 @@
 [
-  {
-    "id": 1,
-    "email": "ab@gmail.com",
-    "name": "Abelardo",
-    "lastname": "BC",
-    "password": "$2a$10$sVK6ea/.ywF6QVbhAAJEGu9y/hJDsnOqbjkxRaVcPcqNk5TseEuki",
-    "image": "zoomhomework.png"
-  },
-  {
-    "id": 2,
-    "email": "abc@gmail.com",
-    "name": "Benito",
-    "lastname": "Bece",
-    "password": "$2a$10$GYavm2lKQj97gJVKI6F8U./yINL7YfN55ELJJmAr9S2PLufuQioY6",
-    "image": "zoomhomework.png"
-  }
+ {
+  "id": 1,
+  "email": "ab@gmail.com",
+  "name": "Abelardo",
+  "lastname": "BC",
+  "password": "$2a$10$sVK6ea/.ywF6QVbhAAJEGu9y/hJDsnOqbjkxRaVcPcqNk5TseEuki",
+  "image": "zoomhomework.png"
+ },
+ {
+  "id": 2,
+  "email": "abc@gmail.com",
+  "name": "Benito",
+  "lastname": "Bece",
+  "password": "$2a$10$GYavm2lKQj97gJVKI6F8U./yINL7YfN55ELJJmAr9S2PLufuQioY6",
+  "image": "zoomhomework.png"
+ },
+ {
+  "id": 3,
+  "email": "kevin.hintze@ipicyt.edu.mx",
+  "name": "Kevin",
+  "lastname": "Hintze",
+  "password": "$2a$10$Xt23sas88NKZIxv6gXVCIORg9HjQ1k.8sPmcUqkWYh0hTCAwVjCaS"
+ }
 ]
