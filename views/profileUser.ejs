@@ -5,24 +5,35 @@
         <!-- vista parcial de header -->
         <%- include('partials/header') %>
         <main id="areaPrincipal">
-            <section>
-                <div id="usuario" class="colorTenue">
-                 
+            <section id="contenedorDePerfilUsuario">
+                <div id="usuario" >
                     <div class="info">
-                      <p class="estiloParrafo">
-                            Nombre:
-                            <strong>
-                              <%= locals.usuarioLogeado.name%>
-                              <%= locals.usuarioLogeado.lastName%> 
-                            </strong> 
-                            <br>
-                            Email:
-                            <strong>
-                              <%= locals.usuarioLogeado.email %>
-                            </strong>
-                      </p> 
+                      <div class="miniaturaImage user">
+                        <!-- <img src="/img/<%= locals.usuarioLogeado.image ? locals.usuarioLogeado.image : 'default-image.png' %>" alt="imagenUsuario"> -->
+                        <img src="/img/default-image.png" alt="imagenUsuario">
+                      </div>
+                      <div>
+                        <p class="estiloParrafo">
+                              Usuario:
+                              <strong>
+                                <%= locals.usuarioLogeado.name%>
+                                <%= locals.usuarioLogeado.lastname%> 
+                              </strong> 
+                              <br>
+                              Email:
+                              <strong>
+                                <%= locals.usuarioLogeado.email %>
+                              </strong>
+                        </p> 
+                      </div>
                     </div>
+                    
                 </div>
+            </section>
+            <section id="contenedorDelistaProductos">
+              <div>
+                <h3>Lista de productos en carrito</h3>
+              </div>
             </section>
         </main>
         <!-- vista parcial de Footer -->
