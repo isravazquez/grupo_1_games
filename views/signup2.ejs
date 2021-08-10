@@ -4,11 +4,11 @@
     <div class="loginform-container">
         <div class="loginleft"></div>
         <div class="loginright">
-            <form action="/users/create" method="POST" id="signupform">
+            <form action="/users/create" method="POST" id="signupform" enctype="multipart/form-data">
                 <h1>Registro</h1>
                 <%  if(locals.repeated) { %>
                     <h1>El email de usuario ya existe</h1>
-                    <% } %> 
+                    <% } %>
                 <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico" required>
                 <input type="text" name="name" id="name" placeholder="Introduce tu nombre" required>
                 <input type="text" name="lastname" id="lastname" placeholder="Introduce tus apellidos" required>
