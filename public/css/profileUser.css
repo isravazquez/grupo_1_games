@@ -5,22 +5,25 @@
     background-position: right bottom; */
 
 }
-.info{
-    width: 75%;
-}
 
-#usuario{
+#perfilUsuario{
     padding: 30px;
     border: dashed black 1px;
 }
 
-.miniaturaImage{
+.infoUsuario{
+    width: 75%;
+}
+
+
+
+.miniaturaImageUser{
     width: 40%;
     margin: 0 10px;
     
 }
 
-.miniaturaImage.user img{
+.miniaturaImageUser.user img{
     border-radius: 75px;
     border: solid 3px black;
 }
@@ -36,13 +39,13 @@
         align-items: center;
     }
 
-    #usuario{
+    #perfilUsuario{
       
         display: flex;
         justify-content: center;
     }
 
-    .info{
+    .infoUsuario{
         /* border: solid red 1px; */
         display: flex;
         align-items: center;
@@ -54,7 +57,7 @@
 
 
 @media (min-width: 790px){
-    .miniaturaImage.user img{
+    .miniaturaImageUser.user img{
         border-radius: 90px;
         border: solid 3px black;
     }
