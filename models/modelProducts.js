@@ -3,20 +3,20 @@ const fs = require('fs');
 const fs2 = require('fs').promises;
 const path = require('path');
 
-let modelProducts = {
+const modelProducts = {
     
      
     aperturaDeArchivo: function () {
         //apertura de archivo
-        let cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'../data/products.json'),'utf-8');
+        const cadenaJsonA = fs.readFileSync(path.resolve(__dirname,'../data/products.json'),'utf-8');
         //conversion de objeto a cadena json
-        let listaProductos = JSON.parse(cadenaJsonA);
+        const listaProductos = JSON.parse(cadenaJsonA);
 
         return listaProductos;
     },
     escrituraDeArchivo: function (listaProducts) {
         //conversion de objeto a cadena json
-        let cadenaJsonE = JSON.stringify(listaProducts,null, 2);
+        const cadenaJsonE = JSON.stringify(listaProducts,null, 2);
         //escritura de archivo
         fs.writeFileSync(path.resolve(__dirname,'../data/products.json'),cadenaJsonE); 
         
@@ -24,7 +24,7 @@ let modelProducts = {
     estructurarObjetoPOST: function (req) {
         
        //objeto para fechas 
-       let fecha = new Date();
+       const fecha = new Date();
 
        //para obtener la fecha con formato 
        const map = {
@@ -38,7 +38,7 @@ let modelProducts = {
     // ---------validacion de imagenes---------------
         
         //para validar se han cargado imagenes desde el formulario
-        let imagenes = [];
+        const imagenes = [];
         // req.files.imageProducto[0].filename
         if(req.files){
             //imagenes 
@@ -58,7 +58,7 @@ let modelProducts = {
 
         
         //creacion de objeto temporal que almacena los datos entrantes de la vista crear producto
-        let productoTmp = {
+        const productoTmp = {
             id: parseInt(Math.random() * (10000 - 1) + 1),
             name: req.body.name,
             category: req.body.category,
@@ -81,7 +81,7 @@ let modelProducts = {
     },
     estructurarObjetoPUT: function (req, vectorImagenes) {
         
-        let fecha = new Date();
+        const fecha = new Date();
  
         //para obtener la fecha con formato 
         const map = {
@@ -92,14 +92,14 @@ let modelProducts = {
         }
  
         
-             //para validar que exite una imagen desde el formulario y se va actuliar
-             let nombreImagen = '';
+        //para validar que exite una imagen desde el formulario y se va actuliar
+        // let nombreImagen = '';
              
              
         // ---------validacion de imagenes---------------
         
             //para validar se han cargado imagenes desde el formulario
-            let imagenes = [];
+            const imagenes = [];
             // req.files.imageProducto[0].filename
             if(req.files){
                 //imagenes 
@@ -124,7 +124,7 @@ let modelProducts = {
  
          
         //creacion de objeto temporal que almacena los datos entrantes de la vista crear producto
-        let productoTmp = {
+        const productoTmp = {
             id: parseInt(Math.random() * (10000 - 1) + 1),
             name: req.body.name,
             category: req.body.category,
@@ -146,14 +146,14 @@ let modelProducts = {
          return productoTmp;
     },
     buscarProducto: function (listaProductos, req) {
-        let productoEncontrado = listaProductos.find( (producto) => {
+        const productoEncontrado = listaProductos.find( (producto) => {
             return producto.id == parseInt(req.params.id);
         });
 
         return productoEncontrado;
     },
     buscarIndice: function (listaProductos, req) {
-        let indice = listaProductos.findIndex( (producto) => {
+        const indice = listaProductos.findIndex( (producto) => {
             return producto.id == parseInt(req.params.id);
         });
 
@@ -161,7 +161,7 @@ let modelProducts = {
      },
     eliminarArchivoImagen: function (nombreImagen) {
 
-        let rutaImagen = path.join(__dirname,'../public/img/imagesProducts/'+nombreImagen);
+        const rutaImagen = path.join(__dirname,'../public/img/imagesProducts/'+nombreImagen);
 
          //console.log(rutaImagen);
          fs2.unlink(rutaImagen).then( ()=>{

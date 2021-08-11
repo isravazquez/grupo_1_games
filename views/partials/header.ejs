@@ -16,6 +16,9 @@
                 <span class="fas fa-shopping-cart header-icon"></span>
             </label>
         </div>
+        <% if (locals.usuarioLogeado) { %>
+           <div class="name"> <%= usuarioLogeado.name %></div>
+            <%}%>
     </div>
 
     <input type="checkbox" id="show-menu" hidden>
@@ -79,5 +82,8 @@
         <li>
             <a href="/login">Iniciar Sesión</a>
         </li>
+    <% if (locals.usuarioLogeado) { %>
+        <li> <a href="/logout"> Cerrar Sesión</a></li>
+    <%}%>
     </ul>
-</header>    
+</header>
