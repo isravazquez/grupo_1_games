@@ -1,10 +1,4 @@
-#areaPrincipal{
 
-    /* background-image: url('../img/logo_160_x_160_blanco.svg');
-    background-repeat: no-repeat;
-    background-position: right bottom; */
-
-}
 
 #perfilUsuario{
     padding: 30px;
@@ -33,7 +27,7 @@
 
 
 @media (min-width:200px){
-    #areaPrincipal{
+    #areaPrincipalPerfilUsuario{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -46,7 +40,7 @@
     }
 
     .infoUsuario{
-        /* border: solid red 1px; */
+ 
         display: flex;
         align-items: center;
         flex-direction: column;
