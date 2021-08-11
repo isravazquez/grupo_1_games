@@ -15,7 +15,7 @@ header {
 
 #site-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   height: 50px;
   padding: 0 24px;
