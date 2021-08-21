@@ -31,6 +31,9 @@ router.get("/accesorios", productsController.accesoriosIndex);
 //constante para almacenar 
 let upload = multer({ storage: storage });
 
+//prueba conexion a la base de datos 
+router.get("/test",productsController.test);
+
 //vista crear producto
 router.get("/create",authMiddleware, productsController.viewCreateProduct);
 
