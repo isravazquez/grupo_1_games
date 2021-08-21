@@ -1,7 +1,17 @@
 const modelProducts = require('../models/modelProducts');
 const {validationResult} = require('express-validator');
 
+const db = require('../database/models');
+// const sequelize = db.sequelize;
+
 const productsController = {
+  test: (req, res) => {
+     db.Movie.findAll().then((peliculas) => {
+        // console.log(peliculas);
+        return res.json(peliculas);
+     });
+    
+  },
   viewCreateProduct: (req, res) => {
     res.status(200);
     res.render("createProduct");
