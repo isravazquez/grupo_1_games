@@ -76,7 +76,7 @@
   margin: 10px 0;
 }
 #password,
-#password2,
+#lastname,
 #name {
   border: 1px solid #dfe1e5;
   background: whitesmoke;
@@ -88,7 +88,8 @@
   border-radius: 24px;
 }
 #signupform > #password,
-#password2 {
+#password2,
+#lastname {
   text-align: center;
 }
 #fpassword {

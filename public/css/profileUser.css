@@ -1,0 +1,58 @@
+
+
+#perfilUsuario{
+    padding: 30px;
+    border: dashed black 1px;
+}
+
+.infoUsuario{
+    width: 75%;
+}
+
+
+
+.miniaturaImageUser{
+    width: 40%;
+    margin: 0 10px;
+    
+}
+
+.miniaturaImageUser.user img{
+    border-radius: 75px;
+    border: solid 3px black;
+}
+
+
+
+
+
+@media (min-width:200px){
+    #areaPrincipalPerfilUsuario{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #perfilUsuario{
+      
+        display: flex;
+        justify-content: center;
+    }
+
+    .infoUsuario{
+ 
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    
+}
+
+
+@media (min-width: 790px){
+    .miniaturaImageUser.user img{
+        border-radius: 90px;
+        border: solid 3px black;
+    }
+}

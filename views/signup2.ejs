@@ -1,15 +1,20 @@
 <%- include("./partials/head") %>
+<%- include("./partials/header") %>
 <div class="login-container">
     <div class="loginform-container">
         <div class="loginleft"></div>
         <div class="loginright">
-            <form action="/" method="get" id="signupform">
+            <form action="/users/create" method="POST" id="signupform" enctype="multipart/form-data">
                 <h1>Registro</h1>
-                <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico">
-                <input type="text" name="name" id="name"placeholder="Introduce tu nombre completo">
-                <input type="password" name="password" id="password" placeholder="Contraseña">
-                <input type="password" placeholder="Contraseña de nuevo" id="password2">
-                <input type="submit" value="ENVIAR" id="conectar" onclick="">
+                <%  if(locals.repeated) { %>
+                    <h1>El email de usuario ya existe</h1>
+                    <% } %>
+                <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico" required>
+                <input type="text" name="name" id="name" placeholder="Introduce tu nombre" required>
+                <input type="text" name="lastname" id="lastname" placeholder="Introduce tus apellidos" required>
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                <input type="file" name="image" id="image" required>
+                <input type="submit" value="ENVIAR" id="conectar" onclick="" required>
                 <a href="/login" id="login">Ya tengo cuenta</a>
             </form>
         </div>
