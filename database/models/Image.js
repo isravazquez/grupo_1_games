@@ -4,6 +4,19 @@ module.exports = (sequelize, dataTypes) => {
     
     let cols = {
 
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        productId: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        imgName: {
+            type: dataTypes.STRING(100),
+            allowNull: false
+        }
     }
     
     let config = {
@@ -15,7 +28,13 @@ module.exports = (sequelize, dataTypes) => {
 
     Image.associate = function (models) {
 
+        Image.belongsTo(models.Product,{
+            foreignKey: 'productId',
+            as:'Product'
+        });
     }
 
     return Image
 }
+
+//SOLO NOMBRAR CAMOCO IMGNAME COMO NAME 
