@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255),
             allowNull: false
         },
-        categoryid: {
+        categoryId: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
@@ -43,6 +43,7 @@ module.exports = (sequelize, dataTypes) => {
         registrationDatetime: {
             type: dataTypes.DATE,
             allowNull: false
+            // defaultValue: sequelize.NOW
         },
         userWhoRegistered:{
             type: dataTypes.STRING(45),
@@ -61,12 +62,12 @@ module.exports = (sequelize, dataTypes) => {
     Product.associate = function (models) {
 
         Product.belongsTo(models.Category,{
-            foreignKey: 'categoryid',
+            foreignKey: 'categoryId',
             as:'Category'
           });
     
         Product.hasMany(models.Image,{
-            foreignKey: 'product_id',
+            foreignKey: 'productId',
             as:'Image'
         });
     }
