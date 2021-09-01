@@ -6,22 +6,38 @@ const db = require('../database/models');
 
 const productsController = {
   test: (req, res) => {
-     db.Movie.findAll().then((peliculas) => {
+     db.Category.findAll().then((categorias) => {
         // console.log(peliculas);
-        return res.json(peliculas);
+        return res.json(categorias);
+     }).catch((error) => {
+        console.log('Error de: '+ error);
+    });
+    
+  },
+  viewCreateProduct: async (req, res) => {
+  
+    // consulta a la base de datos para obtener categorias 
+     const categorias  = await db.Category.findAll().catch((error) => {
+       console.log('Error de: '+ error);
      });
-    
-  },
-  viewCreateProduct: (req, res) => {
+
+    //renderrisado de vista crear producto 
     res.status(200);
-    res.render("createProduct");
+    res.render("createProduct",{ categoriasDB : categorias});
+
   },
-  viewDetailProduct: (req, res) => {
-    //apertura de archivo
-    const listProducts = modelProducts.aperturaDeArchivo();
-    
-    //busqueda de producto
-    const productE = modelProducts.buscarProducto(listProducts, req);
+  viewDetailProduct: async(req, res) => {
+
+    //consulta a la base de datos para obtener el producto mediante su id
+    const productE = await db.Product.findByPk(parseInt(req.params.id),{
+            include:[{
+                association: 'Image',
+            }]
+      }).catch((error) => {
+       console.log('Error de: '+ error);
+     });
+
+    // console.log("-------->"+productE);
 
     //verificacion de no estar vacio 
     if(productE != null){
@@ -37,135 +53,258 @@ const productsController = {
     res.status(200);
     res.render("shoppingCart");
   },
-  createProduct: (req, res) => {
-
+  createProduct: async (req, res) => {
+    
+    //validacion de errores desde backend
     const errores = validationResult(req);
     
     //validacion de si existen errores
     if(errores.isEmpty()){
-      //apertura de archivo
-      const listProducts = modelProducts.aperturaDeArchivo();
 
-      //creacion de objeto temporal 
-      const productTmp = modelProducts.estructurarObjetoPOST(req);
+
+      //crear objeto temporal
+      const productTmp = modelProducts.objetByDB(req);
+
+      // creacion de registro en base de datos
+      const product  = await db.Product.create(productTmp).catch((error) => {
+        console.log('Error de: '+ error);
+      });
       
-      //objeto a insertar en archivo o base de datos 
-      listProducts.push(productTmp);
-        
-      //escritura de archivo
-      modelProducts.escrituraDeArchivo(listProducts);
+      // console.log(product.id);
+      
+      //arreglo de nombres de imagenes 
+      const namesimagenes = modelProducts.imagesByDb(req);
 
+      // creacion de registro de imagenes de cada producto      
+      for (const nameIma of namesimagenes) {
+          console.log(nameIma);
+          await db.Image.create({
+            name: nameIma,
+            productId: product.id,
+          }).catch((error) => {
+            console.log('Error de: '+ error);
+          });
+      }
+     
+      //consulta a la base de datos para obtener productos 
+      const listProducts = await db.Product.findAll({
+            include:[{
+                association: 'Image',
+            }]
+      }).catch((error) => {
+        console.log('Error de: '+ error);
+      });
+      
       //retorno a crear otro producto
       res.status(200); 
       res.render('listProducts', { products: listProducts});
+
     }else{
       console.log(errores);
-      res.render('createProduct', { msgsErrors : errores.mapped(), DataOld  : req.body } );// otra forma de hacerlo 
+      //retorno a base de datss si existen errores 
+
+      const categorias = await db.Category.findAll().catch((error) => {
+        console.log('Error de: '+ error);
+      });
+
+      
+      res.render('createProduct', { msgsErrors : errores.mapped(), DataOld  : req.body,  categoriasDB : categorias } );// otra forma de hacerlo 
     }  
     
   },
-  listProducts: (req, res) => {
-
-    //apertura de archivo
-    const listProducts = modelProducts.aperturaDeArchivo();
+  listProducts: async (req, res) => {
+    //consulta a la base de datos para obtener productos 
+    const listProducts = await db.Product.findAll({
+            include:[{
+                association: 'Image',
+            }]
+    }).catch((error) => {
+      console.log('Error de: '+ error);
+    });
+      
 
     //envio de datos a vista
     res.status(200); 
     res.render('listProducts', { products: listProducts});
 
   },
-  editProduct:(req, res)=>{
-    
-    //apertura de archivo
-    const listProducts = modelProducts.aperturaDeArchivo();
+  editProduct: async (req, res)=>{
 
-    //busqueda de producto
-    const productE =  modelProducts.buscarProducto(listProducts, req);
+    //consulta a la base de datos para obtener el producto mediante su id
+    const productE = await db.Product.findByPk(parseInt(req.params.id),{
+            include:[{
+                association: 'Image',
+                association: 'Category'
+            }]
+      }).catch((error) => {
+       console.log('Error de: '+ error);
+    });
+
+    // console.log(productE);
+
+    const categorias = await db.Category.findAll().catch((error) => {
+        console.log('Error de: '+ error);
+    });
+    
 
     //verificacion de no estar vacio 
     if(productE != null){
       //si exiten errores de validacion se envian 
       res.status(200);
-      res.render('editProduct', { product: productE  });
+      res.render('editProduct', { product: productE,  categoriasDB : categorias});
     }else{
       res.status(404);
       res.render("not-found");
     }  
   },
-  updateProduct:(req, res)=>{
+  updateProduct:async (req, res)=>{
 
     const errores = validationResult(req);
       
     //validacion de si existen errores
     if(errores.isEmpty()){
-      //apertura de archivo
-      const listProducts = modelProducts.aperturaDeArchivo();
-
-      //busqueda de producto
-      const productE = modelProducts.buscarProducto(listProducts, req);
-
-      if(productE != null){
-
+      
+       
         //crear objeto temporal
-        const productTmp = modelProducts.estructurarObjetoPUT(req, productE.imagesSec);
+        const productTmp = await modelProducts.objetByDBPut(req);
+        console.log(productTmp);
 
-        let productM={};
-        productM = Object.assign(productM, productE, productTmp);
 
-        //buscar indice
-        const indice = modelProducts.buscarIndice(listProducts, req);
+        // console.log(productM);
 
-        listProducts[indice] = productM;
+        await db.Product.update(productTmp, {
+            where: {
+                id : req.params.id
+            }
+        }).catch( error =>{
+            console.log(error);
+        });
 
-        //escritura de archivo
-        modelProducts.escrituraDeArchivo(listProducts);
 
-        //apertura de archivo
-        const listProductsMod = modelProducts.aperturaDeArchivo();
+        //eliminar las imagenes que se tenian antes tanto en carpeta fisica como en base de datos 
+        //consulta a la base de datos para obtener el producto mediante su id
+        const productE = await db.Product.findByPk(parseInt(req.params.id),{
+                include:[{
+                    association: 'Image'
+                    // association: 'Category'
+                }]
+        }).catch((error) => {
+        console.log('Error de: '+ error);
+        });
+
+        //elimiando imagenes de producto en carpeta para guardar las nuevas y no almecenar las primera cargadas al crear el producto 
+        for(let i= 0 ; i< productE.Image.length ;i++){
+          console.log(productE.Image[i].name);
+          modelProducts.eliminarArchivoImagen(productE.Image[i].name);
+        }
+
+        //eliminanado imagenes en base de datos 
+        for(let i= 0 ; i< productE.Image.length ;i++){
+          await db.Image.destroy({
+            where :{
+                name : productE.Image[i].name
+            }
+          }).catch((error) => {
+            console.log('Error de: '+ error);
+          });
+        }
+
+        //ahora insertamos las nuevas imagenes que vienen del formulario de actulisacion 
+        //arreglo de nombres de imagenes 
+        const namesimagenes = modelProducts.imagesByDb(req);
+
+        // creacion de registro de imagenes de cada producto      
+        for (const nameIma of namesimagenes) {
+            console.log(nameIma);
+            await db.Image.create({
+              name: nameIma,
+              productId: req.params.id,
+            }).catch((error) => {
+              console.log('Error de: '+ error);
+            });
+        }
+
+
+        //consulta a la base de datos para obtener productos 
+        const listProducts = await db.Product.findAll({
+              include:[{
+                  association: 'Image',
+              }]
+        }).catch((error) => {
+          console.log('Error de: '+ error);
+        });
         
+        //retorno a crear otro producto
+        res.status(200); 
+        res.render('listProducts', { products: listProducts});
 
-        //redireccion a editar productos
-        res.status(200);
-        res.render('listProducts', {products : listProductsMod } );
-
-      }else{
-        res.status(404);
-        res.render("not-found");
-      }
+ 
     }else{
-      res.render('editProduct', { msgsErrors : errores.mapped(), DataOld  : req.body } );// otra forma de hacerlo 
+
+      const categorias = await db.Category.findAll().catch((error) => {
+        console.log('Error de: '+ error);
+      });
+    
+      console.log(req.body);
+      res.render('editProduct', { msgsErrors : errores.mapped(), DataOld  : req.body,  categoriasDB : categorias} );// otra forma de hacerlo 
     }
 
   },
-  deleteProduct:(req, res)=>{
+  deleteProduct: async (req, res)=>{
 
-    //apertura de archivo
-    const listProducts = modelProducts.aperturaDeArchivo();
+      //consulta a la base de datos para obtener el producto mediante su id
+       const productE = await db.Product.findByPk(parseInt(req.params.id),{
+              include:[{
+                  association: 'Image'
+                  // association: 'Category'
+              }]
+      }).catch((error) => {
+      console.log('Error de: '+ error);
+      });
 
-    // buscauada de indice
-    const indice = modelProducts.buscarIndice(listProducts, req);
+      //elimiando imagenes de producto en carpeta 
+      for(let i= 0 ; i< productE.Image.length ;i++){
+        console.log(productE.Image[i].name);
+        modelProducts.eliminarArchivoImagen(productE.Image[i].name);
+      }
 
-    if(indice != -1){
+      //eliminanado imagenes en base de datos primeramente para hacer una eliminacion en cascada de las imagenes del producto 
+      //y no se tenga problema por la foregin key
+      for(let i= 0 ; i< productE.Image.length ;i++){
+        await db.Image.destroy({
+          where :{
+              name : productE.Image[i].name
+          }
+        }).catch((error) => {
+          console.log('Error de: '+ error);
+        });
+      }
 
-      //eliminacion de imagen previamente cargada y no exista despues de ser eliminada
-       for(let i= 0 ; i< listProducts[indice].imagesSec.length ;i++){
-         modelProducts.eliminarArchivoImagen(listProducts[indice].imagesSec[i]);
-       }
+      //aliminacion de producto de la base de datos 
+      await db.Product.destroy({
+        where :{
+            id : req.params.id
+        }
+      }).catch((error) => {
+        console.log('Error de: '+ error);
+      });
 
-      //eliminacion del producto de la lista 
-      listProducts.splice(indice, 1);
 
-      //escritura de archivo
-      modelProducts.escrituraDeArchivo(listProducts);
+      //consulta a la base de datos para obtener productos 
+      const listProducts = await db.Product.findAll({
+            include:[{
+                association: 'Image',
+            }]
+      }).catch((error) => {
+        console.log('Error de: '+ error);
+      });
+
       
       //redireccion a editar productos
       res.status(200);
       res.render('listProducts', {  products : listProducts} );          
       
-    }else{
-      res.status(404);
-      res.render("not-found");
-    } 
+    
   },
   tablerosIndex: (req, res) => {
     res.render("./categoryIndex/tablerosIndex");
