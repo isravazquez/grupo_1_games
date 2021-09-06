@@ -1,3 +1,128 @@
+Sprint-6
+
+30 de Agosto
+Qué hizo ayer.
+
+Kevs: Revisar codigo y tareas pendientes
+Edi: Revisar codigo y tareas pendientes
+Isra: Revisar codigo y tareas pendientes
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+Qué va a hacer hoy.
+
+Kevs: CRUD usuarios
+Edi: CRUD productos
+Isra: Script de sql para db local
+
+23 de Agosto
+Qué hizo ayer.
+
+Kevs: Revison de codigo y reparticion de tareas
+Edi: Revison de codigo y reparticion de tareas
+Isra: Revison de codigo y reparticion de tareas
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+Qué va a hacer hoy.
+
+Kevs: db USUARIOS
+Edi: db PRODUCTOS
+Isra: Diagrama de base de datos
+
+16 de Agosto
+
+Qué hizo ayer.
+
+Kevs: Se finalizo el sprint-5
+Edi: Se finalizo el sprint-5
+Isra: Se finalizo el sprint-5
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+Qué va a hacer hoy.
+
+Kevs: Retroalimentación y repartición de tareas
+Edi: Retroalimentación y repartición de tareas
+Isra: Retroalimentación y repartición de tareas
+
+----------------------------------------------------------------------
+Sprint-5
+
+9 de Agosto
+
+Qué hizo ayer.
+
+Kevs: Tareas pendientes
+Edi: Tareas pendientes
+Isra: Tareas pendientes
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+Qué va a hacer hoy.
+
+Kevs: revision de codigo
+Edi: Recordar usuario con session
+Isra: Redireccion de paginas segun tipo de usuario
+
+2 de Agosto
+
+Qué hizo ayer.
+
+Kevs: Se rapartieron tareas
+Edi: Se rapartieron tareas
+Isra: Se rapartieron tareas
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+Qué va a hacer hoy.
+
+Kevs: Formulario de login
+Edi: Formulario de registro
+Isra: Actualizar tablero y organizar fechas
+
+
+26 jul
+
+Qué hizo ayer.
+
+Kevs: Se finalizo el sprint-4
+Edi: Se finalizo el sprint-4
+Isra: Se finalizo el sprint-4 
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+Qué va a hacer hoy.
+
+Kevs: Retroalimentación y repartición de tareas
+Edi: Retroalimentación y repartición de tareas
+Isra: Retroalimentación y repartición de tareas
+
+---------------------------------------------------------------
 Sprint 4
 
 2 de Julio 2021
