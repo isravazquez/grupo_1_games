@@ -26,7 +26,7 @@
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
-const accountController = {
+const usersController = {
   account: function (req, res, next) {
     res.render("account/myAccount", {
       title: "Account-Dayva",
