@@ -14,7 +14,9 @@
                 </article>
                 <article id="carrusel">
                     <div class="flecha">
-                        <img src="/img/chevron_left_black_24dp.svg" alt="" srcset="">
+                        <a id="left">
+                            <img src="/img/chevron_left_black_24dp.svg" alt="" srcset="">
+                        </a>
                     </div>
 
                      <!-- <% for(let i=0 ; i< product.Image.length ; i++){  %>
@@ -26,14 +28,16 @@
 
                     <% for(let i=0 ; i< product.Image.length ; i++){  %>
 
-                        <a href="#"  class="enlaceIma"  >
+                        <a href="#"  class="enlaceIma" id="enlace<%- i+1%>"  >
                             <img class="min" id="imaSec<%- i+1%>"  src="/img/imagesProducts/<%= product.Image[i].name%>" alt="">
                         </a>
                    
                     <% } %>
 
                     <div class="flecha">
-                        <img src="/img/chevron_right_black_24dp.svg" alt="" srcset="">
+                        <a id="rigth">
+                            <img src="/img/chevron_right_black_24dp.svg" alt="" srcset="">
+                        </a>
                     </div>
                 </article>
             </div>
