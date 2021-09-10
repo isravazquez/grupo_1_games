@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `games`.`products` (
   `registrationDatetime` DATE NOT NULL,
   `userWhoRegistered` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `category_idx` (`categoryId` ASC) VISIBLE,
+  INDEX `category_idx` (`categoryId` ASC) ,
   CONSTRAINT `category`
     FOREIGN KEY (`categoryId`)
     REFERENCES `games`.`categories` (`id`)
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `games`.`images` (
   `productId` INT NOT NULL,
   `name` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `productId_idx` (`productId` ASC) VISIBLE,
+  INDEX `productId_idx` (`productId` ASC) ,
   CONSTRAINT `id`
     FOREIGN KEY (`productId`)
     REFERENCES `games`.`products` (`id`)
