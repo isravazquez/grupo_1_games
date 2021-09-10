@@ -27,14 +27,13 @@ const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const usersController = {
-  account: function (req, res, next) {
-    res.render("account/myAccount", {
-      title: "Account-Dayva",
+  profileUser: function (req, res, next) {
+    res.render("profileUser", {
       user: req.session.userLogged,
     });
   },
   loginView: function (req, res, next) {
-    res.render("account/login", { title: "Login-Dayva" });
+    res.render("login2");
   },
   login: async function (req, res, next) {
     let userToLogin = await db.User.findOne({
@@ -53,8 +52,7 @@ const usersController = {
         }
         return res.redirect("/");
       }
-      return res.render("account/login", {
-        title: "Login-Dayva",
+      return res.render("login2", {
         errors: {
           password: {
             msg: "La contraseña es incorrecta",
@@ -62,8 +60,7 @@ const usersController = {
         },
       });
     }
-    return res.render("account/login", {
-      title: "Login-Dayva",
+    return res.render("login2", {
       errors: {
         email: {
           msg: "Este correo no está registrado",
@@ -72,14 +69,13 @@ const usersController = {
     });
   },
   registerView: function (req, res, next) {
-    res.render("account/register", { title: "Register-Dayva" });
+    res.render("signup2");
   },
   register: async function (req, res, next) {
     // check if exist validation erros
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length) {
-      return res.render("account/register", {
-        title: "Register-Dayva",
+      return res.render("signup2", {
         errors: resultValidation.mapped(),
         data: req.body,
       });
@@ -87,8 +83,7 @@ const usersController = {
     // check if email to register is in DB
     let userInDB = await db.User.findOne({ where: { email: req.body.email } });
     if (userInDB) {
-      return res.render("account/register", {
-        title: "Register-Dayva",
+      return res.render("signup2", {
         errors: {
           email: {
             msg: "Este correo ya esta registrado",
@@ -102,8 +97,9 @@ const usersController = {
       ...req.body,
       password: bcryptjs.hashSync(req.body.password, 10),
     };
+
     let userCreated = await db.User.create({ ...userToCreate });
-    return res.redirect("/account/login");
+    return res.redirect("/users/login");
   },
   logout: function (req, res, next) {
     req.session.destroy();

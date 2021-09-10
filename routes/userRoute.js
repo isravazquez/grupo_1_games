@@ -7,6 +7,7 @@ const multer = require("multer");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 
+/*
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
     let folder = path.join(__dirname, "../public/img/imageUsers");
@@ -19,18 +20,19 @@ let storage = multer.diskStorage({
   },
 });
 let upload = multer({ storage: storage });
-
+*/
 // Define routes
-console.log("Rutas...");
-router.get("/create", guestMiddleware, usersController.view);
+
+router.get("/create", guestMiddleware, usersController.registerView);
 router.post(
   "/create",
-  guestMiddleware,
-  upload.any("image"),
-  usersController.createUser
+  /*guestMiddleware,
+  upload.any("image"),*/
+  usersController.register
 );
 
-router.post("/login", guestMiddleware, usersController.loginUser);
+router.get("/login", usersController.loginView)
+router.post("/login", guestMiddleware, usersController.login);
 //ruta perfil de uauario
 router.get("/profileUser", authMiddleware, usersController.profileUser);
 

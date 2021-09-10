@@ -4,16 +4,16 @@
     <div class="loginform-container">
         <div class="loginleft"></div>
         <div class="loginright">
-            <form action="/users/create" method="POST" id="signupform" enctype="multipart/form-data">
+            <form action="/users/create" method="POST" id="signupform" >
                 <h1>Registro</h1>
                 <%  if(locals.repeated) { %>
                     <h1>El email de usuario ya existe</h1>
                     <% } %>
-                <input type="text" name="email" id="email" placeholder="Introduce tu correo electrónico" required>
+                <input type="email" name="email" id="email" placeholder="Introduce tu correo electrónico" required>
                 <input type="text" name="name" id="name" placeholder="Introduce tu nombre" required>
                 <input type="text" name="lastname" id="lastname" placeholder="Introduce tus apellidos" required>
                 <input type="password" name="password" id="password" placeholder="Contraseña" required>
-                <input type="file" name="image" id="image" required>
+                <!--input type="file" name="image" id="image" required-->
                 <input type="submit" value="ENVIAR" id="conectar" onclick="" required>
                 <a href="/login" id="login">Ya tengo cuenta</a>
             </form>
