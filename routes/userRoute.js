@@ -31,7 +31,7 @@ router.post(
   usersController.register
 );
 
-router.get("/login", usersController.loginView)
+router.get("/login", guestMiddleware ,usersController.loginView)
 router.post("/login", guestMiddleware, usersController.login);
 //ruta perfil de uauario
 router.get("/profileUser", authMiddleware, usersController.profileUser);
