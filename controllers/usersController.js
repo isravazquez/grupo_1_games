@@ -28,9 +28,7 @@ const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const usersController = {
   profileUser: function (req, res, next) {
-    res.render("profileUser", {
-      user: req.session.userLogged,
-    });
+    res.render("profileUser");
   },
   loginView: function (req, res, next) {
     res.render("login2");
