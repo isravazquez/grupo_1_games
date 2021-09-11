@@ -1,6 +1,6 @@
 function guestMiddleware(req, res, next) {
 
-    if(req.session.logged){
+    if(req.session.userLogged){
 
         return res.render('profileUser');
       

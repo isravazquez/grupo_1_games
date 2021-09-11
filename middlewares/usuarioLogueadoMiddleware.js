@@ -6,10 +6,10 @@ function usuarioLogueadoMiddleware(req, res, next) {
     //por estar en un middleware de aplicacion 
     res.locals.estaLoguado = false;
 
-    if(req.session && req.session.logged){
+    if(req.session && req.session.userLogged){
         //si alguien ya esta logueago mando a su profile  del usuario
         res.locals.estaLoguado = true;
-        res.locals.usuarioLogeado = req.session.logged;
+        res.locals.usuarioLogeado = req.session.userLogged;
 
     }
     next();
