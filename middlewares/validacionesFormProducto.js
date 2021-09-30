@@ -6,7 +6,8 @@ const path = require('path');
 //express validator
 const validacionesFormProducto = [
 
-    body('name').notEmpty().withMessage('El campo nombre no debe estar vacio')
+    body('name').notEmpty().withMessage('El campo nombre no debe estar vacio').bail()
+                .isLength({ min: 5 }).withMessage('El campo nombre debe al menos tener 5 caracteres')
     ,
     body('category').notEmpty().withMessage('El campo categoria  no debe estar vacio')
     ,
@@ -22,7 +23,8 @@ const validacionesFormProducto = [
     body('features').notEmpty().withMessage('El campo caracteristicas no debe estar vacio')
     
     ,
-    body('description').notEmpty().withMessage('El campo descripción no debe estar vacio')
+    body('description').notEmpty().withMessage('El campo descripción no debe estar vacio')-bail()
+                       .isLength({ min: 20 }).withMessage('El campo descripción debe al menos tener 20 caracteres')
 
     ,
     body('imagesProducto').custom((value , {req}) => {
@@ -41,7 +43,7 @@ const validacionesFormProducto = [
             return false;
         }else{
             let bandera = false;
-            let extencionesAceptadas = ['.jpg', '.png', '.webp'];
+            let extencionesAceptadas = ['.jpg', '.png', '.webp', '.gif'];
 
             for (let i = 0; i < req.files.length; i++) {
                 let fileExtension = path.extname(req.files[i].originalname);
