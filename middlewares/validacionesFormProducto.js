@@ -23,7 +23,7 @@ const validacionesFormProducto = [
     body('features').notEmpty().withMessage('El campo caracteristicas no debe estar vacio')
     
     ,
-    body('description').notEmpty().withMessage('El campo descripción no debe estar vacio')-bail()
+    body('description').notEmpty().withMessage('El campo descripción no debe estar vacio').bail()
                        .isLength({ min: 20 }).withMessage('El campo descripción debe al menos tener 20 caracteres')
 
     ,
