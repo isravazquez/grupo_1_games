@@ -12,9 +12,11 @@ window.onload = function () {
     passwordlength = password.value;
     console.log(emaillength, passwordlength);
     if (emaillength.length < 2 || emaillength.length == "") {
+      alert("Por favor ingrese un correo valido");
       error.style.display = "block";
       error.style.visibility = "visible";
     } else if (passwordlength.length == "") {
+      alert("Por favor ingrese una contraseña");
       error.style.display = "block";
       error.style.visibility = "visible";
     } else {

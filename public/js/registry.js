@@ -22,6 +22,12 @@ window.onload = function () {
       alert("Por favor, ingrese un correo electrónico válido");
     } else if (password.value.length < 8) {
       alert("La contraseña debe tener al menos 8 caracteres");
+    } else if (passwordValor.search(/\d/) == -1) {
+      alert("Debe contener al menos un número");
+    } else if (passwordValor.search(/[A-Z]/) == -1) {
+      alert("Debe contener al menos una letra mayúscula");
+    } else if (passwordValor.search(/[^\!\@\#\$\%\^\&\*\(\) \_\+]/) == -1) {
+      alert("Debe contener al menos un caracter especial");
     } else {
       form.submit();
     }
