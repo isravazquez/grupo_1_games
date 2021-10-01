@@ -10,22 +10,34 @@
              <div> <!--para centrar despues en vista grande -->
 
                 <article id="imagenProducto">
-                    <img src="/img/imagesProducts/<%= product.image ? product.image : 'default-image.png' %>" alt="imagen producto">
+                    <img id="imaPrin" src="/img/imagesProducts/<%= product.Image[0].name ? product.Image[0].name : 'default-image.png' %>" alt="imagen producto">
                 </article>
                 <article id="carrusel">
                     <div class="flecha">
-                        <img src="/img/chevron_left_black_24dp.svg" alt="" srcset="">
+                        <a id="left">
+                            <img src="/img/chevron_left_black_24dp.svg" alt="" srcset="">
+                        </a>
                     </div>
 
-                     <% for(let i=0 ; i< product.imagesSec.length ; i++){  %>
+                     <!-- <% for(let i=0 ; i< product.Image.length ; i++){  %>
                         <a href="#">
-                            <img class="min" src="/img/imagesProducts/<%= product.imagesSec[i]%>" alt="">
+                            <img class="min" src="/img/imagesProducts/<%= product.Image[i].name %>" alt="">
                         </a>
-                        <img class="max" src="/img/imagesProducts/<%= product.imagesSec[i]%>" alt="">
+                        <img class="max" src="/img/imagesProducts/<%= product.Image[i].name %>" alt="">
+                    <% } %> -->
+
+                    <% for(let i=0 ; i< product.Image.length ; i++){  %>
+
+                        <a href="#"  class="enlaceIma" id="enlace<%- i+1%>"  >
+                            <img class="min" id="imaSec<%- i+1%>"  src="/img/imagesProducts/<%= product.Image[i].name%>" alt="">
+                        </a>
+                   
                     <% } %>
 
                     <div class="flecha">
-                        <img src="/img/chevron_right_black_24dp.svg" alt="" srcset="">
+                        <a id="rigth">
+                            <img src="/img/chevron_right_black_24dp.svg" alt="" srcset="">
+                        </a>
                     </div>
                 </article>
             </div>
@@ -98,5 +110,6 @@
         </section>
     </main>
     <%- include('partials/footer') %>
+    <script src="/js/productDetail.js"></script>
 </body>
 </html>

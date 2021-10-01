@@ -36,17 +36,18 @@
 										<option  value="" > Elige una categoria </option>
 										
 										<%
-											let categorias = ['Tableros','Futbolitos','Maquinitas','Accesorios'];
+											const categorias = categoriasDB;
+
 										%>
 
-										<% for (const categoria of categorias) { %>
-											
-											<option  value=" <%= categoria %> " 
-												
-												<%= locals.DataOld && (categoria === DataOld.category.trim()) ? "selected" : null %> > 
-												
-												<%= categoria %> </option>
 
+										<% for (const categoria of categorias) {  %>
+											
+											<option  value=" <%= categoria.id %> " 
+												
+												<%=  locals.DataOld && (categoria.name === DataOld.category.trim()) ? "selected" : null %> > 
+												
+												<%= categoria.name %> </option>
 										<% } %>
 
 									</select>

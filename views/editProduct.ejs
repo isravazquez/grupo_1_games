@@ -13,6 +13,7 @@
 						Cancelar
 					</a>
 				</div>
+				
 				<% if( locals.msgsErrors ){ %>
 
 					<form action="/products/<%= DataOld.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -38,22 +39,21 @@
 								id="SelectOp"
 						>
 								<option  value="" > Elige una categoria </option>
-										
-									<%
-										let categorias = ['Tableros','Futbolitos','Maquinitas','Accesorios'];
+									<%				
+										let categorias = categoriasDB;
 									%>
 
-									<% for (const categoria of categorias) { %>
 											
-										<option  value=" <%= categoria %> " 
-												
-											<%= (categoria === DataOld.category.trim()) ? "selected" : null %>	> 
-												
-											<%= categoria %> 
-										
+									<% for (const categoria of categorias) {  console.log(categoria.name); %>
+											
+										<option  value=" <%= categoria.name %> " 
+											
+											<%=  locals.DataOld && (categoria.name === DataOld.category.trim()) ? "selected" : null %> > 
+											
+											<%= categoria.name %> 
 										</option>
-
 									<% } %>
+
 
 						</select>
 						<div>
@@ -133,19 +133,19 @@
 							id="SelectOp"
 						>
 								<option  value="" > Elige una categoria </option>
-										
-									<%
-										let categorias = ['Tableros','Futbolitos','Maquinitas','Accesorios'];
-									%>
+		
+								<%	
+									let categorias = categoriasDB;
+								%>
+					
 
 									<% for (const categoria of categorias) { %>
+													
+										<option  value=" <%= categoria.name %> " 
 											
-										<option  value=" <%= categoria %> " 
-												
-											<%= (categoria === product.category.trim()) ? "selected" : null %>	> 
-												
-											<%= categoria %> 
-										</option>
+											<%= (categoria.name === product.Category.name.trim()) ? "selected" : null %>	> 
+											
+											<%= categoria.name %> </option>
 
 									<% } %>
 

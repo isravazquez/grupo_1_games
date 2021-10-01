@@ -1,3 +1,44 @@
+## retospectiva del Sprint-5 
+
+1. Comenzar a hacer
+    Resolver la retrospectiva que nos dio Pako
+    Empezar a implementar sequelize
+
+2. Hacer más
+    Mas reuniones
+    Apoyarnos mas
+
+3. Continuar haciendo
+    Seguir mejorando las vistasa
+    Seguir haciendo reuniones cada 3  a 5 días
+
+4. Hacer menos
+    Adelantarse
+
+5. Dejar de hacer
+    No dejar lapsos grandes de tiempo sin comunicarnos
+
+
+## Sprint-4
+
+1. Comenzar a hacer
+    Resolver la retrospectiva que nos dio Pako
+
+2. Hacer más
+    Mas reuniones
+    Mejorar la comunicacion
+
+3. Continuar haciendo
+    Seguir mejorando las vistasa
+    Seguir haciendo reuniones cada 3  a 5 días
+    Seguir comunicandonos
+
+4. Hacer menos
+    Usar menos imagenes
+
+5. Dejar de hacer
+    No dejar lapsos grandes de tiempo sin comunicarnos
+
 ## --Sprint-3
 
 Retrospectiva
