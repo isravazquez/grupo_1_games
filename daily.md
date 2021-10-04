@@ -1,3 +1,47 @@
+﻿Sprint-7
+10 de septiembre 
+
+Qué hizo ayer.
+
+Kevs: Revisar codigo y tareas pendientes
+Edi: Revisar codigo y tareas pendientes
+Isra: Revisar codigo y tareas pendientes
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+
+Qué va a hacer hoy.
+
+Kevs: validacion Frontend usuarios
+Edi: validacion Frontend y Backend productos 
+Isra: validacion Backend usuarios
+
+
+14 de septiembre 
+Qué hizo ayer.
+
+Kevs: Correccion de errores 
+Edi: Revicion de conexion remota a base de datos 
+Isra: Revicion de despliegue en Heroku 
+
+Si se encontró con algún impedimento.
+
+Kevs: No
+Edi: No
+Isra: No
+
+Qué va a hacer hoy.
+
+Kevs:  seguir implementando Frontend usuarios
+Edi: seguir implementando  Frontend 
+Isra: seguir implementando Backend usuarios
+
+
+
 Sprint-6
 
 30 de Agosto
