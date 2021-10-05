@@ -1,7 +1,6 @@
 const db = require('../../database/models');
 // const sequelize = db.sequelize;
 
-
 const apiProducts = {
   test: (req, res) => {
      db.Category.findAll().then((categorias) => {
@@ -12,6 +11,27 @@ const apiProducts = {
     });
     
   }
+  ,listProducts: async (req, res) => {
+   const listProducts = await db.Product.findAll({
+         include:[{
+            association: 'Image',
+         }]
+   }).catch((error) => {
+      console.log('Error de: '+ error);
+   });
+
+   return res.json(listProducts);
+
+  },
+  createProduct:(req, res) => {
+
+  },
+  updateProduct:(req, res) => {
+  
+  },
+  deleteProduct:(req, res) => {
+  
+  },
 }
 
   
