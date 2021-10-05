@@ -23,6 +23,19 @@ const apiProducts = {
    return res.json(listProducts);
 
   },
+  deteilProduct: async(req, res)=>{
+      const Product = await db.Product.findByPk(req.params.id,
+         {
+            include:[{
+               association: 'Image',
+            }]
+         })
+         .catch((error) => {
+            console.log('Error de: '+ error);
+         });
+      
+         return res.json(Product);
+  },
   createProduct:(req, res) => {
 
   },
