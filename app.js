@@ -33,7 +33,7 @@ app.use("/products", productsRoute);
 app.use("/users", usersRoute);
 
 //api
-app.use("/api", apiProductsRoute);
+app.use("/api/products", apiProductsRoute);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Servidor corriendo en el puerto 3000");

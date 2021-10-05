@@ -191,7 +191,7 @@ const productsController = {
                     // association: 'Category'
                 }]
         }).catch((error) => {
-        console.log('Error de: '+ error);
+          console.log('Error de: '+ error);
         });
 
         //elimiando imagenes de producto en carpeta para guardar las nuevas y no almecenar las primera cargadas al crear el producto 
@@ -255,13 +255,13 @@ const productsController = {
   deleteProduct: async (req, res)=>{
 
       //consulta a la base de datos para obtener el producto mediante su id
-       const productE = await db.Product.findByPk(parseInt(req.params.id),{
+      const productE = await db.Product.findByPk(parseInt(req.params.id),{
               include:[{
                   association: 'Image'
                   // association: 'Category'
               }]
       }).catch((error) => {
-      console.log('Error de: '+ error);
+        console.log('Error de: '+ error);
       });
 
       //elimiando imagenes de producto en carpeta 
@@ -304,11 +304,12 @@ const productsController = {
       
       //redireccion a editar productos
       res.status(200);
-      res.render('listProducts', {  products : listProducts} );          
+      res.render('listProducts', {  products : listProducts} );
       
     
   },
   objetByDB: function (req) {
+
     //objeto para fechas 
     const fecha = new Date();
 
