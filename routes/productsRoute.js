@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require('multer');
-
+const apiProducts = require("../controllers/api/apiProducts");
 const productsController = require("../controllers/productsController");
 const validacionesFormProducto = require('../middlewares/validacionesFormProducto');
 const authMiddleware = require('../middlewares/authMiddleware');

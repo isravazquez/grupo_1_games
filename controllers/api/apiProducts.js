@@ -1,7 +1,8 @@
-const db = require('../database/models');
+const db = require('../../database/models');
 // const sequelize = db.sequelize;
 
-const productsController = {
+
+const apiProducts = {
   test: (req, res) => {
      db.Category.findAll().then((categorias) => {
         // console.log(peliculas);
@@ -14,4 +15,4 @@ const productsController = {
 }
 
   
-module.exports = productsController;
+module.exports = apiProducts;

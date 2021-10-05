@@ -4,6 +4,9 @@ const app = express();
 const homeRoute = require("./routes/home");
 const productsRoute = require("./routes/productsRoute");
 const usersRoute = require("./routes/userRoute");
+
+const apiProductsRoute = require("./routes/api/apiProductsRoute");
+
 const methodOverride = require("method-override");
 const session = require("express-session");
 const usuarioLogueadoMiddleware = require('./middlewares/usuarioLogueadoMiddleware');
@@ -28,6 +31,9 @@ app.set("views", path.join(__dirname, "views"));
 app.use("/", homeRoute);
 app.use("/products", productsRoute);
 app.use("/users", usersRoute);
+
+//api
+app.use("/api", apiProductsRoute);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Servidor corriendo en el puerto 3000");
