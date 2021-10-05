@@ -6,13 +6,13 @@ const apiProducts = require("../../controllers/api/apiProducts");
 router.get("/test",apiProducts.test);
 
 //listar productos
-router.get("/listProducts", apiProducts.listProducts);
+router.get("/", apiProducts.listProducts);
 
 //detalle producto
-router.get("/deteilProduct/:id", apiProducts.deteilProduct);
+router.get("/detail/:id", apiProducts.deteilProduct);
 
 //crear producto en base de datos 
-router.post('/createProduct', apiProducts.createProduct);
+router.post('/', apiProducts.createProduct);
 
 //actulizar producto
 router.put("/update/:id", apiProducts.updateProduct);
