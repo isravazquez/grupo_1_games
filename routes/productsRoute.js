@@ -34,14 +34,14 @@ let upload = multer({ storage: storage });
 //prueba conexion a la base de datos 
 router.get("/test",productsController.test);
 
+//vista carrilo de compra
+router.get("/shoppingCart", productsController.viewShoppingCart);
+
 //vista crear producto
 router.get("/create",authMiddleware, productsController.viewCreateProduct);
 
 //vista detalle producto
 router.get("/:id",authMiddleware ,productsController.viewDetailProduct);
-
-//vista carrilo de compra
-router.get("/shoppingCart", productsController.viewShoppingCart);
 
 //crear producto en base de datos 
 router.post('/',authMiddleware , upload.any('imagesProducto'), validacionesFormProducto, productsController.createProduct);
