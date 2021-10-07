@@ -41,7 +41,7 @@ window.addEventListener('load', function () {
            
 
                 const precio = document.createElement("p");
-                precio.textContent = '$ '+ listaProductosSeleccinados[i].precio;
+                precio.textContent = listaProductosSeleccinados[i].precio;
                 divPrecio.appendChild(precio);
 
             const divCantidad = document.createElement("div");
@@ -62,14 +62,15 @@ window.addEventListener('load', function () {
                 const numProduct = document.createElement("div");
                     const inputProduct = document.createElement("input");
                     inputProduct.setAttribute("type", "text");
-                    inputProduct.setAttribute("id", "numProduct");
+                    inputProduct.setAttribute("id", "numProduct"+i);
+                    inputProduct.setAttribute("class", "conteCant");
                     inputProduct.setAttribute("value", listaProductosSeleccinados[i].cantidad);
                     numProduct.appendChild(inputProduct);
                 divCantidad.appendChild(numProduct);
 
                 const divMas = document.createElement("div");
                     const aMas = document.createElement("a");
-                    aMas.setAttribute("id", "menos");
+                    aMas.setAttribute("id", "mas");
                         const strong2 = document.createElement("strong");
                         strong2.textContent = '+';
                         aMas.appendChild(strong2);
@@ -80,7 +81,7 @@ window.addEventListener('load', function () {
             divTotal.setAttribute("id", "total");
                       
                 const total = document.createElement("p");
-                total.textContent = '$ '+ listaProductosSeleccinados[i].precio * 1;
+                total.textContent = listaProductosSeleccinados[i].precio * 1;
                 divTotal.appendChild(total);
             
             
@@ -110,42 +111,110 @@ window.addEventListener('load', function () {
 
 
      /**-------------------------------para cantidad de productos----------------------------------  */
+    
+     const listaProductos = document.querySelectorAll('div#productos');
+     //console.log(listaProductos);
+     
+     let subTotal = document.querySelector('strong#subtotal');
+     // console.log(subTotal.innerText);
+     let subTotalValor = 0.0; 
+ 
+    
+     for(let i = 0; i < listaProductos.length; i++) {
+ 
+        //hacer la opereracion desde inicio 
+        
+     //    console.log();
+        
+        let precioP   = parseFloat(listaProductos[i].childNodes[1].childNodes[0].innerText);
+     //    console.log("precio: "+precioP);
+        let cantidadP = parseFloat(listaProductos[i].childNodes[2].childNodes[1].childNodes[0].value);
+     //    console.log("cantidad: "+cantidadP)
+        let totalP = precioP * cantidadP;
+     //    console.log(totalP)
+        listaProductos[i].childNodes[3].childNodes[0].innerText = totalP;
+         
+      
+ 
+       subTotalValor = subTotalValor + parseFloat(listaProductos[i].childNodes[3].childNodes[0].innerText);
+ 
+       subTotal.innerText = subTotalValor;
+ 
+ 
+         // console.log(listaProductos[i]);//todo el elemento 
+         // console.log(listaProductos[i].childNodes[1].childNodes[0].innerText);//precio
+         // console.log(listaProductos[i].childNodes[3].childNodes[0].innerText);//total
+         // console.log(listaProductos[i].childNodes[2].childNodes[0].childNodes[0].childNodes[0]);//cantidad 
+         // console.log(listaProductos[i].childNodes[2].childNodes[2].childNodes[0].childNodes[0]); //mas 
+         // console.log( listaProductos[i].childNodes[2].childNodes[0].childNodes[0].childNodes[0]); //menos 
+         
+         
+         //boton de resta 
+         listaProductos[i].childNodes[2].childNodes[0].childNodes[0].childNodes[0].addEventListener('click',()=>{
+             // console.log('se dio clic en menos '+i);
+ 
+             let valorCantidad = document.querySelector("input#numProduct"+i);
+             // console.log(valorCantidad);
+             valorCantidad.value = parseInt(valorCantidad.value) - 1 ;
+ 
+             if(valorCantidad.value < 1){
+                 valorCantidad.value = 0;//cantidad minima 
+             }
+ 
+ 
+             let precio = parseInt(listaProductos[i].childNodes[1].childNodes[0].innerText);
+             // console.log(precio);
+             let cantidad = parseFloat(listaProductos[i].childNodes[2].childNodes[1].childNodes[0].value);
+             //    console.log("cantidad: "+cantidadP)
+             let precioTotal =  parseFloat(listaProductos[i].childNodes[3].childNodes[0].innerText);
+             // console.log(precioTotal);
+             let totalP = precio * cantidad;
+             //    console.log(totalP)
+             listaProductos[i].childNodes[3].childNodes[0].innerText = totalP;
+ 
 
-    // const listaProductos = document.querySelectorAll('div#productos');
-    // console.log(listaProductos);
-
-   
-    // for (let i = 0; i < listaProductos.length; i++) {
-    //         //  console.log(listaProductos[i].childNodes.length);
-    //     for (let x = 0; x < listaProductos[i].childNodes.length; x++) {
-    //         console.log(listaProductos[i].childNodes[2]);
-    //     }
-    // }
-
-
-    //  let mas = document.querySelector('a#mas');
-
-    //  mas.addEventListener('click', function () {
-    //      // console.log('dio en mas ');
-    //      let numProductcantidad = document.querySelector('input#numProduct');
-    //      // console.log(numProductcantidad.value);
-    //      numProductcantidad.value = parseInt(numProductcantidad.value) + 1 ;
-
-    //  });
-
-
-    //  let menos = document.querySelector('a#menos');
-
-    //  menos.addEventListener('click', function () {
-    //      // console.log('dio en menos ');
-    //      let numProductcantidad = document.querySelector('input#numProduct');
-    //      numProductcantidad.value = parseInt(numProductcantidad.value) - 1 ;
-
-    //      if(numProductcantidad.value < 1){
-    //          numProductcantidad.value = 1;
-    //      }
-    //  });
-   /**-------------------------------para cantidad de productos----------------------------------  */
+ 
+             if(subTotalValor != 0 && precioTotal != 0){
+                 subTotalValor = subTotalValor-precio;
+                 subTotal.innerText = subTotalValor; 
+ 
+             }
+ 
+       
+         })
+ 
+ 
+ 
+         //boton de suma
+         listaProductos[i].childNodes[2].childNodes[2].childNodes[0].childNodes[0].addEventListener('click',()=>{
+             // console.log('se dio clic en mas '+i);
+ 
+             let valorCantidad = document.querySelector("input#numProduct"+i);
+             // console.log(valorCantidad);
+             valorCantidad.value = parseInt(valorCantidad.value) + 1 ;
+ 
+ 
+             
+             let precio = parseInt(listaProductos[i].childNodes[1].childNodes[0].innerText);
+             // console.log(precio);
+             let cantidad = parseFloat(listaProductos[i].childNodes[2].childNodes[1].childNodes[0].value);
+             //    console.log("cantidad: "+cantidadP)
+             let totalP = precio * cantidad;
+             //    console.log(totalP)
+             listaProductos[i].childNodes[3].childNodes[0].innerText = totalP;
+ 
+ 
+             subTotalValor = subTotalValor+precio;
+             subTotal.innerText = subTotalValor; 
+         })
+ 
+         
+     }
+ 
+  
+ 
+ 
+    /**-------------------------------para cantidad de productos----------------------------------  */
 
 
 
