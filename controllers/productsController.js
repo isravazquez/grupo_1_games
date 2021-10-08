@@ -52,6 +52,7 @@ const productsController = {
 
   },
   viewShoppingCart: (req, res) => {
+    // console.log("en metodo");
     res.status(200);
     res.render("shoppingCart");
   },

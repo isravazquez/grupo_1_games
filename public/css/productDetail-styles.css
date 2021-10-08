@@ -121,10 +121,15 @@ img{
     margin: 0 4px;
 }
 
-#cantidad{
-    width: 70px;
+#cantidadD{
+    width: 100px;
     padding: 3px;
     border: solid 1px black;
+}
+
+#numProduct{
+    width: 30px;
+    text-align: center;
 }
 
 .botonPrimario{
@@ -186,7 +191,7 @@ img{
         align-items: flex-end;
     }
     
-    #cantidad{
+    #cantidadD{
         display: flex;
         justify-content: space-around;
     }

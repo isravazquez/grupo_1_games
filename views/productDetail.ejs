@@ -19,13 +19,6 @@
                         </a>
                     </div>
 
-                     <!-- <% for(let i=0 ; i< product.Image.length ; i++){  %>
-                        <a href="#">
-                            <img class="min" src="/img/imagesProducts/<%= product.Image[i].name %>" alt="">
-                        </a>
-                        <img class="max" src="/img/imagesProducts/<%= product.Image[i].name %>" alt="">
-                    <% } %> -->
-
                     <% for(let i=0 ; i< product.Image.length ; i++){  %>
 
                         <a href="#"  class="enlaceIma" id="enlace<%- i+1%>"  >
@@ -41,20 +34,23 @@
                     </div>
                 </article>
             </div>
-
             <!-- </div> -->
         </section>
         <section id="vistaDescripcion">
         <!-- area descripcion -->
             <article id="descripcionProducto">
                 <strong>
-                    <h2>
+                    <h2 id="nombreProducto">
                         <%= product.name %> 
                     </h2>
                 </strong>
-                <h4>
-                    ID referencia: <%=  product.id %> 
-                </h4>
+                <span>
+                    <p> ID referencia: 
+                        <strong id="idProducto">
+                            <%=  product.id %> 
+                        </strong>
+                    </p>
+                </span>
                 <div id="grados">
                     <div id="puntaje">
                         <img src="/img/grade_black_24dp.svg" alt="" srcset="">
@@ -73,7 +69,7 @@
                         Descripción. 
                     </h3>
                     <p>
-                        <%=  product.description %> 
+                        <%= product.description %> 
                     </p>
                     <h3>
                         Caracteristicas. 
@@ -92,19 +88,31 @@
             </article>
             <article id="CostoApagar">
                 <div id="precios">
-                    <h4><%= product.price %>$</h4>
-                    <h5><%= product.discount %>$</h5>
+                    <h4 id="precioProducto"><%= product.price %></h4>$
+                    <h5 id="descuentoProducto"><%= product.discount %></h5>$
                     <h6><%= product.discountRate %>%</h6>
                 </div>
                 <p>Stock: <%= product.stock %></p>
                 <p>Cantidad:</p>
-                <div id="cantidad">
-                    <div>-</div>
-                    <div>10</div>
-                    <div>+</div>
+                <div id="cantidadD">
+                    <div>
+                        <a id="menos">
+                            <strong>
+                                - 
+                            </strong>
+                        </a>
+                    </div>
+                    <div><input type="text" name="" id="numProduct" value="1" readonly></div>
+                    <div>
+                        <a id="mas">
+                            <strong>
+                                +
+                            </strong>
+                        </a>
+                    </div>
                 </div>
                 <br>
-                <button class="botonPrimario">Agregar a carrito</button>
+                <button class="botonPrimario" id="agregarCarrito">Agregar a carrito</button>
             </article>
         <!-- area descripcion -->
         </section>
