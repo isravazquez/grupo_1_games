@@ -20,7 +20,17 @@ const apiProducts = {
       console.log('Error de: '+ error);
    });
 
-   return res.json(listProducts);
+   let respuesta = {
+      meta: {
+          status : 200,
+          total: listProducts.length,
+          url: 'api/products'
+      },
+      data: listProducts
+   }
+
+
+   return res.json(respuesta);
 
   },
   deteilProduct: async(req, res)=>{
