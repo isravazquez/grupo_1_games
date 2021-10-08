@@ -61,7 +61,15 @@ const apiProducts = {
             console.log('Error de: '+ error);
          });
       
-         return res.json(Product);
+      let respuesta = {
+          meta: {
+              status : 200,
+              url: req.params.id
+          },
+          data: Product
+       }
+    
+      return res.json(respuesta);
   },
   createProduct: async(req, res) => {
          /** modelo para hacer post  con fetch
