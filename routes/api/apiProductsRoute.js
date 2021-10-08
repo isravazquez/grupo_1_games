@@ -8,6 +8,9 @@ router.get("/test",apiProducts.test);
 //listar productos
 router.get("/", apiProducts.listProducts);
 
+//listar categorias
+router.get("/listCategories", apiProducts.listCategories);
+
 //detalle producto
 router.get("/detail/:id", apiProducts.deteilProduct);
 

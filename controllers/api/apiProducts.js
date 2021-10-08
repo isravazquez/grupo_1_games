@@ -11,6 +11,23 @@ const apiProducts = {
     });
     
   },
+  listCategories: async (req, res) => {
+   
+   const listCategories = await db.Category.findAll().catch((error) => {
+      console.log('Error de: '+ error);
+   });
+
+   let respuesta = {
+      meta: {
+          status : 200,
+          total: listCategories.length,
+          url: 'api/categories'
+      },
+      data: listCategories
+  }
+    
+  return res.json(respuesta);
+ },
   listProducts: async (req, res) => {
    const listProducts = await db.Product.findAll({
          include:[{
