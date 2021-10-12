@@ -4,13 +4,22 @@
     <%- include('../partials/modal') %>
     <main>
         <section class="catalog">
-            <%for(let i = 0; i < 12; i++){%>
+            <%for(let i = 0; i < listProducts.length; i++){  %>
+                <div hidden>
+                    <p id="idProducto<%- i%>" hidden ><%= listProducts[i].id  %></p>
+                    <p id="nombreProducto<%- i%>" hidden  ><%= listProducts[i].name  %></p>
+                    <p id="precioProducto<%- i%>" hidden  ><%= listProducts[i].price  %></p>
+                    <p id="descuentoProducto<%- i%>" hidden  ><%= listProducts[i].discount  %></p>
+                    <p id="cantidadProducto<%- i%>" hidden >1</p>
+                    <p id="imaPrin<%- i%>" hidden >/img/imagesProducts/<%= listProducts[i].Image[0].name %></p>
+                </div>
                 <div class="item-catalog">
-                    <img src="/img/tablero.png" alt="" class="img-item-catalog">
-                    <h3>Tablero Marvel V Capcom</h3>
-                    <h4>$3,990.00</h4>
+                    <img src="/img/imagesProducts/<%= listProducts[i].Image[0].name ?  listProducts[i].Image[0].name : 'default-image.png' %>" alt="imagenProducto" >
+                    <h3><%= listProducts[i].name  %></h3>
+                    <h4>$<%= listProducts[i].price  %></h4>
                     <button class="add-cart-button">Añadir al Carrito</button>
-                    <button class="info-button">Información</button>
+                    <!-- <button class="info-button">Información</button> -->
+                    <a href="/products/<%= listProducts[i].id %>"  >Información</a>
                 </div>
             <%}%>
         </section>

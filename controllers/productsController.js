@@ -423,17 +423,86 @@ const productsController = {
      });
 
   },
-  tablerosIndex: (req, res) => {
-    res.render("./categoryIndex/tablerosIndex");
+  tablerosIndex: async (req, res) => {
+
+    const listProducts = await db.Product.findAll({
+                                       include:[{
+                                           association: 'Category',
+                                           association: 'Image'
+
+                                       }],
+                                       where: {
+                                            categoryId: 1
+                                       },
+                               }
+                               
+    ).catch((error) => {
+       console.log('Error de: '+ error);
+    });
+
+
+    // console.log(listProducts);
+    res.render("./categoryIndex/tablerosIndex",{listProducts});
   },
-  maquinitasIndex: (req, res) => {
-    res.render("./categoryIndex/maquinitasIndex");
+  maquinitasIndex: async (req, res) => {
+    const listProducts = await db.Product.findAll({
+                                       include:[{
+                                           association: 'Category',
+                                           association: 'Image'
+
+                                       }],
+                                       where: {
+                                            categoryId: 3
+                                       },
+                               }
+                               
+    ).catch((error) => {
+       console.log('Error de: '+ error);
+    });
+
+
+    // console.log(listProducts);
+    res.render("./categoryIndex/maquinitasIndex",{listProducts});
   },
-  futbolitosIndex: (req, res) => {
-    res.render("./categoryIndex/futbolitosIndex");
+  futbolitosIndex: async (req, res) => {
+    const listProducts = await db.Product.findAll({
+                                       include:[{
+                                           association: 'Category',
+                                           association: 'Image'
+
+                                       }],
+                                       where: {
+                                            categoryId: 2
+                                       },
+                               }
+                               
+    ).catch((error) => {
+       console.log('Error de: '+ error);
+    });
+
+
+    // console.log(listProducts);
+    res.render("./categoryIndex/futbolitosIndex",{listProducts});
   },
-  accesoriosIndex: (req, res) => {
-    res.render("./categoryIndex/accesoriosIndex");
+  accesoriosIndex: async (req, res) => {
+    const listProducts = await db.Product.findAll({
+                                       include:[{
+                                           association: 'Category',
+                                           association: 'Image'
+
+                                       }],
+                                       where: {
+                                            categoryId: 4
+                                       },
+                               }
+                               
+    ).catch((error) => {
+       console.log('Error de: '+ error);
+    });
+
+
+    // console.log(listProducts);
+    res.render("./categoryIndex/accesoriosIndex",{listProducts});
   },
 
 }
