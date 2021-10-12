@@ -36,7 +36,7 @@ app.use("/users", usersRoute);
 
 //api
 app.use("/api/products", apiProductsRoute);
-api.use("/api/users", apiUsersRoute)
+app.use("/api/users", apiUsersRoute)
 
 app.listen(process.env.PORT || 3001, () => {
   console.log("Servidor corriendo en el puerto 3001");
