@@ -32,6 +32,7 @@ const apiProducts = {
    const listProducts = await db.Product.findAll({
          include:[{
             association: 'Image',
+            association: 'Category'
          }]
    }).catch((error) => {
       console.log('Error de: '+ error);
