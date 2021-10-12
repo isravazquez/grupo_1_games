@@ -7,6 +7,7 @@ const usersRoute = require("./routes/userRoute");
 const cors = require("cors");
 
 const apiProductsRoute = require("./routes/api/apiProductsRoute");
+const apiUsersRoute = require("./routes/api/apiUsersRoute");
 
 const methodOverride = require("method-override");
 const session = require("express-session");
@@ -35,6 +36,7 @@ app.use("/users", usersRoute);
 
 //api
 app.use("/api/products", apiProductsRoute);
+api.use("/api/users", apiUsersRoute)
 
 app.listen(process.env.PORT || 3001, () => {
   console.log("Servidor corriendo en el puerto 3001");
