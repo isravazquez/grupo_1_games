@@ -44,6 +44,11 @@
 #signupform * {
   margin: 10px 0;
 }
+#errorEmail,
+#errorPaswword {
+  display: none;
+  visibility: hidden;
+}
 .passwordinput,
 #email {
   border: 1px solid #dfe1e5;

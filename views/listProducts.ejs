@@ -17,7 +17,7 @@
             <% if(i % 2 == 0 ){ %>
             <div id="producto" class="colorTenue">
               <div class="miniaturaImage">
-                <img src="/img/imagesProducts/<%= products[i].image ? products[i].image : 'default-image.png' %>" alt="imagenProducto">
+                    -<img src="/img/imagesProducts/<%= products[i].Image[0].name ? products[i].Image[0].name : 'default-image.png' %>" alt="imagenProducto">
               </div>
               <div class="info">
                 <p class="estiloParrafo">
@@ -64,7 +64,7 @@
           <% }else{%>
             <div id="producto" class="colorOscuro">
                 <div class="miniaturaImage">
-                  <img src="/img/imagesProducts/<%= products[i].image ? products[i].image : 'default-image.png' %>" alt="imagenProducto">
+                  <img src="/img/imagesProducts/<%= products[i].Image[0].name ? products[i].Image[0].name : 'default-image.png' %>" alt="imagenProducto">
                 </div>
                 <div class="info">
                   <p class="estiloParrafo">

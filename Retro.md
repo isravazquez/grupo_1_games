@@ -1,3 +1,88 @@
+﻿## retospectiva del Sprint-7 
+
+1. Comenzar a hacer
+    Resolver las tareas pendientes de entrega
+    Empezar a implementar validaciones 
+
+2. Hacer más
+    REvisar dudas sobre implementaciones de tareas pendientes 
+    Apoyarnos mas en dudas sobre las herramientas 
+
+3. Continuar haciendo
+    Seguir mejorando las validaciones 
+    Seguir haciendo reuniones mas seguido
+
+4. Hacer menos
+    Adelantarse
+
+5. Dejar de hacer
+    No dejar lapsos grandes de tiempo sin comunicarnos en tiempos de entrega 
+
+
+
+## retospectiva del Sprint-6 
+
+1. Comenzar a hacer
+    agilizar tareas frente a tiempo de entrega 
+    Revisar fechas de entrega continua 
+
+2. Hacer más
+    Mas reuniones antes de entrega
+    Apoyarnos en dudas 
+
+3. Continuar haciendo
+    Revisar conexion dudas sobre herremientas 
+    Seguir haciendo reuniones cada 3  a 5 días
+
+4. Hacer menos
+    Adelantarse
+
+5. Dejar de hacer
+    No dejar lapsos grandes de tiempo sin comunicarnos
+
+
+
+## retospectiva del Sprint-5 
+
+1. Comenzar a hacer
+    Resolver la retrospectiva que nos dio Pako
+    Empezar a implementar sequelize
+
+2. Hacer más
+    Mas reuniones
+    Apoyarnos mas
+
+3. Continuar haciendo
+    Seguir mejorando las vistasa
+    Seguir haciendo reuniones cada 3  a 5 días
+
+4. Hacer menos
+    Adelantarse
+
+5. Dejar de hacer
+    No dejar lapsos grandes de tiempo sin comunicarnos
+
+
+## Sprint-4
+
+1. Comenzar a hacer
+    Resolver la retrospectiva que nos dio Pako
+
+2. Hacer más
+    Mas reuniones
+    Mejorar la comunicacion
+
+3. Continuar haciendo
+    Seguir mejorando las vistasa
+    Seguir haciendo reuniones cada 3  a 5 días
+    Seguir comunicandonos
+
+4. Hacer menos
+    Usar menos imagenes
+
+5. Dejar de hacer
+    No dejar lapsos grandes de tiempo sin comunicarnos
+
 ## --Sprint-3
 
 Retrospectiva

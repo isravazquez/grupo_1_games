@@ -62,6 +62,17 @@ img{
 .textoTabla{
     font-size: x-small;
 }
+
+.conteCant{
+    /*border: solid 1px red;*/
+    width: 35px;
+    text-align: center;
+}
+
+p.nomProduct{
+ color:black;
+ font-size:0.8rem;
+}
 /* productos */
 
 /*---------tabla con divs--------- */
@@ -80,6 +91,11 @@ img{
     color:#FFFFFF;
     border-radius: 5px;
     padding: 10px;
+}
+
+#subtotal{
+	font-size: 3rem;
+	color:#0071E3;
 }
 /*----------------------------vistaPago---------------------------*/
 
