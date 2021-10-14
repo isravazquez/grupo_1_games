@@ -12,7 +12,7 @@
 
 
     const buttonsAddCart = document.querySelectorAll('.add-cart-button');
-    console.log(buttonsAddCart);
+    // console.log(buttonsAddCart);
 
 
 

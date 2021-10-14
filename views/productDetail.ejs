@@ -88,9 +88,9 @@
             </article>
             <article id="CostoApagar">
                 <div id="precios">
+                	<h5 id="descuentoProducto"><%= product.discount %></h5>$
                     <h4 id="precioProducto"><%= product.price %></h4>$
-                    <h5 id="descuentoProducto"><%= product.discount %></h5>$
-                    <h6><%= product.discountRate %>%</h6>
+                    <h6><%= product.discountRate %>% de descuento</h6>
                 </div>
                 <p>Stock: <%= product.stock %></p>
                 <p>Cantidad:</p>

@@ -35,6 +35,8 @@ window.addEventListener('load', function () {
                         divImagen.appendChild(imagen);
 
                         const nombre = document.createElement("p");
+                        nombre.setAttribute("class", "nomProduct");
+                        //nombre.setAttribute("style", "display: none");//para ocultar nombre 
                         nombre.textContent = listaProductosSeleccinados[i].nombre;
                         divImagen.appendChild(nombre);
 
